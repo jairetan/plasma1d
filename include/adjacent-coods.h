@@ -1,9 +1,8 @@
 //Determine which points are adjacent to particle position
+#pragma once
 
 #include <vector>
 #include "particle.h"
 #include "jmod.h"
 
-#pragma once
-
-void adjacent_points (Particle *particle, std::vector <int> *points, int divisions);
+void adjacent_points (Particle *particle, std::vector <int> *points);

@@ -4,6 +4,6 @@ double random_vel ()
 {
     //srand (time(NULL));
     //printf ("%d\n", rand());
-    //return (double)rand () / RAND_MAX;
+    //return (double)rand () / RAND_MAX / 2;
     return 0; //Cold plasma
 }

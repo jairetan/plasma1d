@@ -8,4 +8,4 @@
 
 #pragma once
 
-void calc_density (std::vector <double> *density, std::vector <Particle *> *particles, int num_div);
+void calc_density (std::vector <double> *density, std::vector <Particle *> *particles);

@@ -1,51 +1,52 @@
 #include "run-man.h"
 static void helper (std::vector <Particle*> *particles,
         std::vector <double> *pot,
-        std::vector <double> *density, std::vector <double> *field,
-        int num_cells, double dt, double t){
+        std::vector <double> *density, std::vector <double> *field, int curr_it)
+{
     using namespace std;
 
-    calc_density (density, particles, num_cells);
-    calc_field (field, pot, density, num_cells);
-    move_particles (particles, field, dt, num_cells);
+    calc_density (density, particles);
 
-    //Run diagnostics every 10 intervals
-    //if (((int)(t/dt) % 5) == 0)
-    //{
-        diagnostics (particles, t, pot, density);
-    //}
+    calc_field (field, pot, density);
+    move_particles (particles, field);
 
+    //Run diagnostics every intervals
+    if (curr_it % 5 == 0)
+    {
+        diagnostics (particles, curr_it, pot, density);
+    }
 }
 
-void run_man (int (*init_pos)(int),
-        double (*init_vel)(void), double dt,
-        double duration, double width, int num_ion,
-        int num_e, int num_cells)
-{
+//void run_man (int (*init_pos)(int),
+        //double (*init_vel)(void), double D_T,
+        //double duration, double width, int num_ion,
+        //int num_e, int num_cells)
+//{
+int main (){
 
     using namespace std;
     vector <Particle *> particles;
     //vector <Particle *> e (num_e);
-    int iterations = duration/dt;
-    vector <double> density (num_cells);
-    vector <double> field (num_cells);
-    vector <double> potential (num_cells);
+    int iterations = T/D_T;
+    vector <double> density (NUM_CELLS);
+    vector <double> field (NUM_CELLS);
+    vector <double> potential (NUM_CELLS);
 
-    for (int i = 0; i < num_ion; i++)
+    for (int i = 0; i < NUM_IONS; i++)
     {
         particles.insert (particles.begin() + i , new Proton
-            (init_vel (), init_pos (num_cells), 1));
+            (random_vel (), random_start (), 1));
     }
 
-    for (int j = num_ion; j < num_e+num_ion; j++)
+    for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++)
     {
         particles.insert (particles.begin() + j , new Electron
-            (init_vel (), init_pos (num_cells), 1));
+            (random_vel (), random_start (), 1));
     }
 
     for (int i = 0; i < iterations; i++){
-        helper (&particles, &potential, &density, &field, num_cells, dt, dt*i);
-        //Progress bar
+        helper (&particles, &potential, &density, &field, i);
+//        Progress bar
         if ((i % (iterations / 10)) == 0)
         {
             std::cout << 10 - i*10/iterations << " ";
@@ -55,7 +56,8 @@ void run_man (int (*init_pos)(int),
 
     field_diagnostic (&field);
     pot_diagnostic (&potential);
+    density_diagnostic (&density);
+    velocity_diagnostic (&particles);
 
     std::cout << "0\nCompleted\n";
-
 }

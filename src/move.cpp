@@ -1,9 +1,16 @@
 //Move particles
 #include "move.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include <iostream>
 
-void move_particles (std::vector <Particle *> * particles, std::vector <double> *field, double dt, int num_cells)
+//Return normalized acceleration
+static double find_accel (double field, Particle *particle)
+{
+    double dx = SYS_SIZE/NUM_CELLS;
+    double accel = FIELD_SCALE* field * particle->get_charge () *D_T *D_T / particle->get_mass ()/ dx;
+    return accel;
+}
+
+void move_particles (std::vector <Particle *> * particles, std::vector <double> *field)
 {
     using namespace std;
 
@@ -13,15 +20,14 @@ void move_particles (std::vector <Particle *> * particles, std::vector <double> 
 
     for (int i = 0; i < num_particles; i++)
     {
-
         weighing (particles->at (i), &weights);
-        adjacent_points (particles->at (i), &points, num_cells);
-        particles->at (i)->inc_vel (dt, field->at (points.at (0))*weights.at (0));
-        particles->at (i)->inc_vel (dt, field->at (points.at (1))*weights.at (1));
-        particles->at (i)->inc_pos (dt, num_cells);
+        //zero_order_weighing (particles->at (i), &weights); //Birdsell says to conserve energy
+        adjacent_points (particles->at (i), &points);
+
+        particles->at (i)->inc_vel (find_accel(field->at (points.at (0))*weights.at (0)+field->at (points.at (1))*weights.at (1), particles->at(i)));
+        particles->at (i)->inc_pos ();
 
         weights.clear();
         points.clear ();
     }
-
 }

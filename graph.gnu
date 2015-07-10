@@ -13,9 +13,9 @@ plot "ke_out.dat"
 #unset key
 #plot "e_data.dat"
 
-set title "Ion position vs Time"
-unset key
-plot "pos_out.dat"
+#set title "Ion position vs Time"
+#unset key
+#plot "pos_out.dat"
 
 #set title "E(k) vs k"
 #unset key
@@ -33,13 +33,18 @@ set title "Electric Potential Energy vs time"
 unset key
 plot "pe_out.dat"
 
+#set title "Final velocity Distribution"
+#unset key
+#plot "vel_out.dat"
+
 #set title "Total Energy vs Time"
 #unset key
 #plot "total_nrg.dat"
 
-set title "Particle velocity vs Time"
+set title "Density distribution"
 unset key
-plot "vel.dat"
+plot "density_out.dat"
+
 
 unset multiplot
 

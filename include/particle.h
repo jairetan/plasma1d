@@ -1,5 +1,7 @@
 //General object that occupies simulation
 #include "/home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h"
+#include "jmod.h"
+#include "parameters.h"
 
 #pragma once
 class Particle
@@ -20,12 +22,13 @@ class Particle
         }
         double get_vel ();
         double get_pos ();
-        void inc_pos (double dt, int);
-        double inc_vel (double dt, double field); //somehwo adapt for b field when time comes
+        void inc_pos ();
+        void inc_vel (double); //somehwo adapt for b field when time comes
         double get_mom ();
         double get_ke ();
         double get_width();
         double get_charge();
+        double get_mass();
 };
 
 

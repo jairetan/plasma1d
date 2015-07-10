@@ -1,68 +1,83 @@
 #include "altfield.h"
+#include <iostream>
 
-void electric_field (std::vector <double> *phi, std::vector <double> *field, int num_cells)
+static double trans_mult (int x, double kappa)
 {
-    for (int i = 1 ; i < num_cells-1; i++)
+    double delta_x = SYS_SIZE/NUM_CELLS;
+    double k = kappa * x;
+    double inner_term = k * delta_x / 2;
+
+
+    double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
+    return multiplier;
+}
+
+void electric_field (std::vector <double> *phi, std::vector <double> *field)
+{
+    for (int i = 1 ; i < NUM_CELLS-1; i++)
     {
         field->at (i) = (phi->at (i-1)-phi->at (i+1))/2;
     }
 
     //Periodic boundary conditions
-    field->at (0) = (phi->at (num_cells-1)-phi->at (1))/2;
-    field->at (num_cells-1) = (phi->at(num_cells-2)-phi->at (0))/2;
+    field->at (0) = (phi->at (NUM_CELLS-1)-phi->at (1))/2;
+    field->at (NUM_CELLS-1) = (phi->at(NUM_CELLS-2)-phi->at (0))/2;
 }
 
+//Note: Try with one extra grid point for periodicity
 void calc_field (std::vector <double> *field_vector,
         std::vector <double> *pot_vector,
-        std::vector <double> *density_vector, int num_cells)
+        std::vector <double> *density_vector)
 {
-    double *potential = (double *)calloc (num_cells,
-                sizeof (double)),
-           *density = (double *)calloc (num_cells,
-                sizeof (double));
+    double *potential = (double *)calloc (NUM_CELLS,
+            sizeof (double)),
+           *density = (double *)calloc (NUM_CELLS,
+                   sizeof (double));
 
-    double kappa = 2*M_PI/num_cells;
+    double kappa = 2*M_PI/NUM_CELLS;
     fftw_complex *pot_trans = NULL;
     fftw_plan p;
 
-    for (int i = 0; i < num_cells; i++){
+    for (int i = 0; i < NUM_CELLS; i++){
         density [i] = density_vector->at(i);
     }
 
     pot_trans = (fftw_complex*) fftw_malloc
-        (sizeof (fftw_complex)*(num_cells));
+        (sizeof (fftw_complex)*(NUM_CELLS));
 
     /*Transform density*/
     p = fftw_plan_dft_r2c_1d
-        (num_cells, density, pot_trans, FFTW_ESTIMATE);
+        (NUM_CELLS, density, pot_trans, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    /*Obtain potential transform*/
-    pot_trans [0] = 0;
-
-    //Why split up?
-    for (int x = 1; x < num_cells; x++)
+    for (int x = 1; x < NUM_CELLS; x++)
     {
-        pot_trans [x] *= -1/ (x*x) / kappa /kappa;
+        //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
+        pot_trans [x] *= trans_mult (x, kappa);
     }
-    //for (int x = num_cells/2; x < num_cells; x++){
-        //pot_trans [x] = conj(pot_trans [num_cells-x]);
-    //}
 
-    p = fftw_plan_dft_c2r_1d (num_cells, pot_trans,
+    pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
+    //pot_trans [0] = 0;
+        //Why split up?
+        //Why split up?
+        //for (int x = NUM_CELLS/2; x < NUM_CELLS; x++){
+        //pot_trans [x] = conj(pot_trans [NUM_CELLS-x]);
+        //}
+
+    p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
             potential, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    /*divide by num_cells in array (inverse transform not normalized)*/
-    for (int x = 0; x < num_cells; x++)
+    /*divide by NUM_CELLS in array (inverse transform not normalized)*/
+    for (int x = 0; x < NUM_CELLS; x++)
     {
-        potential [x] /= num_cells;
+        potential [x] /= NUM_CELLS;
         pot_vector->at (x) = potential [x];
     }
 
-    electric_field (pot_vector, field_vector, num_cells);
+    electric_field (pot_vector, field_vector);
     free (potential);
     free (density);
 
