@@ -1,14 +1,29 @@
 #include "run-man.h"
+#include <ctime>
+
 static void helper (std::vector <Particle*> *particles,
         std::vector <double> *pot,
         std::vector <double> *density, std::vector <double> *field, int curr_it)
 {
+    double density_time = 0, field_time = 0, move_time = 0;
+    clock_t t1 = 0, t2 = 0;
+    std::ofstream times ("times.dat", std::ios::app);
+
     using namespace std;
-
+    t1 = clock();
     calc_density (density, particles);
-
+    t2 = clock();
+    density_time = double(t2 - t1) / CLOCKS_PER_SEC;
+    t1 = clock ();
     calc_field (field, pot, density);
+    t2 = clock ();
+    field_time = double(t2 - t1) / CLOCKS_PER_SEC;
+    t1 = clock ();
     move_particles (particles, field);
+    t2 = clock ();
+    move_time = double(t2 - t1) / CLOCKS_PER_SEC;
+    times << density_time << " " << field_time << " " << move_time << "\n";
+
 
     //Run diagnostics every intervals
     if (curr_it % 5 == 0)
@@ -23,14 +38,13 @@ static void helper (std::vector <Particle*> *particles,
         //int num_e, int num_cells)
 //{
 int main (){
-
-    using namespace std;
-    vector <Particle *> particles;
-    //vector <Particle *> e (num_e);
+    std::vector <Particle *> particles;
+    srand (time(NULL));
+    // std::vector <Particle *> e (num_e);
     int iterations = T/D_T;
-    vector <double> density (NUM_CELLS);
-    vector <double> field (NUM_CELLS);
-    vector <double> potential (NUM_CELLS);
+    std::vector <double> density (NUM_CELLS);
+    std::vector <double> field (NUM_CELLS);
+    std::vector <double> potential (NUM_CELLS);
 
     for (int i = 0; i < NUM_IONS; i++)
     {
@@ -58,6 +72,7 @@ int main (){
     pot_diagnostic (&potential);
     density_diagnostic (&density);
     velocity_diagnostic (&particles);
+    psd (&field, NULL);
 
     std::cout << "0\nCompleted\n";
 }

@@ -3,4 +3,4 @@
 #include "particle.h"
 #pragma once
 
-void weighing (Particle *particle, std::vector <double> * weights);
+void weighing (Particle *particle, double *weights);

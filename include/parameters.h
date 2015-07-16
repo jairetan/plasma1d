@@ -1,18 +1,32 @@
 #pragma once
+#include "/home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h"
 //Things to consider when kind of works
 //1. Assymetric time steps for field and species
+//Work through each module by hand
 
 //Guidelines for parameters (from birdsell):
 //Number of particles in a debye length >> 1
 //Scale length >> 1 debye length
 //KE >> PE ?
 
-static const double D_T = 1e-12;
-static const int NUM_CELLS = 100;
-static const double T = 1e-9; //In units of plasma freq
-static const int PARTICLE_WIDTH = 1; //In Units of debye length
-static const int NUM_IONS = 0;
-static const int NUM_E = 10000;
-static const int SYS_SIZE = 1000; //In debye lengths
+//Normalized units
+static const double D_T = 1e-6;
+static const double T = 1e-3;
+static const int NUM_CELLS = 1e2;
+static const int PARTICLE_WIDTH = 1; //In debye lengths
+static const int SYS_SIZE = 1e4; //In debye lengths
 static const double FIELD_SCALE = 1;
+static const int NUM_IONS = 0;
+static const int NUM_E = 1e5;
 
+//Normalized to electron properties
+static const double PROTON_CHARGE = 1;
+static const double ELECTRON_CHARGE = -1;
+static const double PROTON_MASS = 100;
+static const double ELECTRON_MASS = 1;
+
+//Non normalized masses
+/*static const double PROTON_CHARGE = CLHEP::eplus;
+static const double ELECTRON_CHARGE = -CLHEP::eplus;
+static const double PROTON_MASS = CLHEP::proton_mass_c2;
+static const double ELECTRON_MASS = -CLHEP::electron_mass_c2;*/

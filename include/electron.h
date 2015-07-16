@@ -1,9 +1,8 @@
 //Electron particle
-#include "particle.h"
 
 #pragma once
-#define E_CHARGE -1 //Normalized fundamental charge
-#define E_MASS 1 //Normalized Electron mass
+#include "particle.h"
+#include "parameters.h"
 
 class Electron : public Particle
 {

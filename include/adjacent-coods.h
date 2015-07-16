@@ -5,4 +5,4 @@
 #include "particle.h"
 #include "jmod.h"
 
-void adjacent_points (Particle *particle, std::vector <int> *points);
+void adjacent_points (Particle *particle, int *points);

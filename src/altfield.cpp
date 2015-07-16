@@ -3,12 +3,16 @@
 
 static double trans_mult (int x, double kappa)
 {
-    double delta_x = SYS_SIZE/NUM_CELLS;
-    double k = kappa * x;
-    double inner_term = k * delta_x / 2;
+    //double delta_x = SYS_SIZE/NUM_CELLS;
+    //double k = kappa * x;
+    //double inner_term = k * delta_x / 2;
 
-
-    double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
+    //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
+    double multiplier = .5 *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+    if (cos(2*M_PI*x/NUM_CELLS)-1 == 0){
+        std::cout << x << "\n";
+        exit (-1);
+    }
     return multiplier;
 }
 
@@ -24,7 +28,6 @@ void electric_field (std::vector <double> *phi, std::vector <double> *field)
     field->at (NUM_CELLS-1) = (phi->at(NUM_CELLS-2)-phi->at (0))/2;
 }
 
-//Note: Try with one extra grid point for periodicity
 void calc_field (std::vector <double> *field_vector,
         std::vector <double> *pot_vector,
         std::vector <double> *density_vector)
@@ -43,7 +46,7 @@ void calc_field (std::vector <double> *field_vector,
     }
 
     pot_trans = (fftw_complex*) fftw_malloc
-        (sizeof (fftw_complex)*(NUM_CELLS));
+        (sizeof (fftw_complex)*(NUM_CELLS/2+1)); //Efficiency of fftw3
 
     /*Transform density*/
     p = fftw_plan_dft_r2c_1d
@@ -51,19 +54,14 @@ void calc_field (std::vector <double> *field_vector,
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    for (int x = 1; x < NUM_CELLS; x++)
+    for (int x = 1; x < NUM_CELLS/2+1; x++)
     {
         //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
         pot_trans [x] *= trans_mult (x, kappa);
     }
 
-    pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
-    //pot_trans [0] = 0;
-        //Why split up?
-        //Why split up?
-        //for (int x = NUM_CELLS/2; x < NUM_CELLS; x++){
-        //pot_trans [x] = conj(pot_trans [NUM_CELLS-x]);
-        //}
+    //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
+    pot_trans [0] = 0; //Making 0 doesn't seem to affect field calc
 
     p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
             potential, FFTW_ESTIMATE);

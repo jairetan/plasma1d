@@ -31,7 +31,7 @@ void calc_field (std::vector <double> *field_vector,
     fftw_destroy_plan(p);
 
     /*Obtain potential transform*/
-    /*phi_k = 4pi/(1-cos (2pik/N))*/
+    /*phi_k *= 4pi/(1-cos (2pik/N))*/
     pot_trans [0] = e_trans [0];
     pot_trans [0] *= 4*M_PI / (1 - cos (2*M_PI*NUM_CELLS)/(NUM_CELLS+1));
 

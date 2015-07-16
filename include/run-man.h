@@ -15,6 +15,7 @@
 #include "init_v.h"
 #include "init-pos.h"
 #include "velocity_diagnostic.h"
+#include "psd.h"
 #include <vector>
 
 #include "parameters.h"

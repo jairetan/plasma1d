@@ -1,4 +1,5 @@
 #include "field_diagnostic.h"
+#include "parameters.h"
 
 void field_diagnostic (std::vector <double> *field)
 {

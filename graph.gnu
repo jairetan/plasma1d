@@ -29,9 +29,9 @@ set title "Final Electric Field vs Position"
 unset key
 plot "field_out.dat"
 
-set title "Electric Potential Energy vs time"
-unset key
-plot "pe_out.dat"
+#set title "Electric Potential Energy vs time"
+#unset key
+#plot "pe_out.dat"
 
 #set title "Final velocity Distribution"
 #unset key
@@ -41,10 +41,13 @@ plot "pe_out.dat"
 #unset key
 #plot "total_nrg.dat"
 
-set title "Density distribution"
-unset key
-plot "density_out.dat"
+#set title "Density distribution"
+#unset key
+#plot "density_out.dat"
 
+set title "Power Spectrum"
+unset key
+plot "psd_out.dat"
 
 unset multiplot
 

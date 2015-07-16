@@ -1,7 +1,9 @@
 //1 Dimensino adjacent points
-#include <adjacent-coods.h>
+#include <iostream>
+#include <stdlib.h>
+#include "adjacent-coods.h"
 
-void adjacent_points (Particle *particle, std::vector <int> *points)
+void adjacent_points (Particle *particle, int *points)
 {
     int left = (int)jmod (particle->get_pos(), NUM_CELLS);
     int right = (int)jmod (particle->get_pos()+1, NUM_CELLS);
@@ -9,6 +11,6 @@ void adjacent_points (Particle *particle, std::vector <int> *points)
     //points->insert (points->begin(), left); //to the left or where the particle is
     //points->insert (points->begin()+1, right);
 
-    points->push_back (right);
-    points->push_back (left);
+    points [1] = right;
+    points [0] = left;
 }
