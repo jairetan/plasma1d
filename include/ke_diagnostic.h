@@ -4,5 +4,6 @@
 #include <particle.h>
 #pragma once
 
-void ke_diagnostic (std::vector <Particle *> *, double);
-void pe_diagnostic (std::vector <double> *, std::vector <double> *, double);
+double ke_diagnostic (std::vector <Particle *> *, double);
+double pe_diagnostic (std::vector <double> *, std::vector <double> *, double);
+void energy_diagnostic (std::vector <Particle *> *, std::vector <double> *, std::vector <double> *, double);

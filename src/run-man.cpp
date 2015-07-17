@@ -24,7 +24,6 @@ static void helper (std::vector <Particle*> *particles,
     move_time = double(t2 - t1) / CLOCKS_PER_SEC;
     times << density_time << " " << field_time << " " << move_time << "\n";
 
-
     //Run diagnostics every intervals
     if (curr_it % 5 == 0)
     {
@@ -64,15 +63,14 @@ int main (){
         if ((i % (iterations / 10)) == 0)
         {
             std::cout << 10 - i*10/iterations << " ";
+            density_diagnostic (&density, i);
+            field_diagnostic (&field, i);
+            pot_diagnostic (&potential, i);
+            velocity_diagnostic (&particles, i);
             std::cout.flush();
         }
     }
 
-    field_diagnostic (&field);
-    pot_diagnostic (&potential);
-    density_diagnostic (&density);
-    velocity_diagnostic (&particles);
-    psd (&field, NULL);
-
+    psd (&field);
     std::cout << "0\nCompleted\n";
 }

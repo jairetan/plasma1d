@@ -1,3 +1,4 @@
+#include <complex.h>
 #include "altfield.h"
 #include <iostream>
 
@@ -71,7 +72,7 @@ void calc_field (std::vector <double> *field_vector,
     /*divide by NUM_CELLS in array (inverse transform not normalized)*/
     for (int x = 0; x < NUM_CELLS; x++)
     {
-        potential [x] /= NUM_CELLS;
+        potential [x] /= -NUM_CELLS;
         pot_vector->at (x) = potential [x];
     }
 

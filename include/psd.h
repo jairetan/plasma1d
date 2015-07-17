@@ -7,4 +7,4 @@
 #include <fstream>
 #include "parameters.h"
 
-void psd (std::vector <double> * data, std::vector <double> *return_dat);
+void psd (std::vector <double> * data);

@@ -1,4 +1,4 @@
-set multiplot layout 3,3 title "Diagnostics"
+set multiplot layout 2,2 title "Diagnostics"
 set tmargin 4 #margin between graphs
 
 set title "Momentum vs Time" font "Arial bold, 15"
@@ -25,44 +25,26 @@ plot "ke_out.dat"
 #unset key
 #plot "e_k_data.dat"
 
-set title "Final Potential vs Position"
-unset key
-set ylabel "Potential"
-set xlabel "Grid Point"
-plot "pot_out.dat"
-
-set title "Final Electric Field vs Position"
-unset key
-set ylabel "Electric Field"
-set xlabel "Grid Point"
-plot "field_out.dat"
-
 set title "Electric Potential Energy vs time"
 unset key
 set ylabel "EPE"
 set xlabel "Iteration"
 plot "pe_out.dat"
 
-set title "Final velocity Distribution"
-unset key
-set ylabel "Velocity"
-set xlabel "Grid Point"
-plot "vel_out.dat"
-
 #set title "Total Energy vs Time"
 #unset key
 #plot "total_nrg.dat"
 
-set title "Density distribution"
+set title "Total Energy vs Time"
 unset key
-set ylabel "Charge Density"
-set xlabel "Grid Point"
-plot "density_out.dat"
+set ylabel "Total Energy"
+set xlabel "Iteration"
+plot "e_out.dat"
 
-set title "Power Spectrum"
-unset key
-set ylabel "Power Spectral Density"
-set xlabel "Grid Point"
-plot "psd_out.dat"
+#set title "Power Spectrum"
+#unset key
+#set ylabel "Power Spectral Density"
+#set xlabel "Grid Point"
+#plot "psd_out.dat"
 
 unset multiplot

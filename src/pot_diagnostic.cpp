@@ -1,8 +1,8 @@
 #include "pot_diagnostic.h"
 
-void pot_diagnostic (std::vector <double> *pot)
+void pot_diagnostic (std::vector <double> *pot, int iter)
 {
-    std::string path = DATA_DIR + "pot_out.dat";
+    std::string path = DATA_DIR + to_string (iter*10*D_T/T) + "pot_out.dat";
     std::ofstream pot_out (path.c_str(), std::ios::app);
     int size = pot->size();
 
