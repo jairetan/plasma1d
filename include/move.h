@@ -5,7 +5,7 @@
 #include <cmath>
 #include "particle.h"
 #include "weighing.h"
-#include "adjacent-coods.h"
+#include "adjacent_coods.h"
 #include "zero_order_weighing.h"
 #include "parameters.h"
 

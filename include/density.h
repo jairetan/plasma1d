@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
-#include "adjacent-coods.h"
+#include "adjacent_coods.h"
 #include "weighing.h"
 #include "zero_order_weighing.h"
 

@@ -1,4 +1,4 @@
-set terminal wxt size 1000,500
+set terminal wxt size 1366,768
 set term wxt 1
 load "graph.gnu"
 set term wxt 2
