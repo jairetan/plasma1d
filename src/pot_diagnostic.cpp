@@ -2,7 +2,8 @@
 
 void pot_diagnostic (std::vector <double> *pot)
 {
-    std::ofstream pot_out ("pot_out.dat", std::ios::app);
+    std::string path = DATA_DIR + "pot_out.dat";
+    std::ofstream pot_out (path.c_str(), std::ios::app);
     int size = pot->size();
 
     for (int x = 0; x < size; x++)

@@ -1,5 +1,6 @@
 #pragma once
 #include "/home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h"
+#include <string>
 //Things to consider when kind of works
 //1. Assymetric time steps for field and species
 //Work through each module by hand
@@ -10,11 +11,11 @@
 //KE >> PE ?
 
 //Normalized units
-static const double D_T = 1e-6;
-static const double T = 1e-3;
+static const double D_T = 1e-3;
+static const double T = 1;
 static const int NUM_CELLS = 1e2;
 static const int PARTICLE_WIDTH = 1; //In debye lengths
-static const int SYS_SIZE = 1e4; //In debye lengths
+static const int SYS_SIZE = 1e2; //In debye lengths
 static const double FIELD_SCALE = 1;
 static const int NUM_IONS = 0;
 static const int NUM_E = 1e5;
@@ -30,3 +31,10 @@ static const double ELECTRON_MASS = 1;
 static const double ELECTRON_CHARGE = -CLHEP::eplus;
 static const double PROTON_MASS = CLHEP::proton_mass_c2;
 static const double ELECTRON_MASS = -CLHEP::electron_mass_c2;*/
+
+//Weighing schemes
+static const int CIC = 1;
+static const int ZERO_ORDER = 0;
+
+//Output Directories
+static const std::string DATA_DIR ("data/");

@@ -60,7 +60,7 @@ int main (){
 
     for (int i = 0; i < iterations; i++){
         helper (&particles, &potential, &density, &field, i);
-//        Progress bar
+        //Progress bar
         if ((i % (iterations / 10)) == 0)
         {
             std::cout << 10 - i*10/iterations << " ";

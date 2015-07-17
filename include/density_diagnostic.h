@@ -1,7 +1,6 @@
-
+#pragma once
 #include <vector>
 #include <fstream>
-
-#pragma once
+#include "parameters.h"
 
 void density_diagnostic (std::vector <double> *);

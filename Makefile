@@ -16,4 +16,4 @@ run: $(OBJ) -lfftw3 -lm -lgsl -lgslcblas
 	mv *.o $(OBJECTS)
 
 clean:
-	@rm -f $(OBJECTS)*.o run *.dat
+	@rm -f $(OBJECTS)*.o run ./data/*.dat

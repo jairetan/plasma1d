@@ -4,7 +4,8 @@
 void pos_diagnostic (std::vector <Particle *> *particles, double t)
 {
     int size = particles -> size();
-    std::ofstream pos_out ("pos_out.dat", std::ios::app);
+    std::string path = DATA_DIR + "pos_out.dat";
+    std::ofstream pos_out (path.c_str(), std::ios::app);
 
     for (int i = 0; i < size; i+=10){
         pos_out << t << " " << particles->at (i)->get_pos() << "\n";

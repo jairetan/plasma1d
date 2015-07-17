@@ -1,7 +1,8 @@
 #include "psd.h"
 void psd (std::vector <double> * data, std::vector <double> *return_dat)
 {
-    std::ofstream psd_out ("psd_out.dat", std::ios::app);
+    std::string path = DATA_DIR + "psd_out.dat";
+    std::ofstream psd_out (path.c_str(), std::ios::app);
     int size = data->size();
     double *data_array =  (double *)calloc (sizeof (double), size);
     fftw_complex *final_array =  (fftw_complex *)calloc (sizeof (double), size);

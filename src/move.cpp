@@ -22,8 +22,13 @@ void move_particles (std::vector <Particle *> * particles, std::vector <double> 
 
     for (int i = 0; i < num_particles; i++)
     {
-        weighing (particles->at (i), weights);
-        //zero_order_weighing (particles->at (i), &weights); //Birdsell says to conserve energy
+        if (CIC){
+            weighing (particles->at (i), weights);
+        }
+        else if (ZERO_ORDER){
+            zero_order_weighing (particles->at (i), weights); //Birdsell says to conserve energy
+        }
+
         adjacent_points (particles->at (i), points);
         left_field = field->at (points [0])*weights [0];
         right_field = field->at (points[1]) * weights [1];

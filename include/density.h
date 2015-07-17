@@ -5,6 +5,7 @@
 #include <cmath>
 #include "adjacent-coods.h"
 #include "weighing.h"
+#include "zero_order_weighing.h"
 
 #pragma once
 

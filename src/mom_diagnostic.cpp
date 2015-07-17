@@ -5,7 +5,8 @@
 void mom_diagnostic (std::vector <Particle *> *particles, double t){
     double mom_total = 0;
     int size = particles -> size();
-    std::ofstream mom_out ("mom_out.dat", std::ios::app);
+    std::string path = DATA_DIR + "mom_out.dat";
+    std::ofstream mom_out (path.c_str(), std::ios::app);
 
     for (int i = 0; i < size; i++){
         mom_total += particles->at (i)->get_mom();

@@ -1,6 +1,4 @@
 #include "density.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void calc_density (std::vector <double> *density, std::vector <Particle *> *particles)
 {
@@ -15,14 +13,19 @@ void calc_density (std::vector <double> *density, std::vector <Particle *> *part
     }
 
     for (int i = 0; i < num_particles; i++){
-        weighing (particles->at (i), weights);
+        if (CIC){
+            weighing (particles->at (i), weights);
+        }
+        else if (ZERO_ORDER){
+            zero_order_weighing (particles->at (i), weights);
+        }
         adjacent_points (particles->at (i), points);
 
         for (int j = 0; j < adjacencies; j++){
-            if (points[j] > NUM_CELLS-1 || points [j] < 0){
-                std::cout << points[j] << "\n";
-                exit (-1);
-            }
+            //if (points[j] > NUM_CELLS-1 || points [j] < 0){
+            //std::cout << points[j] << "\n";
+            //exit (-1);
+            //}
             density->at (points [j]) +=
                 weights [j]* ((particles->at (i))->get_charge());
         }

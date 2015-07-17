@@ -1,5 +1,5 @@
 #include "zero_order_weighing.h"
-void zero_order_weighing (Particle *particle, std::vector <double> *weights)
+void zero_order_weighing (Particle *particle, double *weights)
 {
     int nearest = (int)(particle->get_pos() + .5);
     double left_perc, right_perc;
@@ -12,6 +12,6 @@ void zero_order_weighing (Particle *particle, std::vector <double> *weights)
         left_perc = 0.;
     }
 
-    weights->push_back (right_perc);
-    weights->push_back (left_perc);
+    weights [1] = (right_perc);
+    weights [0] = (left_perc);
 }
