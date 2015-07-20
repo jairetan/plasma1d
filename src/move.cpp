@@ -22,19 +22,21 @@ void move_particles (std::vector <Particle *> * particles, std::vector <double> 
 
     for (int i = 0; i < num_particles; i++)
     {
+        Particle *particle = particles->at (i);
+
         if (CIC){
-            weighing (particles->at (i), weights);
+            weighing (particle, weights);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particles->at (i), weights); //Birdsell says to conserve energy
+            zero_order_weighing (particle, weights); //Birdsell says to conserve energy
         }
 
-        adjacent_points (particles->at (i), points);
-        left_field = field->at (points [0])*weights [0];
-        right_field = field->at (points[1]) * weights [1];
-        accel = find_accel(left_field+right_field, particles->at (i));
+        adjacent_points (particle, points);
+        left_field = field->at (points [0]) * weights [0];
+        right_field = field->at (points [1]) * weights [1];
+        accel = find_accel(left_field + right_field, particle);
 
-        particles->at (i)->inc_vel (accel);
-        particles->at (i)->inc_pos ();
+        particle->inc_vel (accel);
+        particle->inc_pos ();
     }
 }

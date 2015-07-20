@@ -1,75 +1,87 @@
-//Calculate field with fftw
+#include <complex.h>
 #include "field.h"
+#include <iostream>
 
+//Mutliplier for transformed density
+static double trans_mult (int x, double kappa)
+{
+    //double delta_x = SYS_SIZE/NUM_CELLS;
+    //double k = kappa * x;
+    //double inner_term = k * delta_x / 2;
+
+    //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
+    double multiplier = .5 *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+    if (cos(2*M_PI*x/NUM_CELLS)-1 == 0){
+        std::cout << x << "\n";
+        exit (-1);
+    }
+    return multiplier;
+}
+
+//Calculate Electric field from finite differences
+static void electric_field (std::vector <double> *phi, std::vector <double> *field)
+{
+    for (int i = 1 ; i < NUM_CELLS-1; i++)
+    {
+        field->at (i) = (phi->at (i-1)-phi->at (i+1))/2;
+    }
+
+    //Periodic boundary conditions
+    field->at (0) = (phi->at (NUM_CELLS-1)-phi->at (1))/2;
+    field->at (NUM_CELLS-1) = (phi->at(NUM_CELLS-2)-phi->at (0))/2;
+}
+
+//Calculate potential and electric field from charge density
 void calc_field (std::vector <double> *field_vector,
         std::vector <double> *pot_vector,
         std::vector <double> *density_vector)
 {
-    double *field = (double *)calloc (NUM_CELLS,
-            sizeof (double)),
-           *potential = (double *)calloc (NUM_CELLS,
+    double *potential = (double *)calloc (NUM_CELLS,
             sizeof (double)),
            *density = (double *)calloc (NUM_CELLS,
                    sizeof (double));
 
-    fftw_complex *e_trans = NULL, *pot_trans = NULL;
+    double kappa = 2*M_PI/NUM_CELLS;
+    fftw_complex *pot_trans = NULL;
     fftw_plan p;
 
     for (int i = 0; i < NUM_CELLS; i++){
         density [i] = density_vector->at(i);
     }
 
-    e_trans = (fftw_complex*) fftw_malloc
-        (sizeof (fftw_complex)*(NUM_CELLS));
     pot_trans = (fftw_complex*) fftw_malloc
-    (sizeof (fftw_complex)*(NUM_CELLS+1));
+        (sizeof (fftw_complex)*(NUM_CELLS/2+1));
 
     /*Transform density*/
     p = fftw_plan_dft_r2c_1d
-        (NUM_CELLS, density, e_trans, FFTW_ESTIMATE);
+        (NUM_CELLS, density, pot_trans, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    /*Obtain potential transform*/
-    /*phi_k *= 4pi/(1-cos (2pik/N))*/
-    pot_trans [0] = e_trans [0];
-    pot_trans [0] *= 4*M_PI / (1 - cos (2*M_PI*NUM_CELLS)/(NUM_CELLS+1));
-
-    /*wrap around*/
-    e_trans[0] *= 4*M_PI/(I*sin (2*M_PI*(NUM_CELLS-1)/(NUM_CELLS)));
-
-    /*Dividing by 0?*/
-    for (int x = 1; x < NUM_CELLS; x++)
+    for (int x = 1; x < NUM_CELLS/2+1; x++)
     {
-        pot_trans[x] = e_trans [x];
-        pot_trans [x] *= 4*M_PI / (1-cos (2*M_PI*x)/(NUM_CELLS+1));
-
-        e_trans [x] *= 4*M_PI/(I*sin (2*M_PI*x/(NUM_CELLS)));
+        //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
+        pot_trans [x] *= trans_mult (x, kappa);
     }
 
-    p = fftw_plan_dft_c2r_1d (NUM_CELLS, e_trans,
-            field, FFTW_ESTIMATE);
-    fftw_execute(p);
-    fftw_destroy_plan(p);
+    //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
+    pot_trans [0] = 0; //Making 0 doesn't seem to affect field calc
 
     p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
             potential, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    /*divide by num_cells in array (inverse transform not normalized)*/
+    /*divide by NUM_CELLS in array (inverse transform not normalized)*/
     for (int x = 0; x < NUM_CELLS; x++)
     {
-        field[x] /= NUM_CELLS;
         potential [x] /= -NUM_CELLS;
-        field_vector->at (x) =field[x];
         pot_vector->at (x) = potential [x];
-
     }
+
+    electric_field (pot_vector, field_vector);
     free (potential);
-    free (field);
     free (density);
 
-    fftw_free (e_trans);
     fftw_free (pot_trans);
 }

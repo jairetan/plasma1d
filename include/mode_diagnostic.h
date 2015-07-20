@@ -1,4 +1,5 @@
 #pragma once
 #include <fstream>
 #include <string>
-void move_diagnostic (int, double, double);
+#include "to_string.h"
+void mode_diagnostic (int, double, double);

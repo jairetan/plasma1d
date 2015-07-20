@@ -10,4 +10,7 @@ load "pot.gnu"
 set terminal png size 1366,768
 set output '~/my-plasma/1dcpp/outgraph/graph4.png'
 load "density.gnu"
+set terminal png size 1366,768
+set output '~/my-plasma/1dcpp/outgraph/graph5.png'
+load "phase.gnu"
 

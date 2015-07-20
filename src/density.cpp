@@ -13,21 +13,20 @@ void calc_density (std::vector <double> *density, std::vector <Particle *> *part
     }
 
     for (int i = 0; i < num_particles; i++){
+        Particle *particle = particles->at (i);
+        double particle_charge = particle->get_charge();
+
         if (CIC){
-            weighing (particles->at (i), weights);
+            weighing (particle, weights);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particles->at (i), weights);
+            zero_order_weighing (particle, weights);
         }
-        adjacent_points (particles->at (i), points);
+        adjacent_points (particle, points);
 
         for (int j = 0; j < adjacencies; j++){
-            //if (points[j] > NUM_CELLS-1 || points [j] < 0){
-            //std::cout << points[j] << "\n";
-            //exit (-1);
-            //}
             density->at (points [j]) +=
-                weights [j]* ((particles->at (i))->get_charge());
+                weights [j]* (particle_charge);
         }
     }
 }
