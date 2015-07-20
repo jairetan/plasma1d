@@ -6,7 +6,6 @@ INC=./include/
 OBJECTS=./object/
 FILES:=$(wildcard $(SRC)*.cpp)
 OBJ:=$(FILES:$(SRC)%.cpp=%.o)
-#OBJ=adjacent_coods.o density.o electron.o altfield.o init_pos.o move.o particle.o proton.o run_man.o weighing.o jmod.o energy_diagnostic.o mom_diagnostic.o pos_diagnostic.o time_history_diagnostics.o field_diagnostic.o pot_diagnostic.o init_v.o density_diagnostic.o zero_order_weighing.o velocity_diagnostic.o psd.o snapshot_diagnostics.o phase_diagnostic.o
 
 all: run
 
