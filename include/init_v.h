@@ -1,6 +1,9 @@
+#pragma once
+
 #include <time.h>
 #include <stdlib.h>
-
-#pragma once
+#include <cmath>
+#include <parameters.h>
+#include "jmod.h"
 
 double random_vel ();

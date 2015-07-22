@@ -10,6 +10,12 @@
 //Scale length >> 1 debye length
 //KE >> PE ?
 
+//Boltzmann dist stuff
+static const double TOLERANCE = 1;
+static const double TEMP = 1e-6; //in kelvin
+static const double NON_NORMAL_MASS = CLHEP::electron_mass_c2/CLHEP::c_squared/CLHEP::joule/1e12; //Mass in kg
+static const double MY_BOLTZMANN =1.3806488e-23; //in SI base units
+
 //Normalized units
 static const double D_T = 1e-3;
 static const double T = 1;

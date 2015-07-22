@@ -65,7 +65,7 @@ void calc_field (std::vector <double> *field_vector,
     }
 
     //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
-    pot_trans [0] = 0; //Making 0 doesn't seem to affect field calc
+    pot_trans [0] = 0; //automatically add in neutralizing background ions
 
     p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
             potential, FFTW_ESTIMATE);
