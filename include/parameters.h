@@ -17,7 +17,7 @@ static const double NON_NORMAL_MASS = CLHEP::electron_mass_c2/CLHEP::c_squared/C
 static const double MY_BOLTZMANN =1.3806488e-23; //in SI base units
 
 //Normalized units
-static const double D_T = 1e-3;
+static const double D_T = 1e-4;
 static const double T = 1;
 static const int NUM_CELLS = 1e2;
 static const int PARTICLE_WIDTH = 1; //In debye lengths
@@ -31,6 +31,8 @@ static const double PROTON_CHARGE = 1;
 static const double ELECTRON_CHARGE = -1;
 static const double PROTON_MASS = 100;
 static const double ELECTRON_MASS = 1;
+
+static const int BACKGROUND_DENSITY = NUM_E*ELECTRON_CHARGE/NUM_CELLS;
 
 //Non normalized masses
 /*static const double PROTON_CHARGE = CLHEP::eplus;

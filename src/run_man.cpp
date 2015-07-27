@@ -27,7 +27,7 @@ static void helper (std::vector <Particle*> *particles,
     //Run diagnostics every intervals
     if (curr_it % 5 == 0)
     {
-        diagnostics (particles, curr_it, pot, density);
+        diagnostics (particles, curr_it, pot, density, field);
     }
 }
 
@@ -71,6 +71,5 @@ int main (){
         helper (&particles, &potential, &density, &field, i);
     }
 
-    psd (&field);
     std::cout << "0\nCompleted\n";
 }

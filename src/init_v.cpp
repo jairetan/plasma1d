@@ -12,7 +12,32 @@ static double pdf (double mass, double vel)
 
     return coeff1 * coeff2 * vterm1 *exponential;
 }
+double maxwell2 (double vb)
+{
+    //Initialize random number generator
+    static int flag = 0;
+    if (flag == 0)
+    {
+        int seed = time (NULL);
+        srand (seed);
+        flag = 1;
+    }
 
+    // Generate random v value
+    double fmax = 0.5 * (1. + exp (-2. * vb * vb));
+    double vmin = - 5. * vb;
+    double vmax = + 5. * vb;
+    double v = vmin + (vmax - vmin) * double (rand ()) / double (RAND_MAX);
+
+    // Accept/reject value
+    double f = 0.5 * (exp (-(v - vb) * (v - vb) / 2.) +
+            exp (-(v + vb) * (v + vb) / 2.));
+    double x = fmax * double (rand ()) / double (RAND_MAX);
+    if (x > f)
+        return maxwell2 (vb);
+    else return v;
+
+}
 static double maxwell ()
 {
     double gen_val = jmod (rand (),100), vel = jmod (double (rand ())/100, 10);
@@ -36,5 +61,6 @@ double random_vel ()
     //srand (time(NULL));
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
-    return maxwell()/20; //Cold plasma
+    //return maxwell()/100; //Cold plasma
+    return maxwell2 (3);
 }

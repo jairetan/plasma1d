@@ -7,4 +7,5 @@ void snapshot_diagnostics (std::vector <Particle *> *particles,
     pot_diagnostic (potential, i);
     velocity_diagnostic (particles, i);
     phase_diagnostic (particles, i);
+    psd (field, i);
 }

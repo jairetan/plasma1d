@@ -12,7 +12,7 @@ static double trans_mult (int x, double kappa)
     //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
     double multiplier = .5 *1/(cos (2*M_PI*x/NUM_CELLS)-1);
     if (cos(2*M_PI*x/NUM_CELLS)-1 == 0){
-        std::cout << x << "\n";
+        //std::cout << x << "\n";
         exit (-1);
     }
     return multiplier;
