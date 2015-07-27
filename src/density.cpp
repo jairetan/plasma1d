@@ -5,11 +5,12 @@ void calc_density (std::vector <double> *density, std::vector <Particle *> *part
     //Change to any dimension later on
     int num_particles = particles->size(), adjacencies = pow (2, 1);
     double *weights = new double [2];
-    int *points = new int[2];
+    int *points = new int [2];
 
     //Reset density
     for (int i = 0; i < NUM_CELLS; i++){
-        density->at (i) = 0;
+        density->at (i) = BACKGROUND_DENSITY;
+        //density->at (i) = 0;
     }
 
     for (int i = 0; i < num_particles; i++){
@@ -22,6 +23,7 @@ void calc_density (std::vector <double> *density, std::vector <Particle *> *part
         else if (ZERO_ORDER){
             zero_order_weighing (particle, weights);
         }
+
         adjacent_points (particle, points);
 
         for (int j = 0; j < adjacencies; j++){

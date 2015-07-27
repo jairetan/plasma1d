@@ -24,7 +24,7 @@ static const int PARTICLE_WIDTH = 1; //In debye lengths
 static const int SYS_SIZE = 1e2; //In debye lengths
 static const double FIELD_SCALE = 1;
 static const int NUM_IONS = 0;
-static const int NUM_E = 1e5;
+static const int NUM_E = 1e4;
 
 //Normalized to electron properties
 static const double PROTON_CHARGE = 1;
@@ -32,7 +32,7 @@ static const double ELECTRON_CHARGE = -1;
 static const double PROTON_MASS = 100;
 static const double ELECTRON_MASS = 1;
 
-static const int BACKGROUND_DENSITY = NUM_E*ELECTRON_CHARGE/NUM_CELLS;
+static const int BACKGROUND_DENSITY = -NUM_E*ELECTRON_CHARGE/NUM_CELLS;
 
 //Non normalized masses
 /*static const double PROTON_CHARGE = CLHEP::eplus;
