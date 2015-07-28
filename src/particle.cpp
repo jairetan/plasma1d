@@ -21,7 +21,7 @@ double Particle::get_pos ()
 
 void Particle::inc_pos ()
 {
-    position = jmod (position + velocity, NUM_CELLS);
+    position = wrap_around (position + velocity, NUM_CELLS);
 }
 
 //Increment velocity relative to grid points

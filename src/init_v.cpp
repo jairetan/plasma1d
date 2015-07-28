@@ -12,6 +12,24 @@ static double pdf (double mass, double vel)
 
     return coeff1 * coeff2 * vterm1 *exponential;
 }
+
+static double maxwell ()
+{
+    double gen_val = wrap_around (rand (),100), vel = wrap_around (double (rand ())/100, 10);
+    double probability = pdf (NON_NORMAL_MASS, vel)*100;
+
+    if (gen_val - probability > TOLERANCE){
+        return maxwell ();
+    }
+
+    if (wrap_around (rand () , 2)){
+        return -vel;
+    }
+
+    return vel;
+}
+
+//Borrowed from elsewhere
 double maxwell2 (double vb)
 {
     //Initialize random number generator
@@ -37,23 +55,6 @@ double maxwell2 (double vb)
         return maxwell2 (vb);
     else return v;
 
-}
-static double maxwell ()
-{
-    double gen_val = jmod (rand (),100), vel = jmod (double (rand ())/100, 10);
-    double probability = pdf (NON_NORMAL_MASS, vel)*100;
-
-    //std::cout << NON_NORMAL_MASS << "\n";
-    //std::cout << gen_val << " " << vel << " " << probability <<"\n";
-    if (gen_val - probability > TOLERANCE){
-        return maxwell ();
-    }
-
-    if (rand () % 2){
-        return -vel;
-    }
-
-    return vel;
 }
 
 double random_vel ()

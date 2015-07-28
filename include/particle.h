@@ -1,6 +1,7 @@
 //General object that occupies simulation
 #include "/home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h"
 #include "jmod.h"
+#include "wrap_around.h"
 #include "parameters.h"
 
 #pragma once

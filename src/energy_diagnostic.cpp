@@ -40,7 +40,7 @@ double ke_diagnostic (std::vector <Particle *> *particles,  double t){
     return ke_total;
 }
 
-double mode_diagnostic ( std::vector <double> *potential,  std::vector <double> *density,  int t)
+double mode_diagnostic ( std::vector <double> *potential, std::vector <double> *density, int t)
 {
     double total_energy = 0;
     fftw_complex *pot_trans = transform (potential);
@@ -69,7 +69,8 @@ double mode_diagnostic ( std::vector <double> *potential,  std::vector <double> 
     return total_energy;
 }
 
-double pe_diagnostic ( std::vector <double> *potential,  std::vector <double> *density,  double t){
+double pe_diagnostic (std::vector <double> *potential,
+        std::vector <double> *density,  double t){
     double pe_total = 0;
     std::vector <double> x;
     std::vector <double> y;
@@ -85,7 +86,9 @@ double pe_diagnostic ( std::vector <double> *potential,  std::vector <double> *d
     return pe_total;
 }
 
-void energy_diagnostic (std::vector <Particle *> *particles, std::vector <double> *potential, std::vector <double> *density,  double t){
+void energy_diagnostic (std::vector <Particle *> *particles,
+        std::vector <double> *potential, std::vector <double> *density,  double t)
+{
     std::string path = DATA_DIR + "e_out.dat";
     std::ofstream e_out (path.c_str(), std::ios::app);
     std::vector <double> x;

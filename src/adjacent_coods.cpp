@@ -3,8 +3,8 @@
 
 void adjacent_points (Particle *particle, int *points)
 {
-    int left = (int)jmod (particle->get_pos(), NUM_CELLS);      //round down
-    int right = (int)jmod (particle->get_pos()+1, NUM_CELLS);   //round up position
+    int left = (int) wrap_around (particle->get_pos(), NUM_CELLS);      //round down
+    int right = (int) wrap_around (particle->get_pos()+1, NUM_CELLS);   //round up position
 
     points [1] = right;
     points [0] = left;
