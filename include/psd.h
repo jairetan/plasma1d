@@ -10,4 +10,4 @@
 #include <complex>
 #include <iostream>
 
-void psd (std::vector <double> * data, int iter);
+void psd (std::vector <double> * data, std::vector <double> *, std::vector <double> *, int iter);

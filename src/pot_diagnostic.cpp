@@ -2,15 +2,13 @@
 
 void pot_diagnostic (std::vector <double> *pot, int iter)
 {
-    std::string path = DATA_DIR + to_string (iter*10*D_T/T) + "pot_out.dat";
-    std::ofstream pot_out (path.c_str(), std::ios::app);
-    int size = pot->size();
-
-    for (int x = 0; x < size; x++)
-    {
-        pot_out << x << " " << pot->at (x) << "\n";
+    std::vector <double> x;
+    for (int i = NUM_CELLS-1; i >=0; i--){
+        x.push_back (i);
     }
 
-    pot_out.close ();
+    std::string path = DATA_DIR + to_string (iter*10*D_T/T) + "pot_out.dat";
+
+    out_writer (path, &x, pot);
 }
 

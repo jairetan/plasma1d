@@ -25,7 +25,7 @@ static void helper (std::vector <Particle*> *particles,
     times << density_time << " " << field_time << " " << move_time << "\n";
 
     //Run diagnostics every intervals
-    if (curr_it % 5 == 0)
+    if (curr_it % 50 == 0)
     {
         diagnostics (particles, curr_it, pot, density, field);
     }
@@ -45,11 +45,11 @@ int main (){
     std::vector <double> field (NUM_CELLS);
     std::vector <double> potential (NUM_CELLS);
 
-    for (int i = 0; i < NUM_IONS; i++)
-    {
-        particles.insert (particles.begin() + i , new Proton
-            (random_vel (), random_start (), 1));
-    }
+    //for (int i = 0; i < NUM_IONS; i++)
+    //{
+        //particles.insert (particles.begin() + i , new Proton
+            //(random_vel (), random_start (), 1));
+    //}
 
     for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++)
     {
@@ -63,9 +63,9 @@ int main (){
         if ((i % (iterations / 10)) == 0)
         {
             std::cout << 10 - i*10/iterations << " ";
+            std::cout.flush();
             snapshot_diagnostics (&particles, &density,
                     &field, &potential, i);
-            std::cout.flush();
         }
 
         helper (&particles, &potential, &density, &field, i);

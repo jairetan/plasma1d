@@ -11,10 +11,10 @@ static double trans_mult (int x, double kappa)
 
     //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
     double multiplier = .5 *1/(cos (2*M_PI*x/NUM_CELLS)-1);
-    if (cos(2*M_PI*x/NUM_CELLS)-1 == 0){
-        //std::cout << x << "\n";
-        exit (-1);
-    }
+    //if (cos(2*M_PI*x/NUM_CELLS)-1 == 0){
+        ////std::cout << x << "\n";
+        //exit (-1);
+    //}
     return multiplier;
 }
 
@@ -65,7 +65,7 @@ void calc_field (std::vector <double> *field_vector,
     }
 
     //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
-    pot_trans [0] = 0; //automatically add in neutralizing background ions
+    pot_trans [0] = 0; //automatically add in neutralizing background ions?
 
     p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
             potential, FFTW_ESTIMATE);

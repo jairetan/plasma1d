@@ -3,10 +3,11 @@
 void density_diagnostic (std::vector <double> *density, int iter)
 {
     std::string path = DATA_DIR + to_string (10*iter*D_T/T) + "density_out.dat";
-    std::ofstream density_out (path.c_str(), std::ios::app);
-    for (int x = 0; x < NUM_CELLS; x++)
-    {
-        density_out << x << " " << density->at (x) << "\n";
+    std::vector <double> x;
+    for (int i = NUM_CELLS-1; i >=0; i--){
+        x.push_back (i);
     }
-    density_out.close ();
+
+    out_writer (path, &x, density);
+
 }
