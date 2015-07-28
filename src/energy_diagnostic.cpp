@@ -48,6 +48,5 @@ void energy_diagnostic (std::vector <Particle *> *particles, std::vector <double
     x.push_back (t);
     y.push_back (e_total);
     out_writer (path, &x, &y);
-
 }
 
