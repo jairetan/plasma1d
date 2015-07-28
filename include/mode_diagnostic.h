@@ -8,5 +8,5 @@
 #include <vector>
 #include <cmath>
 //void mode_diagnostic (std::vector <double> *, int);
-void mode_diagnostic (std::vector <double> *, std::vector <double> *, int);
+double mode_diagnostic (std::vector <double> *, std::vector <double> *, int);
 

@@ -1,5 +1,5 @@
 //Take true modulus (i.e. not %)
-#include <cmath>
 #pragma once
+#include <cmath>
 
-double jmod (double x, double y);
+double jmod (const double x, const double y);

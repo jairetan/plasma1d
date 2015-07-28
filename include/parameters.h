@@ -10,6 +10,8 @@
 //Scale length >> 1 debye length
 //KE >> PE ?
 
+static const int PLOT_MODES = 20;
+
 //Boltzmann dist stuff
 static const double TOLERANCE = 1;
 static const double TEMP = 1e-6; //in kelvin
