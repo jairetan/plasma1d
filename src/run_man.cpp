@@ -11,7 +11,7 @@ static void helper (std::vector <Particle*> *particles,
 
     using namespace std;
     t1 = clock();
-    calc_density (density, particles);
+    calc_density (particles,density);
     t2 = clock();
     density_time = double(t2 - t1) / CLOCKS_PER_SEC;
     t1 = clock ();

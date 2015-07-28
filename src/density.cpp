@@ -1,6 +1,6 @@
 #include "density.h"
 
-void calc_density (std::vector <double> *density, std::vector <Particle *> *particles)
+void calc_density (std::vector <Particle *> *particles,std::vector <double> *density)
 {
     //Change to any dimension later on
     int num_particles = particles->size(), adjacencies = pow (2, 1);

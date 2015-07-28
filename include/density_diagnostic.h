@@ -7,4 +7,4 @@
 #include "to_string.h"
 #include "out_writer.h"
 
-void density_diagnostic (std::vector <double> *, int);
+void density_diagnostic (std::vector <double> *, const int);

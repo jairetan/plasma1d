@@ -1,6 +1,4 @@
-//1 Dimensino adjacent points
-#include <iostream>
-#include <stdlib.h>
+//1 Dimension adjacent points
 #include "adjacent_coods.h"
 
 void adjacent_points (Particle *particle, int *points)
