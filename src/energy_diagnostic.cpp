@@ -4,10 +4,11 @@
 
 static fftw_complex *transform (std::vector <double> *vect)
 {
-    double *vect_array = new double [vect->size()];
+    int size = vect->size();
+    double *vect_array = new double [size];
     fftw_complex *transform_out = new fftw_complex [vect->size()];
 
-    for (int i = 0; i < vect->size(); i++){
+    for (int i = 0; i < size; i++){
         vect_array [i] = vect->at (i);
     }
 
@@ -74,7 +75,6 @@ double pe_diagnostic (std::vector <double> *potential,
     double pe_total = 0;
     std::vector <double> x;
     std::vector <double> y;
-    int size = potential -> size();
 
     std::string path = DATA_DIR + "pe_out.dat";
     pe_total = mode_diagnostic (potential, density, t);
