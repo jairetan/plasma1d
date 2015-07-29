@@ -31,6 +31,10 @@ static fftw_complex *transform (double *vect, int size)
     fftw_execute (p);
     fftw_destroy_plan (p);
 
+    for (int i = 0; i < size; i++ ){
+        vect [i] /= size;
+    }
+
     return transform_out;
 }
 
@@ -79,6 +83,7 @@ void psd (std::vector <double> *data, std::vector <double> *potential, std::vect
     fftw_complex *transformed_mode = transform (mode_energy, int (T/D_T));
 
     for (int j = 0; j < i ; j++){
+        std::cout << creal (transformed_mode [j]) << " " << cimag (transformed_mode [j]) << "i\n";
         psd_out << j << " " << pow (creal (transformed_mode [j]),2) + pow (cimag (transformed_mode [j]) ,2 )<< "\n";
     }
 

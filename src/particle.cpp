@@ -27,25 +27,7 @@ void Particle::inc_pos ()
 //Increment velocity relative to grid points
 void Particle::inc_vel (double accel)
 {
-    //printf ("%.17f\n", (field * charge/mass));
-    //printf ("Velocity: %.17f\n", velocity);
-    //printf ("Field at %f: %.17f\n", position,  field);
-    //printf ("Charge %f\n", charge);
-    //double v_orig = velocity; if (accel == 0) {
-        ////std::cout << "it's zero\n";
-        //return;
-    //}
     velocity += accel;
-    //if (fabs (v_orig-velocity) > accel +1e30){
-        //std::cout <<"Inconsistent diff" << "\n";
-        //std::cout << "Vel:" <<  v_orig << ":: Accel: " <<accel<<  "vs " << velocity;
-        //exit (-1);
-    //}
-
-    //if (velocity > 1e8){
-        //std::cout << velocity << "\n";
-    //}
-    //printf ("After: %.17f\n", velocity);
 }
 
 double Particle::get_mom ()

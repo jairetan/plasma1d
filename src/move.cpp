@@ -6,14 +6,14 @@
 static double find_accel (double field, Particle *particle)
 {
     double dx = SYS_SIZE/NUM_CELLS;
-    double accel = FIELD_SCALE* field * particle->get_charge () *D_T *D_T / particle->get_mass ()/ dx;
-    //std::ofstream field_test ("field_test.dat", std::ios::app);
-    //field_test << "Field" << field << "\n";
-    //field_test.close();
+    double accel = FIELD_SCALE * field * particle->get_charge () *D_T *D_T /
+        particle->get_mass ()/ dx;
+
     return accel;
 }
 
-void move_particles (std::vector <Particle *> * particles, std::vector <double> *field)
+void move_particles (std::vector <Particle *> * particles,
+        std::vector <double> *field)
 {
     int num_particles = particles->size();
     double left_field = 0, right_field = 0, accel = 0;
@@ -28,7 +28,7 @@ void move_particles (std::vector <Particle *> * particles, std::vector <double> 
             weighing (particle, weights);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particle, weights); //Birdsell says to conserve energy
+            zero_order_weighing (particle, weights);
         }
 
         adjacent_points (particle, points);

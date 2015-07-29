@@ -1,11 +1,11 @@
 set multiplot layout 3,3 title "Diagnostics"
 set tmargin 4 #margin between graphs
 
-set title "PSD0"
-unset key
-set ylabel "PSD"
-set xlabel "k"
-plot "0psd_out.dat"
+#set title "PSD0"
+#unset key
+#set ylabel "PSD"
+#set xlabel "k"
+#plot "0psd_out.dat"
 
 set title "PSD1"
 unset key

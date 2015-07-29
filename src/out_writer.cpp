@@ -1,7 +1,8 @@
 #include "out_writer.h"
 
 //Size of x_data and y_data assumed to be same
-void out_writer (std::string path, std::vector <double> *x_data, std::vector <double> *y_data)
+void out_writer (std::string path, std::vector <double> *x_data,
+        std::vector <double> *y_data)
 {
     int size = x_data->size();
     std::ofstream output (path.c_str(), std::ios::app);

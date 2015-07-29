@@ -1,6 +1,6 @@
 #include <complex.h>
 #include "field.h"
-#include <iostream>
+#include <fstream>
 
 //Mutliplier for transformed density
 static double trans_mult (int x, double kappa)
@@ -10,7 +10,7 @@ static double trans_mult (int x, double kappa)
     //double inner_term = k * delta_x / 2;
 
     //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
-    double multiplier = .5 *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+    double multiplier = 2*M_PI *1/(cos (2*M_PI*x/NUM_CELLS)-1);
 
     return multiplier;
 }
@@ -41,6 +41,7 @@ void calc_field (std::vector <double> *field_vector,
     double kappa = 2*M_PI/NUM_CELLS;
     fftw_complex *pot_trans = NULL;
     fftw_plan p;
+    std::ofstream tfile ("init_transform.dat", std::ios::app);
 
     for (int i = 0; i < NUM_CELLS; i++){
         density [i] = density_vector->at(i);
@@ -55,11 +56,15 @@ void calc_field (std::vector <double> *field_vector,
     fftw_execute(p);
     fftw_destroy_plan(p);
 
-    for (int x = 1; x < NUM_CELLS/2+1; x++)
+    for (int x = 0; x < NUM_CELLS/2; x++)
     {
+        tfile << x << " " << creal (pot_trans [x]) << " " << cimag (pot_trans [x]) << "i\n";
+
         //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
         pot_trans [x] *= trans_mult (x, kappa);
     }
+    tfile << "End\n";
+    tfile.close();
 
     //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
     pot_trans [0] = 0; //automatically add in neutralizing background ions?
