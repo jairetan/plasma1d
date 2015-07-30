@@ -10,6 +10,7 @@
 #include "parameters.h"
 #include <iostream>
 #include "transform_wrapper.h"
+#include "square_mod.h"
 
 void E_psd (std::vector <double>* field, int iter);
 void U_psd (std::vector <double>* potential, std::vector <double> *density,
