@@ -1,5 +1,5 @@
 #include "time_history_diagnostics.h"
-void diagnostics (std::vector <Particle *> *particles, double t,
+void time_history_diagnostics (std::vector <Particle *> *particles, double t,
         std::vector <double> *potential, std::vector <double> *density,
         std::vector <double> *field)
 {

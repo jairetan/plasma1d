@@ -2,8 +2,6 @@
 
 void E_psd (std::vector <double> *field, int iter)
 {
-    double t = 0;
-    double *field_c_array;
     std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"E_psd_out.dat";
     std::ofstream psd_out (path.c_str(), std::ios::app);
     int size = field->size();
@@ -33,7 +31,6 @@ void U_psd (std::vector <double> *potential,
     double *mode_ese = new double [size];
     fftw_complex *transform_mode_ese = NULL;
 
-
     for (int i = 0; i < PLOT_MODES; i++){
         std::string read_path = DATA_DIR + to_string (i) + "mode_out.dat";
         std::string write_path = DATA_DIR + to_string (i) + "U_psd_out.dat";
@@ -53,6 +50,7 @@ void U_psd (std::vector <double> *potential,
         }
 
         transform_mode_ese = transform (mode_ese, size);
+
         for (int j = 0; j < size; j++){
             fprintf (out_file, "%d %f\n",j,
                     square_mod (transform_mode_ese [j]));
