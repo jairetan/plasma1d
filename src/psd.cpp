@@ -17,7 +17,6 @@ void E_psd (std::vector <double> *field, int iter)
     }
 
     psd_out.close();
-    fftw_free (transformed_field);
 }
 
 void U_psd (std::vector <double> *potential,
@@ -52,7 +51,7 @@ void U_psd (std::vector <double> *potential,
         transform_mode_ese = transform (mode_ese, size);
 
         for (int j = 0; j < size; j++){
-            fprintf (out_file, "%d %f\n",j,
+            fprintf (out_file, "%d %f\n", j,
                     square_mod (transform_mode_ese [j]));
         }
 

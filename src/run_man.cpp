@@ -10,7 +10,7 @@ static void helper (std::vector <Particle*> *particles,
     move_particles (particles, field);
 
     //Run diagnostics every intervals
-    if (curr_it % 50 == 0)
+    if (curr_it % 25 == 0)
     {
         time_history_diagnostics (particles, curr_it, pot, density, field);
     }

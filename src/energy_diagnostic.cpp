@@ -6,23 +6,23 @@
 double ke_diagnostic (std::vector <Particle *> *particles,  double t){
     double ke_total = 0;
     int size = particles -> size();
-    std::vector <double> x;
-    std::vector <double> y;
+    std::vector <double> x (1);
+    std::vector <double> y (1);
     std::string path = DATA_DIR + "ke_out.dat";
 
     for (int i = 0; i < size; i++){
         ke_total += particles->at (i)->get_ke();
     }
 
-    x.push_back (t);
-    y.push_back (ke_total);
+    x[0] = t;
+    y[0] = ke_total;
 
     out_writer (path, &x, &y);
 
     return ke_total;
 }
 
-double mode_diagnostic ( std::vector <double> *potential,
+double mode_diagnostic (std::vector <double> *potential,
         std::vector <double> *density, int t)
 {
     double total_ese = 0;
