@@ -84,11 +84,15 @@ double mode_diagnostic ( std::vector <double> *potential,
 double pe_diagnostic (std::vector <double> *potential,
         std::vector <double> *density,  double t){
     double pe_total = 0;
+    int size = potential->size();
     std::vector <double> x;
     std::vector <double> y;
 
     std::string path = DATA_DIR + "pe_out.dat";
-    //pe_total = modediagnostic (potential, density, t);
+
+    for (int i = 0; i < size; i++){
+        pe_total += potential->at (i)* density->at(i);
+    }
 
     x.push_back (t);
     y.push_back (pe_total);

@@ -4,8 +4,7 @@ void E_psd (std::vector <double> *field, int iter)
 {
     double t = 0;
     double *field_c_array;
-    std::string line;
-    std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"psd_out.dat";
+    std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"E_psd_out.dat";
     std::ofstream psd_out (path.c_str(), std::ios::app);
     int size = field->size();
 
@@ -26,6 +25,9 @@ void E_psd (std::vector <double> *field, int iter)
 void U_psd (std::vector <double> *potential,
         std::vector <double> *density, int iter)
 {
+    std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"U_psd_out.dat";
+    std::ofstream psd_out (path.c_str(), std::ios::app);
+
     double total_ese = 0;
     double test_ese = 0;
 
@@ -43,11 +45,12 @@ void U_psd (std::vector <double> *potential,
 
         mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
                 + trans_pot_imag * trans_dens_imag);
+        mode_energy [i] *= NUM_CELLS; //One too many normalizations
+
+        psd_out << i << " " << mode_energy [i] << "\n";
         total_ese += mode_energy [i];
 
-        test_ese += (*potential)[i] * (*density) [i]/200;
+        test_ese += (*potential)[i] * (*density) [i]/2;
     }
-
-    std::cout << total_ese << "::" << test_ese << "\n";
 }
 

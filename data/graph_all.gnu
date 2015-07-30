@@ -14,6 +14,8 @@ load "velocity.gnu"
 set term wxt 7
 load "mode.gnu"
 set term wxt 8
-load "psd.gnu"
+load "E_psd.gnu"
+set term wxt 9
+load "U_psd.gnu"
 
 
