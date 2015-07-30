@@ -64,5 +64,5 @@ double random_vel ()
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
     //return maxwell(5);
-    return maxwell2 (2);
+    return maxwell2 (1);
 }

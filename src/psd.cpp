@@ -1,27 +1,6 @@
 #include "psd.h"
 
-static fftw_complex *transform (double *vect, int size)
-{
-    fftw_complex *transform_out = new fftw_complex [size];
-    fftw_plan p = fftw_plan_dft_r2c_1d
-        (size, vect, transform_out, FFTW_ESTIMATE);
-    fftw_execute (p);
-    fftw_destroy_plan (p);
-
-    //fftw does not fill in latter half of transform array (hermitian symmetry)
-    for (int i = 0; i < size/2; i++){
-        transform_out [size-i-1] = conj (transform_out [i]);
-    }
-
-    //fftw does not normalize transform
-    for (int i = 0; i < size; i++ ){
-        transform_out [i] /= size;
-    }
-
-    return transform_out;
-}
-
-void psd (std::vector <double> *field, int iter)
+void E_psd (std::vector <double> *field, int iter)
 {
     double t = 0;
     double *field_c_array;
@@ -43,3 +22,32 @@ void psd (std::vector <double> *field, int iter)
     psd_out.close();
     fftw_free (transformed_field);
 }
+
+void U_psd (std::vector <double> *potential,
+        std::vector <double> *density, int iter)
+{
+    double total_ese = 0;
+    double test_ese = 0;
+
+    int size = potential->size();
+
+    fftw_complex *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
+    fftw_complex *transformed_density = transform (&((*density)[0]), NUM_CELLS);
+    std::vector <double> mode_energy (size);
+
+    for (int i = 0; i < size; i++){
+        double trans_pot_real = creal (transformed_potential [i]);
+        double trans_pot_imag = cimag (transformed_potential [i]);
+        double trans_dens_real = creal (transformed_density [i]);
+        double trans_dens_imag = cimag (transformed_density [i]);
+
+        mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
+                + trans_pot_imag * trans_dens_imag);
+        total_ese += mode_energy [i];
+
+        test_ese += (*potential)[i] * (*density) [i]/200;
+    }
+
+    std::cout << total_ese << "::" << test_ese << "\n";
+}
+

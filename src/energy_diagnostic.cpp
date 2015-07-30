@@ -3,26 +3,6 @@
 #include "mode_diagnostic.h"
 #include <iostream>
 
-static fftw_complex *transform (std::vector <double> *vect)
-{
-    int size = vect->size();
-    double *vect_array = new double [size];
-    fftw_complex *transform_out = new fftw_complex [vect->size()];
-
-    for (int i = 0; i < size; i++){
-        vect_array [i] = vect->at (i);
-    }
-
-    fftw_plan p;
-
-    p = fftw_plan_dft_r2c_1d
-        (NUM_CELLS, vect_array, transform_out, FFTW_ESTIMATE);
-    fftw_execute (p);
-    fftw_destroy_plan (p);
-
-    return transform_out;
-}
-
 double ke_diagnostic (std::vector <Particle *> *particles,  double t){
     double ke_total = 0;
     int size = particles -> size();
@@ -47,8 +27,9 @@ double mode_diagnostic ( std::vector <double> *potential,
 {
     double total_energy = 0;
     double total_energy2 = 0;
-    fftw_complex *pot_trans = transform (potential);
-    fftw_complex *density_trans = transform (density);
+    int size = potential->size ();
+    fftw_complex *pot_trans = transform (&((*potential)[0]), size);
+    fftw_complex *density_trans = transform (&((*density)[0]), size);
     std::vector <double> x;
     std::vector <double> y;
     x.push_back (0);
@@ -71,7 +52,8 @@ double mode_diagnostic ( std::vector <double> *potential,
         density_imag = cimag(density_trans[i]);
         if (i ==0){
             temp = pot_trans [0] * density_trans [0];
-            mode_energy = 1/NUM_CELLS * (creal (temp) *creal (temp) +cimag (temp)*cimag (temp));
+            mode_energy = 1/NUM_CELLS * (pow (creal(temp), 2) +
+                    pow (cimag (temp), 2));
         }
         else {
             temp = pot_trans [i] *density_trans [NUM_CELLS-i];
@@ -106,7 +88,7 @@ double pe_diagnostic (std::vector <double> *potential,
     std::vector <double> y;
 
     std::string path = DATA_DIR + "pe_out.dat";
-    pe_total = mode_diagnostic (potential, density, t);
+    //pe_total = modediagnostic (potential, density, t);
 
     x.push_back (t);
     y.push_back (pe_total);

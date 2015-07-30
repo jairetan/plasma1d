@@ -1,13 +1,16 @@
 #pragma once
+
 #include <math.h>
 #include <gsl/gsl_statistics.h>
 #include <complex.h>
 #include <vector>
 #include <stdlib.h>
-#include <fftw3.h>
 #include <fstream>
 #include "to_string.h"
 #include "parameters.h"
 #include <iostream>
+#include "transform_wrapper.h"
 
-void psd (std::vector <double> * field, int iter);
+void E_psd (std::vector <double>* field, int iter);
+void U_psd (std::vector <double>* potential, std::vector <double> *density,
+        int iter);
