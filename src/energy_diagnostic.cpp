@@ -89,10 +89,11 @@ double mode_diagnostic ( std::vector <double> *potential,
     }
     total_energy2 = sqrt (total_energy2);
     if (total_energy2 > 0){
-        std::cout << "Energy Ratio:" << total_energy/total_energy2 << "\n";
+        //std::cout << "Energy Ratio:" << total_energy/total_energy2 << "\n";
     }
     else {
-        std::cout <<"Energy error\n";
+        //std::cout << "Energy Ratio:" << total_energy << ":" << total_energy2 << "\n";
+        //std::cout <<"Energy error\n";
     }
 
     return total_energy;

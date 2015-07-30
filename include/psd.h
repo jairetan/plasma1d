@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 #include <gsl/gsl_statistics.h>
 #include <complex.h>
 #include <vector>
@@ -7,7 +8,6 @@
 #include <fstream>
 #include "to_string.h"
 #include "parameters.h"
-#include <complex>
 #include <iostream>
 
-void psd (std::vector <double> * data, std::vector <double> *, std::vector <double> *, int iter);
+void psd (std::vector <double> * field, int iter);
