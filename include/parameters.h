@@ -15,7 +15,8 @@ static const int PLOT_MODES = 20;
 //Boltzmann dist stuff
 static const double TOLERANCE = 1;
 static const double TEMP = 1e-6; //in kelvin
-static const double NON_NORMAL_MASS = CLHEP::electron_mass_c2/CLHEP::c_squared/CLHEP::joule/1e12; //Mass in kg
+static const double NON_NORMAL_MASS = CLHEP::electron_mass_c2/
+    CLHEP::c_squared/CLHEP::joule/1e12; //Mass in kg
 static const double MY_BOLTZMANN =1.3806488e-23; //in SI base units
 //static const double MY_EPSIL0 = 8.85418782e-12;
 static const double MY_EPSIL0 = 1;
@@ -23,8 +24,9 @@ static const double MY_EPSIL0 = 1;
 //Normalized units
 static const double D_T = 1e-4;
 static const double T = 1;
-static const int NUM_CELLS = 1e2;
+static const int NUM_CELLS = 1e2; //size of cells < debye length
 static const int PARTICLE_WIDTH = 1; //In debye lengths
+static const double GRID_SIZE = .2; //Grid size must be < Debye length
 static const int SYS_SIZE = 1e2; //In debye lengths
 static const double FIELD_SCALE = 1;
 static const int NUM_IONS = 0;

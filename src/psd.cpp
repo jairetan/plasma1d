@@ -58,32 +58,5 @@ void U_psd (std::vector <double> *potential,
         fclose (in_file);
         fclose (out_file);
     }
-    //std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"U_psd_out.dat";
-    //std::ofstream psd_out (path.c_str(), std::ios::app);
-
-    //double total_ese = 0;
-    //double test_ese = 0;
-
-    //int size = potential->size();
-
-    //fftw_complex *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
-    //fftw_complex *transformed_density = transform (&((*density)[0]), NUM_CELLS);
-    //std::vector <double> mode_energy (size);
-
-    //for (int i = 0; i < size; i++){
-        //double trans_pot_real = creal (transformed_potential [i]);
-        //double trans_pot_imag = cimag (transformed_potential [i]);
-        //double trans_dens_real = creal (transformed_density [i]);
-        //double trans_dens_imag = cimag (transformed_density [i]);
-
-        //mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
-                //+ trans_pot_imag * trans_dens_imag);
-        //mode_energy [i] *= NUM_CELLS; //One too many normalizations
-
-        //psd_out << i << " " << mode_energy [i] << "\n";
-        //total_ese += mode_energy [i];
-
-        //test_ese += (*potential)[i] * (*density) [i]/2;
-    //}
 }
 

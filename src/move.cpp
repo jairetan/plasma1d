@@ -5,9 +5,8 @@
 //Return normalized acceleration
 static double find_accel (double field, Particle *particle)
 {
-    double dx = SYS_SIZE/NUM_CELLS;
     double accel = FIELD_SCALE * field * particle->get_charge () *D_T *D_T /
-        particle->get_mass ()/ dx;
+        particle->get_mass ()/ GRID_SIZE;
 
     return accel;
 }

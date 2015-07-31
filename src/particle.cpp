@@ -32,14 +32,12 @@ void Particle::inc_vel (double accel)
 
 double Particle::get_mom ()
 {
-    double dx = SYS_SIZE/NUM_CELLS;
-    return mass * velocity * dx/ D_T; //denomarlize momentum
+    return mass * velocity * GRID_SIZE/ D_T; //denomarlize momentum
 }
 
 double Particle::get_ke ()
 {
-    double dx = SYS_SIZE/NUM_CELLS;
-    return mass * velocity * velocity / 2 * dx*dx/D_T/D_T; //denormalize
+    return mass * velocity * velocity / 2 * GRID_SIZE*GRID_SIZE/D_T/D_T; //denormalize
 }
 
 double Particle::get_width ()
