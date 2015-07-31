@@ -3,14 +3,10 @@
 #include <fstream>
 
 //Mutliplier for transformed density
-static double trans_mult (int x, double kappa)
+static double trans_mult (int x)
 {
-    //double delta_x = SYS_SIZE/NUM_CELLS;
-    //double k = kappa * x;
-    //double inner_term = k * delta_x / 2;
-
     //double multiplier =  inner_term*inner_term/sin (inner_term) / sin (inner_term)/k/k;
-    double multiplier = 2*M_PI *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+    double multiplier = -2*M_PI *1/(cos (2*M_PI*x/NUM_CELLS)-1);
 
     return multiplier;
 }
@@ -33,38 +29,23 @@ void calc_field (std::vector <double> *field_vector,
         std::vector <double> *pot_vector,
         std::vector <double> *density_vector)
 {
-    double *potential = (double *)calloc (NUM_CELLS,
-            sizeof (double)),
-           *density = (double *)calloc (NUM_CELLS,
+    double *potential = new double [NUM_CELLS];
+    double *density = (double *)calloc (NUM_CELLS,
                    sizeof (double));
 
-    double kappa = 2*M_PI/NUM_CELLS;
-    fftw_complex *pot_trans = NULL;
+    fftw_complex *density_trans = NULL;
     fftw_plan p;
 
-    for (int i = 0; i < NUM_CELLS; i++){
-        density [i] = density_vector->at(i);
-    }
-
-    pot_trans = (fftw_complex*) fftw_malloc
-        (sizeof (fftw_complex)*(NUM_CELLS/2+1));
-
-    /*Transform density*/
-    p = fftw_plan_dft_r2c_1d
-        (NUM_CELLS, density, pot_trans, FFTW_ESTIMATE);
-    fftw_execute(p);
-    fftw_destroy_plan(p);
+    density_trans = transform (&((*density_vector)[0]), NUM_CELLS);
 
     for (int x = 0; x < NUM_CELLS/2; x++)
     {
-        //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
-        pot_trans [x] *= trans_mult (x, kappa);
+        density_trans [x] *= trans_mult (x);
     }
 
-    //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
-    pot_trans [0] = 0; //automatically add in neutralizing background ions?
+    density_trans [0] = 0; //automatically add in neutralizing background ions?
 
-    p = fftw_plan_dft_c2r_1d (NUM_CELLS, pot_trans,
+    p = fftw_plan_dft_c2r_1d (NUM_CELLS, density_trans,
             potential, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
@@ -72,13 +53,13 @@ void calc_field (std::vector <double> *field_vector,
     /*divide by NUM_CELLS in array (inverse transform not normalized)*/
     for (int x = 0; x < NUM_CELLS; x++)
     {
-        potential [x] /= -NUM_CELLS;
+        potential [x] /= NUM_CELLS;
         pot_vector->at (x) = potential [x];
     }
 
     electric_field (pot_vector, field_vector);
-    free (potential);
     free (density);
+    free (potential);
 
-    fftw_free (pot_trans);
+    fftw_free (density_trans);
 }

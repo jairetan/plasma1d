@@ -19,3 +19,15 @@ fftw_complex *transform (double *vect, int size)
 
     return transform_out;
 }
+
+double *inverse_transform (fftw_complex *transform, int size)
+{
+    double *inverse = new double [size];
+
+    fftw_plan p = fftw_plan_dft_c2r_1d
+        (size, transform, inverse, FFTW_ESTIMATE);
+    fftw_execute (p);
+    fftw_destroy_plan (p);
+
+    return inverse;
+}
