@@ -139,7 +139,6 @@ void energy_diagnostic (std::vector <Particle *> *particles,
         double t)
 {
     std::string path = DATA_DIR + "e_out.dat";
-    std::ofstream e_out (path.c_str(), std::ios::app);
     std::vector <double> x;
     std::vector <double> y;
 

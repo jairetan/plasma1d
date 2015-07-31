@@ -32,7 +32,6 @@ int main (){
 
     for (int i = 0; i < iterations; i++){
 
-        helper (&particles, &potential, &density, &field, i);
         //Progress bar
         if ((i % (iterations / 10)) == 0)
         {
@@ -41,6 +40,7 @@ int main (){
             snapshot_diagnostics (&particles, &density,
                     &field, &potential, i);
         }
+        helper (&particles, &potential, &density, &field, i);
     }
 
     std::cout << "0\nCompleted\n";

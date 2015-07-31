@@ -4,12 +4,16 @@
 void out_writer (std::string path, std::vector <double> *x_data,
         std::vector <double> *y_data)
 {
+    FILE *file = NULL;
     int size = x_data->size();
-    std::ofstream output (path.c_str(), std::ios::app);
-
-    for (int i = 0 ; i < size; i++){
-        output << x_data->at (i) << " " << y_data->at (i) << "\n";
+    if ((file = fopen (path.c_str (), "a")) == NULL){
+        printf ("Error opening file\n");
+        return;
     }
 
-    output.close();
+    for (int i = 0 ; i < size; i++){
+        fprintf (file, "%f %f\n", x_data->at (i), y_data->at (i));
+    }
+    fclose (file);
+
 }

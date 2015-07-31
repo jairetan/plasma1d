@@ -4,12 +4,17 @@
 void phase_diagnostic (std::vector <Particle *> *particles, int iter)
 {
     int size = particles -> size();
+    FILE *file = NULL;
     std::string path = DATA_DIR + to_string (10*iter*D_T/T) + "phase_out.dat";
-    std::ofstream phase_out (path.c_str(), std::ios::app);
 
-    for (int i = 0; i < size; i+=10){
-        phase_out << particles->at (i)->get_pos() << " " << particles->at (i)->get_vel() << "\n";
+    if ((file = fopen (path.c_str(), "a")) == NULL){
+        printf ("Error opening file");
+        return;
     }
 
-    phase_out.close();
+    for (int i = 0; i < size; i+=10){
+        fprintf (file, "%f %f\n", particles->at (i)->get_pos(), particles->at (i)->get_vel());
+    }
+
+    fclose (file);
 }

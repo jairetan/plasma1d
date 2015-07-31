@@ -3,13 +3,18 @@
 void velocity_diagnostic (std::vector <Particle *> *particles, int iter)
 {
     std::string path = DATA_DIR +to_string (10*iter*D_T/T)+ "vel_out.dat";
-    std::ofstream vel_out (path.c_str(), std::ios::app);
+    FILE *file = NULL;
+
+    if ((file = fopen (path.c_str (), "a")) == NULL ){
+        printf ("Error opening file");
+    }
 
     int size = particles->size();
     for (int i = 0; i < size; i+=50)
     {
-        vel_out << i << " " << particles->at (i)->get_vel()<< "\n";
+        fprintf (file, "%d %f\n", i, particles->at (i)->get_vel());
     }
-    vel_out.close ();
+
+    fclose (file);
 
 }

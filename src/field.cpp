@@ -41,7 +41,6 @@ void calc_field (std::vector <double> *field_vector,
     double kappa = 2*M_PI/NUM_CELLS;
     fftw_complex *pot_trans = NULL;
     fftw_plan p;
-    std::ofstream tfile ("init_transform.dat", std::ios::app);
 
     for (int i = 0; i < NUM_CELLS; i++){
         density [i] = density_vector->at(i);
@@ -58,13 +57,9 @@ void calc_field (std::vector <double> *field_vector,
 
     for (int x = 0; x < NUM_CELLS/2; x++)
     {
-        tfile << x << " " << creal (pot_trans [x]) << " " << cimag (pot_trans [x]) << "i\n";
-
         //pot_trans [x] *= -1/ (x*x)/.1 / kappa /kappa;
         pot_trans [x] *= trans_mult (x, kappa);
     }
-    tfile << "End\n";
-    tfile.close();
 
     //pot_trans [0] *= trans_mult (NUM_CELLS, kappa);
     pot_trans [0] = 0; //automatically add in neutralizing background ions?
