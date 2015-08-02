@@ -1,7 +1,6 @@
 //Return momentum vs time
 #include "mom_diagnostic.h"
 
-
 void mom_diagnostic (std::vector <Particle *> *particles, double t){
     double mom_total = 0;
     std::vector <double> x;

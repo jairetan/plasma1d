@@ -1,21 +1,21 @@
-#include <complex.h>
 #include "field.h"
-
 
 //Mutliplier for transformed density
 static double trans_mult (int x)
 {
-    double multiplier = -2*M_PI *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+    return -2*M_PI *1/(cos (2*M_PI*x/NUM_CELLS)-1);
+}
 
-    return multiplier;
+static double finite_derivative (double *function, int loc)
+{
+    return (function [loc-1]-function [loc+1])/2;
 }
 
 //Calculate Electric field from finite differences
 static void electric_field (std::vector <double> *phi, std::vector <double> *field)
 {
-    for (int i = 1 ; i < NUM_CELLS-1; i++)
-    {
-        field->at (i) = (phi->at (i-1)-phi->at (i+1))/2;
+    for (int i = 1 ; i < NUM_CELLS-1; i++){
+        field->at (i) = -finite_derivative (&(phi->at (0)), i);
     }
 
     //Periodic boundary conditions
