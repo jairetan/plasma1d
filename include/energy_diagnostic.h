@@ -1,6 +1,6 @@
 //Record kinetic energy at each time of the simulation
 #pragma once
-#include <fstream>
+
 #include <vector>
 #include <particle.h>
 #include "out_writer.h"

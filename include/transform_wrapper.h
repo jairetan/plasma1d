@@ -2,6 +2,11 @@
 
 #include <complex.h>
 #include <fftw3.h>
+#include <math.h>
 
-fftw_complex *transform (double *vect, int size);
-double *inverse_transform (fftw_complex *transform, int size);
+double complex *transform (double *vect, int size);
+
+//Fill in latter half of transform
+void full_transform (double complex *vect, int size);
+
+double *inverse_transform (double complex *transform, int size);

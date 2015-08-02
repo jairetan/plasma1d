@@ -1,5 +1,5 @@
 #include "init_v.h"
-#include <iostream>
+
 
 static double pdf (double mass, double vel)
 {

@@ -3,7 +3,6 @@ g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/adjacent_coods.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/mom_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/out_writer.cpp
-g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/pos_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/electron.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/square_mod.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/wrap_around.cpp
@@ -14,7 +13,6 @@ g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/field_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/energy_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/density.cpp
-g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/velocity_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/snapshot_diagnostics.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/weighing.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/move.cpp
@@ -23,4 +21,4 @@ g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/field.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/density_diagnostic.cpp
 g++ -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -I././include/ -c src/init_v.cpp
-g++ -o run particle.o transform_wrapper.o adjacent_coods.o mom_diagnostic.o out_writer.o pos_diagnostic.o electron.o square_mod.o wrap_around.o pot_diagnostic.o time_history_diagnostics.o run_man.o psd.o field_diagnostic.o energy_diagnostic.o density.o velocity_diagnostic.o snapshot_diagnostics.o weighing.o move.o phase_diagnostic.o init_pos.o field.o density_diagnostic.o init_v.o /usr/lib64/libfftw3.so /usr/lib64/libm.so /usr/lib64/libgsl.so /usr/lib64/libgslcblas.so
+g++ -o run particle.o transform_wrapper.o adjacent_coods.o mom_diagnostic.o out_writer.o electron.o square_mod.o wrap_around.o pot_diagnostic.o time_history_diagnostics.o run_man.o psd.o field_diagnostic.o energy_diagnostic.o density.o snapshot_diagnostics.o weighing.o move.o phase_diagnostic.o init_pos.o field.o density_diagnostic.o init_v.o /usr/lib64/libfftw3.so /usr/lib64/libm.so /usr/lib64/libgsl.so /usr/lib64/libgslcblas.so

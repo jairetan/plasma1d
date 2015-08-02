@@ -9,16 +9,13 @@
 #include "proton.h"
 #include "electron.h"
 #include "time_history_diagnostics.h"
-#include "field_diagnostic.h"
-#include "pot_diagnostic.h"
 #include "density_diagnostic.h"
 #include "init_v.h"
 #include "init_pos.h"
-#include "velocity_diagnostic.h"
-#include "psd.h"
 #include "snapshot_diagnostics.h"
 #include <vector>
 #include "parameters.h"
+#include <iostream>
 
 //void run_man (int (*init_pos)(int),
         //double (*init_vel)(void), double dt,

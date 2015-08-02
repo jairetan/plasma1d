@@ -5,7 +5,6 @@ void time_history_diagnostics (std::vector <Particle *> *particles, double t,
 {
     energy_diagnostic (particles, potential, density,t);
     mom_diagnostic (particles, t);
-    pos_diagnostic (particles, t);
     mode_diagnostic (potential,density, t);
 }
 

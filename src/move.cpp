@@ -1,6 +1,6 @@
 //Move particles
 #include "move.h"
-#include <fstream>
+
 
 //Return normalized acceleration
 static double find_accel (double field, Particle *particle)

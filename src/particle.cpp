@@ -1,5 +1,5 @@
 #include "particle.h"
-#include <iostream>
+
 #include <stdlib.h>
 
 //All quantities natively normalized

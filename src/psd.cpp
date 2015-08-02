@@ -1,24 +1,5 @@
 #include "psd.h"
 
-void E_psd (std::vector <double> *field, int iter)
-{
-    //std::string path = DATA_DIR + to_string (10*iter*D_T/T)+"E_psd_out.dat";
-    ////std::ofstream psd_out (path.c_str(), std::ios::app);
-    //int size = field->size();
-
-    //fftw_complex *transformed_field = transform (&((*field)[0]), NUM_CELLS);
-
-    //for (int j = 0; j < size ; j++){
-        //double transformed_field_real = creal (transformed_field [j]);
-        //double transformed_field_imag = cimag (transformed_field [j]);
-
-        //psd_out << j << " " << pow (transformed_field_real, 2)
-            //+ pow (transformed_field_imag, 2 )<< "\n";
-    //}
-
-    //psd_out.close();
-}
-
 void U_psd (std::vector <double> *potential,
         std::vector <double> *density, int iter)
 {
@@ -49,6 +30,7 @@ void U_psd (std::vector <double> *potential,
         }
 
         transform_mode_ese = transform (mode_ese, size);
+        full_transform (transform_mode_ese, size);
 
         for (int j = 0; j < size; j++){
             fprintf (out_file, "%d %f\n", j,

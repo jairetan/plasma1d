@@ -1,7 +1,6 @@
 //Return kinetic energy vs time
 #include "energy_diagnostic.h"
 #include "mode_diagnostic.h"
-#include <iostream>
 
 double ke_diagnostic (std::vector <Particle *> *particles,  double t){
     double ke_total = 0;
@@ -27,14 +26,15 @@ double mode_diagnostic (std::vector <double> *potential,
 {
     double total_ese = 0;
     double test_ese = 0;
+    int size = potential->size();
     std::vector <double> x (1);
     std::vector <double> y (1);
-
-    int size = potential->size();
+    std::vector <double> mode_energy (size);
 
     fftw_complex *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
+    full_transform (transformed_potential, size);
     fftw_complex *transformed_density = transform (&((*density)[0]), NUM_CELLS);
-    std::vector <double> mode_energy (size);
+    full_transform (transformed_density, size);
 
     for (int i = 0; i < size; i++){
         double trans_pot_real = creal (transformed_potential [i]);
@@ -57,58 +57,6 @@ double mode_diagnostic (std::vector <double> *potential,
 
         test_ese += (*potential)[i] * (*density) [i]/2;
     }
-    //double total_energy = 0;
-    //double total_energy2 = 0;
-    //int size = potential->size ();
-    //fftw_complex *pot_trans = transform (&((*potential)[0]), size);
-    //fftw_complex *density_trans = transform (&((*density)[0]), size);
-    //std::vector <double> x;
-    //std::vector <double> y;
-    //x.push_back (0);
-    //y.push_back (0);
-    //double mode_energy = 0;
-    //double pot_real = 0;
-    //double pot_imag = 0;
-    //double density_real = 0;
-    //double density_imag = 0;
-    //fftw_complex temp;
-
-
-    //for (int j = 0; j < potential->size();j++){
-        //total_energy += potential->at (j) * density->at (j) ;
-    //}
-    //for (int i = 0 ; i < NUM_CELLS; i++){
-        //pot_real = creal(pot_trans[i]);
-        //pot_imag = cimag(pot_trans[i]);
-        //density_real = creal(density_trans[i]);
-        //density_imag = cimag(density_trans[i]);
-        //if (i ==0){
-            //temp = pot_trans [0] * density_trans [0];
-            //mode_energy = 1/NUM_CELLS * (pow (creal(temp), 2) +
-                    //pow (cimag (temp), 2));
-        //}
-        //else {
-            //temp = pot_trans [i] *density_trans [NUM_CELLS-i];
-            //mode_energy = 1/NUM_CELLS *  (creal (temp) *creal (temp) +cimag (temp)*cimag (temp));
-        //}
-        //total_energy2 += mode_energy;
-
-        //if (i < PLOT_MODES){
-            //x[0]= (t);
-            //y[0]= mode_energy;
-            //std::string path = DATA_DIR +to_string (i)+"mode"+ "_out.dat";
-            //out_writer (path, &x, &y);
-        //}
-
-    //}
-    //total_energy2 = sqrt (total_energy2);
-    //if (total_energy2 > 0){
-        ////std::cout << "Energy Ratio:" << total_energy/total_energy2 << "\n";
-    //}
-    //else {
-        ////std::cout << "Energy Ratio:" << total_energy << ":" << total_energy2 << "\n";
-        ////std::cout <<"Energy error\n";
-    //}
 
     return total_ese;
 }
@@ -149,4 +97,3 @@ void energy_diagnostic (std::vector <Particle *> *particles,
     y.push_back (e_total);
     out_writer (path, &x, &y);
 }
-

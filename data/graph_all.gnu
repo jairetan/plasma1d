@@ -9,13 +9,11 @@ set term wxt 4
 load "density.gnu"
 set term wxt 5
 load "phase.gnu"
-set term wxt 6
-load "velocity.gnu"
 set term wxt 7
 load "mode.gnu"
 #set term wxt 8
 #load "E_psd.gnu"
-set term wxt 9
+set term wxt 6
 load "U_psd.gnu"
 
 

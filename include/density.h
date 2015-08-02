@@ -3,7 +3,7 @@
 
 #include "particle.h"
 #include <vector>
-#include <iostream>
+
 #include <cmath>
 #include "adjacent_coods.h"
 #include "weighing.h"
