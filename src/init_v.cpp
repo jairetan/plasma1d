@@ -1,6 +1,5 @@
 #include "init_v.h"
 
-
 static double pdf (double mass, double vel)
 {
     double coeff1 = 4 * M_PI;

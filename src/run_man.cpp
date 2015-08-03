@@ -24,6 +24,12 @@ int main (){
     std::vector <double> field (NUM_CELLS);
     std::vector <double> potential (NUM_CELLS);
 
+    for (int j = 0; j < NUM_IONS; j++)
+    {
+        particles.insert (particles.begin() + j , new Ion
+            (random_vel (), random_start (), 1));
+    }
+
     for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++)
     {
         particles.insert (particles.begin() + j , new Electron

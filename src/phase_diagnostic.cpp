@@ -13,7 +13,8 @@ void phase_diagnostic (std::vector <Particle *> *particles, int iter)
     }
 
     for (int i = 0; i < size; i+=10){
-        fprintf (file, "%f %f\n", particles->at (i)->get_pos(), particles->at (i)->get_vel());
+        fprintf (file, "%f %f\n", particles->at (i)->get_pos(),
+                particles->at (i)->get_vel());
     }
 
     fclose (file);
