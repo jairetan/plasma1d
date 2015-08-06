@@ -4,37 +4,68 @@
 
 static const std::string SNAPSHOTS [] = {"pot_out", "U_psd_out",
     "phase_out", "mode_out", "field_out", "density_out"};
+std::string SNAPSHOTS_Y_AXIS [] = {"Potential", "Power Density",
+    "Velocity", "Mode Energy", "Electric Field", "Charge Density"};
+std::string SNAPSHOTS_X_AXIS [] = {"Grid Cell", "Frequency",
+    "Particle", "Mode", "", "Grid Cell"};
 static const std::string TIME_HISTORIES [] = {"ke_out", "pe_out",
     "e_out", "mom_out"};
+std::string TIME_HISTORIES_Y_AXIS [] = {"Kinetic Energy", "Potential Energy",
+    "Total Energy", "Momentum"};
+std::string TIME_HISTORIES_X_AXIS [] = {
+    "Iterations", "Iterations","Iterations","Iterations"};
 
-TString GetID(int type)
+static TString GetID(int type)
 {
     TString name;
     name.Form("%d",type);
     return name;
 }
+static void list_snapshot_files (std::string base_file_name,
+        std::vector <std::string> *files)
+{
+    for (int i = 0; i < 9; i++){
+        files->at (i) = GetID (i) + base_file_name;
+    }
+}
 
-//Works
-TGraph *create_graph (std::string file_name, std::string title,
-        std::string x_axis, std::string y_axis)
+static void list_snapshot_titles (std::string base_file_name,
+        std::vector <std::string> *files)
+{
+    for (int i = 0; i < 9 ; i++){
+        files->at (i) = base_file_name + " " + GetID (i);
+    }
+}
+
+static void load_files (std::string file_name, std::vector <double> *x,
+        std::vector <double> *y)
 {
     FILE *file = NULL;
     char *buffer = new char [1024];
 
     if ((file = fopen (("data/"+file_name+".dat").c_str(), "r")) == NULL){
         printf ("Error opening file %s", ("data/"+file_name+".dat").c_str());
-        return NULL;
+        return;
     }
 
-    std::vector<double> xVec,yVec;
     double tmpX,tmpY;
     while (fgets (buffer, 1025, file) != NULL){
         sscanf (buffer, "%lf %lf", &tmpX, &tmpY);
-        xVec.push_back(tmpX);
-        yVec.push_back(tmpY);
+        x->push_back(tmpX);
+        y->push_back(tmpY);
     }
 
     fclose (file);
+}
+
+//Works
+static TGraph *create_graph (std::string file_name, std::string title,
+        std::string x_axis, std::string y_axis)
+{
+    std::vector <double> xVec;
+    std::vector <double> yVec;
+
+    load_files (file_name, &xVec, &yVec);
 
     int nPoints = xVec.size();
     double x[nPoints],y[nPoints];
@@ -52,36 +83,12 @@ TGraph *create_graph (std::string file_name, std::string title,
     return graph;
 }
 
-void create_canvas (std::string title, std::vector <std::string> *files,
-        std::vector <std::string> *titles, std::string x_axis,
-        std::string y_axis, int x_div, int y_div, std::string graph_options = "")
+TCanvas *create_canvas (std::string title, int x_div, int y_div)
 {
-    TCanvas *canvas = new TCanvas (title.c_str(), title.c_str(), 900, 700);
-    TGraph *graph = NULL;
+    TCanvas *canvas = new TCanvas (title.c_str(), title.c_str(), 800, 500);
     canvas->Divide (x_div, y_div);
 
-    for (int i = 0; i < x_div*y_div; i++){
-        canvas->cd (i+1);
-        graph = create_graph (files->at(i), titles->at(i), x_axis, y_axis);
-        graph->Draw(graph_options);
-    }
-}
-
-//Works
-void list_snapshot_files (std::string base_file_name,
-        std::vector <std::string> *files)
-{
-    for (int i = 0; i < 9; i++){
-        files->at (i) = GetID (i) + base_file_name;
-    }
-}
-
-void list_snapshot_titles (std::string base_file_name,
-        std::vector <std::string> *files)
-{
-    for (int i = 0; i < 9 ; i++){
-        files->at (i) = base_file_name + " " + GetID (i);
-    }
+    return canvas;
 }
 
 static void snapshot_graph ()
@@ -92,8 +99,14 @@ static void snapshot_graph ()
     for (int i = 0; i < 6; i++){
         list_snapshot_files (SNAPSHOTS[i], &file_names);
         list_snapshot_titles (SNAPSHOTS[i], &titles);
-        create_canvas (SNAPSHOTS [i], &file_names, &titles,
-                "test x", "test y", 3,3);
+        TCanvas *canvas = create_canvas (SNAPSHOTS [i],3,3);
+
+        for (int j = 0; j < 9; j++){
+            canvas->cd (j+1);
+            TGraph *graph = create_graph (file_names[j],
+                    titles [j],SNAPSHOTS_X_AXIS[i], SNAPSHOTS_Y_AXIS [i]);
+            graph->Draw ("ap");
+        }
     }
 }
 
@@ -107,10 +120,12 @@ static void history_graph ()
         titles [i] = TIME_HISTORIES [i];
     }
 
-     create_canvas ("Time Histories", &files,
-            &titles, "Iterations",
-            "TestY", 2, 2);
-
+     TCanvas *canvas = create_canvas ("Time Histories", 2, 2);
+    for (int i = 0; i < 4; i++){
+        canvas->cd (i+1);
+        TGraph *graph = create_graph (TIME_HISTORIES[i], TIME_HISTORIES[i], "Iterations", TIME_HISTORIES_Y_AXIS[i]);
+        graph->Draw ();
+    }
 }
 
 void runner (){
