@@ -12,14 +12,14 @@ static double pdf (double mass, double vel)
     return coeff1 * coeff2 * vterm1 *exponential;
 }
 
-static double maxwell (double max_vel)
+static double maxwell (double max_vel, double mass)
 {
     double gen_val = rand() % 100,
            vel = max_vel*rand ()/RAND_MAX;
     double probability = pdf (NON_NORMAL_MASS, vel)*100;
 
     if (gen_val - probability > TOLERANCE){
-        return maxwell (max_vel);
+        return maxwell (max_vel,mass);
     }
 
     if (rand () % 2){
@@ -57,11 +57,11 @@ double maxwell2 (double vb)
 
 }
 
-double random_vel ()
+double random_vel (double mass)
 {
     //srand (time(NULL));
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
-    //return maxwell(5);
-    return maxwell2 (1);
+    return maxwell(5, mass);
+    //return maxwell2 (1);
 }
