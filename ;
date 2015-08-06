@@ -40,13 +40,13 @@ static void load_files (std::string file_name, std::vector <double> *x,
 {
     FILE *file = NULL;
     char *buffer = new char [1024];
-    double tmpX,tmpY;
 
     if ((file = fopen (("data/"+file_name+".dat").c_str(), "r")) == NULL){
         printf ("Error opening file %s", ("data/"+file_name+".dat").c_str());
         return;
     }
 
+    double tmpX,tmpY;
     while (fgets (buffer, 1025, file) != NULL){
         sscanf (buffer, "%lf %lf", &tmpX, &tmpY);
         x->push_back(tmpX);
