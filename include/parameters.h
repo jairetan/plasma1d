@@ -5,10 +5,6 @@
 //1. Assymetric time steps for field and species
 //Work through each module by hand
 
-//Guidelines for parameters (from birdsell):
-//Number of particles in a debye length >> 1
-//Scale length >> 1 debye length
-//KE >> PE ?
 
 static const int PLOT_MODES = 20;
 
