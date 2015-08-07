@@ -68,6 +68,12 @@ double maxwell2 (double vb)
 
 }
 
+static double maxwell_3 (double boltzmann_temp)
+{
+
+}
+
+
 double random_vel (double mass, double boltzmann_temp)
 {
     //srand (time(NULL));
