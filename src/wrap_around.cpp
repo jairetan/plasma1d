@@ -1,4 +1,5 @@
 #include "wrap_around.h"
+#include <cstdio>
 double wrap_around (double position, double max_pos)
 {
     if (position < 0){

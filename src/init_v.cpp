@@ -1,5 +1,7 @@
+#include <random>
 #include "init_v.h"
 #include <cstdio>
+#include <chrono>
 
 static double pdf (double mass, double vel, double boltzmann_temp)
 {
@@ -16,10 +18,10 @@ static double pdf (double mass, double vel, double boltzmann_temp)
     return coeff1 * coeff2 * vterm1 *exponential;
 }
 
-static double normalize_vel (double non_normalized_v)
-{
-    return non_normalized_v * PLASMA_FREQ/DEBYE_LENGTH;
-}
+//static double normalize_vel (double non_normalized_v)
+//{
+    //return non_normalized_v * PLASMA_FREQ/DEBYE_LENGTH;
+//}
 
 static double maxwell (double max_vel, double mass, double boltzmann_temp)
 {
@@ -68,17 +70,24 @@ double maxwell2 (double vb)
 
 }
 
-static double maxwell_3 (double boltzmann_temp)
+static double maxwell_3 (double boltzmann_temp, double mass)
 {
+    static std::default_random_engine generator (std::chrono::system_clock::now().time_since_epoch().count());
 
+    double std_dev = sqrt (boltzmann_temp/mass);
+    double mean = 0;
+    std::normal_distribution <double> distribution (mean, std_dev);
+
+    return distribution (generator);
 }
-
 
 double random_vel (double mass, double boltzmann_temp)
 {
     //srand (time(NULL));
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
-    return maxwell(10000, mass, boltzmann_temp);
+    //return maxwell(10000, mass, boltzmann_temp);
     //return maxwell2 (1);
+    double vel = maxwell_3 (boltzmann_temp, mass);
+    return vel;
 }

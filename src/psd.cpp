@@ -9,7 +9,7 @@ void U_psd (std::vector <double> *potential,
     char *buffer = new char [1024];
     double time = 0;
     double *mode_ese = new double [size];
-    fftw_complex *transform_mode_ese = NULL;
+    std::complex <double> *transform_mode_ese = NULL;
 
     for (int i = 0; i < PLOT_MODES; i++){
         std::string read_path = DATA_DIR + to_string (i) + "mode_out.dat";
@@ -26,14 +26,14 @@ void U_psd (std::vector <double> *potential,
         }
 
         for (int j = 0; fgets (buffer, 1025, in_file) != NULL; j++){
-            sscanf (buffer, "%f %f", &time, mode_ese+j);
+            sscanf (buffer, "%lf %lf", &time, mode_ese+j);
         }
 
         transform_mode_ese = transform (mode_ese, size);
         full_transform (transform_mode_ese, size);
 
         for (int j = 0; j < size; j++){
-            fprintf (out_file, "%d %f\n", j,
+            fprintf (out_file, "%d %lf\n", j,
                     square_mod (transform_mode_ese [j]));
         }
 

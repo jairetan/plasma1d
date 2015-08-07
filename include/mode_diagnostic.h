@@ -1,6 +1,5 @@
 #pragma once
-#include <complex.h>
-
+#include <complex>
 #include <string>
 #include "parameters.h"
 #include "to_string.h"

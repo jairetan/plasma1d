@@ -6,6 +6,7 @@
 //1. Assymetric time steps for field and species
 //Work through each module by hand
 //Normalized units
+//
 static const double D_T = 1e-4;
 static const double T = 1;
 static const int NUM_CELLS = 1e2; //size of cells < debye length
@@ -15,7 +16,6 @@ static const int SYS_SIZE = 1e2; //In debye lengths
 static const double FIELD_SCALE = 1;
 static const int NUM_IONS = 1e4;
 static const int NUM_E = 1e4;
-
 
 static const int PLOT_MODES = 20;
 
@@ -29,16 +29,16 @@ static const double MY_FUNDAMENTAL_CHARGE =1.6e-19; //in SI base units
 static const double MY_EPSIL0 = 8.85418782e-12;
 //static const double MY_EPSIL0 = 1;
 
-static const double DEBYE_LENGTH = pow (MY_EPSIL0 * MY_BOLTZMANN *
-        ELECTRON_TEMP/pow (MY_FUNDAMENTAL_CHARGE, 2)/NUM_E*SYS_SIZE, 1.0/3);
-static const double E_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS,.5);
-static const double I_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS/1000, .5);
-static const double PLASMA_FREQ = E_V_THERMAL/DEBYE_LENGTH;
+//static const double DEBYE_LENGTH = pow (MY_EPSIL0 * MY_BOLTZMANN *
+        //ELECTRON_TEMP/pow (MY_FUNDAMENTAL_CHARGE, 2)/NUM_E*SYS_SIZE, 1.0/3);
+//static const double E_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS,.5);
+//static const double I_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS/1000, .5);
+//static const double PLASMA_FREQ = E_V_THERMAL/DEBYE_LENGTH;
 
-//static const double E_V_THERMAL = 5000;
-//static const double I_V_THERMAL = 1;
-//static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL; //Normalized k*T
-//static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL;
+static const double E_V_THERMAL = 1000;
+static const double I_V_THERMAL = 1;
+static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL; //Normalized k*T
+static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL;
 
 
 
@@ -48,8 +48,8 @@ static const double PLASMA_FREQ = E_V_THERMAL/DEBYE_LENGTH;
 //static const double PROTON_MASS = 100;
 //static const double ELECTRON_MASS = 1;
 
-static const double ELECTRON_CHARGE = -SYS_SIZE/NUM_CELLS * MY_EPSIL0;
-static const double ION_CHARGE = -ELECTRON_CHARGE;
+static const double ELECTRON_CHARGE = -1;
+static const double ION_CHARGE = 1;
 static const double ELECTRON_MASS = -ELECTRON_CHARGE;
 static const double ION_MASS = 1000 *ELECTRON_MASS;
 static const int BACKGROUND_DENSITY = 0;

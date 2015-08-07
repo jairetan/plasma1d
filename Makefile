@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS= -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all
+CFLAGS= -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -std=c++11
 DEPS=particle.h
 SRC=./src/
 INC=./include/

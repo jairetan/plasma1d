@@ -31,19 +31,21 @@ double mode_diagnostic (std::vector <double> *potential,
     std::vector <double> y (1);
     std::vector <double> mode_energy (size);
 
-    fftw_complex *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
+    std::complex <double> *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
     full_transform (transformed_potential, size);
-    fftw_complex *transformed_density = transform (&((*density)[0]), NUM_CELLS);
+    std::complex <double> *transformed_density= transform (&((*density)[0]), NUM_CELLS);
     full_transform (transformed_density, size);
 
     for (int i = 0; i < size; i++){
-        double trans_pot_real = creal (transformed_potential [i]);
-        double trans_pot_imag = cimag (transformed_potential [i]);
-        double trans_dens_real = creal (transformed_density [i]);
-        double trans_dens_imag = cimag (transformed_density [i]);
+        //double trans_pot_real = transformed_potential [i].real();
+        //double trans_pot_imag = transformed_potential [i].imag();
+        //double trans_dens_real = transformed_density [i].real();
+        //double trans_dens_imag = transformed_density [i].imag();
 
-        mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
-                + trans_pot_imag * trans_dens_imag);
+        //mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
+                //+ trans_pot_imag * trans_dens_imag);
+        mode_energy[i] = (transformed_potential [i] *
+                transformed_density [i]).real();
         mode_energy [i] *= NUM_CELLS; //One too many normalizations
 
         total_ese += mode_energy [i];

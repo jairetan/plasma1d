@@ -2,7 +2,7 @@
 
 #include <math.h>
 #include <gsl/gsl_statistics.h>
-#include <complex.h>
+#include <complex>
 #include <vector>
 #include <stdlib.h>
 #include "to_string.h"

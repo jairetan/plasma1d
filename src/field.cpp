@@ -21,6 +21,7 @@ static void electric_field (std::vector <double> *phi, std::vector <double> *fie
     //Periodic boundary conditions
     field->at (0) = (phi->at (NUM_CELLS-1)-phi->at (1))/2;
     field->at (NUM_CELLS-1) = (phi->at(NUM_CELLS-2)-phi->at (0))/2;
+
 }
 
 //Calculate potential and electric field from charge density
@@ -29,7 +30,7 @@ void calc_field (std::vector <double> *field_vector,
         std::vector <double> *density_vector)
 {
     double *potential = NULL;
-    double complex *density_trans = NULL;
+    std::complex <double> *density_trans = NULL;
 
     density_trans = transform (&(density_vector->at(0)), NUM_CELLS);
 

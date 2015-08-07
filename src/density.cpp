@@ -1,4 +1,5 @@
 #include "density.h"
+#include <cstdio>
 
 static void reset_density (std::vector <double> *density)
 {
@@ -32,6 +33,9 @@ void calc_density (std::vector <Particle *> *particles,
         adjacent_points (particle, points);
 
         for (int j = 0; j < adjacencies; j++){
+            if (points [j] > NUM_CELLS-1 || points [j] <0){
+                printf ("%d AHHHH\n", points [j]);
+            }
             density->at (points [j]) += weights [j]* (particle_charge);
         }
     }
