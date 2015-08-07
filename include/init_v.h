@@ -6,4 +6,4 @@
 #include "parameters.h"
 #include "wrap_around.h"
 
-double random_vel (double mass);
+double random_vel (double mass, double boltzmann_temp);

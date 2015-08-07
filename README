@@ -18,6 +18,7 @@ HOW DOES IT WORK:
     using the cloud-in-cell weighing technique in conjuction with the particle
     charge
     7. Increment each particle's position according to its current velocity
+    (leap-frog method)
     8. Increment each particle's velocity according to its current accelaration
     9. Repeat from step 3 until desired number of iterations has occured
 
@@ -56,6 +57,20 @@ PHYSICAL CONSTANTS:
         4. Grid size < Debye length
 
 UNITS:
+    Normalized Unit System
+    ----------------------
     Time: Inverse Plasma Frequency
     Distance: Debye Lengths
-    Charge/Mass: 1
+    Charge: Elementary Charge Units
+    Mass: Electron Mass Units
+
+    Velocity: Debye Lengths/Inverse Plasma Freq.
+    Momentum: Electron Mass * Debye Lengths/Inverse Plasma Freq.
+
+FUTURE FEATURES:
+    Analysis of ion-acoustic waves
+    Introduction of Magnetic Field
+    Introduction of higher dimensions
+
+ISSUES:
+    Non-physical power spectrum spike at 0th mode

@@ -6,8 +6,8 @@ std::string SNAPSHOTS [] = {"pot_out", "U_psd_out",
     "phase_out", "mode_out", "field_out", "density_out"};
 std::string SNAPSHOTS_Y_AXIS [] = {"Potential", "Power Density",
     "Velocity", "Mode Energy", "Electric Field", "Charge Density"};
-std::string SNAPSHOTS_X_AXIS [] = {"Grid Cell", "Frequency",
-    "Particle", "Mode", "", "Grid Cell"};
+std::string SNAPSHOTS_X_AXIS [] = {"Grid Cell", "Frequency (1/Iterations)",
+    "Particle", "Iteration", "Grid Cell", "Grid Cell"};
 std::string TIME_HISTORIES [] = {"ke_out", "pe_out",
     "e_out", "mom_out"};
 std::string TIME_HISTORIES_Y_AXIS [] = {"Kinetic Energy", "Potential Energy",

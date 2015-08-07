@@ -1,26 +1,37 @@
 #include "init_v.h"
+#include <cstdio>
 
-static double pdf (double mass, double vel)
+static double pdf (double mass, double vel, double boltzmann_temp)
 {
     double coeff1 = 4 * M_PI;
-    double coeff2 = mass/(2*M_PI*MY_BOLTZMANN*TEMP);
+    double coeff2 = mass/(2*M_PI*boltzmann_temp);
+
+    //printf ("%d\n", isnan (coeff2));
+    //fflush (stdout);
     coeff2 = pow (coeff2, 1.5);
     double vterm1 = vel * vel;
-    double exponential = -mass * vel * vel/(2 *MY_BOLTZMANN * TEMP);
+    double exponential = -mass * vel * vel/(2 *boltzmann_temp);
     exponential = exp (exponential);
 
     return coeff1 * coeff2 * vterm1 *exponential;
 }
 
-static double maxwell (double max_vel, double mass)
+static double normalize_vel (double non_normalized_v)
 {
-    double gen_val = rand() % 100,
-           vel = max_vel*rand ()/RAND_MAX;
-    double probability = pdf (NON_NORMAL_MASS, vel)*100;
+    return non_normalized_v * PLASMA_FREQ/DEBYE_LENGTH;
+}
 
-    if (gen_val - probability > TOLERANCE){
-        return maxwell (max_vel,mass);
+static double maxwell (double max_vel, double mass, double boltzmann_temp)
+{
+    double gen_val = double (rand())/RAND_MAX,
+           vel = max_vel*rand ()/RAND_MAX;
+    double probability = pdf (mass, vel, boltzmann_temp);
+
+    if (gen_val > probability){
+        return maxwell (max_vel,mass, boltzmann_temp);
     }
+
+    printf ("%f %f %f\n", probability, gen_val, vel);
 
     if (rand () % 2){
         return -vel;
@@ -57,11 +68,11 @@ double maxwell2 (double vb)
 
 }
 
-double random_vel (double mass)
+double random_vel (double mass, double boltzmann_temp)
 {
     //srand (time(NULL));
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
-    return maxwell(5, mass);
+    return maxwell(10000, mass, boltzmann_temp);
     //return maxwell2 (1);
 }

@@ -5,6 +5,6 @@ int random_start ()
 {
     //srand (time(NULL));
     //printf ("%d\n", rand());
-    int pos = rand () % NUM_CELLS;
+    int pos = rand () % NUM_CELLS/2;
     return pos;
 }
