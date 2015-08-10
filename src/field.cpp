@@ -12,7 +12,8 @@ static double finite_derivative (double *function, int loc)
 }
 
 //Calculate Electric field from finite differences
-static void electric_field (std::vector <double> *phi, std::vector <double> *field)
+static void electric_field (std::vector <double> *phi,
+        std::vector <double> *field)
 {
     for (int i = 1 ; i < NUM_CELLS-1; i++){
         field->at (i) = -finite_derivative (&(phi->at (0)), i);

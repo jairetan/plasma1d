@@ -109,7 +109,7 @@ double random_vel (double mass, double boltzmann_temp)
     //return maxwell2 (1);
 
     //Normalize velocity
-    double vel = maxwell_3 (boltzmann_temp, mass)*D_T/GRID_SIZE;
+    double vel = maxwell_3 (boltzmann_temp, mass);
 
     return vel;
 }

@@ -22,10 +22,6 @@ double Particle::get_pos ()
 void Particle::inc_pos ()
 {
     position = wrap_around (position + velocity, NUM_CELLS);
-    if (position > 2*NUM_CELLS || position < -NUM_CELLS){
-        printf ("Position: %f | Velocity: %f\n", position, velocity);
-    }
-
 }
 
 //Increment velocity relative to grid points
@@ -36,12 +32,12 @@ void Particle::inc_vel (double accel)
 
 double Particle::get_mom ()
 {
-    return mass * velocity ; //* GRID_SIZE/ D_T; //denomarlize momentum
+    return mass * velocity * GRID_SIZE/ D_T; //denomarlize momentum
 }
 
 double Particle::get_ke ()
 {
-    return mass * velocity * velocity / 2 ;//* GRID_SIZE*GRID_SIZE/D_T/D_T; //denormalize
+    return mass * velocity * velocity / 2 *GRID_SIZE*GRID_SIZE/D_T/D_T; //denormalize
 }
 
 double Particle::get_width ()

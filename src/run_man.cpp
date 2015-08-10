@@ -18,15 +18,6 @@ static void helper (std::vector <Particle*> *particles,
 }
 
 int main (){
-    //double std_dev = sqrt (5000);
-    //double mean = 0;
-    //std::default_random_engine generator (time(NULL));
-    //std::normal_distribution <double> distribution (mean, std_dev);
-
-    //printf ("%f\n", distribution (generator));
-
-    //return 0;
-
     std::vector <Particle *> particles;
     srand (time(NULL));
     int iterations = T/D_T;
@@ -39,9 +30,14 @@ int main (){
             (random_vel (ION_MASS, I_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++){
+    for (int j = NUM_IONS; j < NUM_E*.9 + NUM_IONS; j++){
         particles.insert (particles.begin() + j , new Electron
             (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP), random_start (), 1));
+    }
+
+    for (int j = NUM_E*.9 + NUM_IONS; j < NUM_E + NUM_IONS; j++){
+        particles.insert (particles.begin() + j , new Electron
+            (.8, random_start (), 1));
     }
 
     for (int i = 0; i < iterations; i++){
