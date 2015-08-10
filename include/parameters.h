@@ -7,8 +7,8 @@
 //Work through each module by hand
 //Normalized units
 //
-static const double D_T = 1e-4;
-static const double T = 1;
+static const double D_T = 1e-6;
+static const double T = 1e-2;
 static const int NUM_CELLS = 1e2; //size of cells < debye length
 static const int PARTICLE_WIDTH = 1; //In debye lengths
 static const double GRID_SIZE = .2; //Grid size must be < Debye length
@@ -35,12 +35,10 @@ static const double MY_EPSIL0 = 8.85418782e-12;
 //static const double I_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS/1000, .5);
 //static const double PLASMA_FREQ = E_V_THERMAL/DEBYE_LENGTH;
 
-static const double E_V_THERMAL = 1000;
-static const double I_V_THERMAL = 1;
+static const double E_V_THERMAL = 10;
+static const double I_V_THERMAL = .01;
 static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL; //Normalized k*T
 static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL;
-
-
 
 //Normalized to electron properties
 //static const double PROTON_CHARGE = 1;

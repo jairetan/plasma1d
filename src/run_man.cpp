@@ -34,14 +34,12 @@ int main (){
     std::vector <double> field (NUM_CELLS);
     std::vector <double> potential (NUM_CELLS);
 
-    for (int j = 0; j < NUM_IONS; j++)
-    {
+    for (int j = 0; j < NUM_IONS; j++){
         particles.insert (particles.begin() + j , new Ion
             (random_vel (ION_MASS, I_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++)
-    {
+    for (int j = NUM_IONS; j < NUM_E + NUM_IONS; j++){
         particles.insert (particles.begin() + j , new Electron
             (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP), random_start (), 1));
     }
@@ -50,8 +48,7 @@ int main (){
         helper (&particles, &potential, &density, &field, i);
 
         //Progress bar
-        if ((i % (iterations / 10)) == 0)
-        {
+        if ((i % (iterations / 10)) == 0){
             std::cout << 10 - i*10/iterations << " ";
             std::cout.flush();
             snapshot_diagnostics (&particles, &density,

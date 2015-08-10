@@ -70,15 +70,34 @@ double maxwell2 (double vb)
 
 }
 
+//Marsaglia Method
 static double maxwell_3 (double boltzmann_temp, double mass)
 {
-    static std::default_random_engine generator (std::chrono::system_clock::now().time_since_epoch().count());
-
-    double std_dev = sqrt (boltzmann_temp/mass);
+    double variance = boltzmann_temp/mass;
     double mean = 0;
-    std::normal_distribution <double> distribution (mean, std_dev);
+    static bool hasSpare = false;
+    static double spare;
 
-    return distribution (generator);
+    //Generates an extra value each time run
+    if(hasSpare)
+    {
+        hasSpare = false;
+        return mean + variance * spare;
+    }
+
+    hasSpare = true;
+    static double u, v, s;
+
+    do{
+        u = (rand() / ((double) RAND_MAX)) * 2.0 - 1.0;
+        v = (rand() / ((double) RAND_MAX)) * 2.0 - 1.0;
+        s = u * u + v * v;
+    } while( (s >= 1.0) || (s == 0.0) );
+
+    s = sqrt(-2.0 * log(s) / s);
+    spare = v * s;
+    return mean + variance * u * s;
+
 }
 
 double random_vel (double mass, double boltzmann_temp)
@@ -88,6 +107,9 @@ double random_vel (double mass, double boltzmann_temp)
     //return (double)rand () / RAND_MAX / 2;
     //return maxwell(10000, mass, boltzmann_temp);
     //return maxwell2 (1);
-    double vel = maxwell_3 (boltzmann_temp, mass);
+
+    //Normalize velocity
+    double vel = maxwell_3 (boltzmann_temp, mass)*D_T/GRID_SIZE;
+
     return vel;
 }
