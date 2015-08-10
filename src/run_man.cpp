@@ -1,6 +1,4 @@
-#include <random>
 #include "run_man.h"
-#include <ctime>
 
 static void helper (std::vector <Particle*> *particles,
         std::vector <double> *pot,
@@ -45,12 +43,12 @@ int main (){
 
         //Progress bar
         if ((i % (iterations / 10)) == 0){
-            std::cout << 10 - i*10/iterations << " ";
-            std::cout.flush();
+            printf ("%d ", 10 - i*10/iterations);
+            fflush (stdout);
             snapshot_diagnostics (&particles, &density,
                     &field, &potential, i);
         }
     }
 
-    std::cout << "0\nCompleted\n";
+    printf ("0\nCompleted\n");
 }
