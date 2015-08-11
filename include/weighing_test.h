@@ -1,3 +1,3 @@
 #include <gtest/gtest.h>
-#include "density.h"
+#include "weighing.h"
 #include "ion.h"

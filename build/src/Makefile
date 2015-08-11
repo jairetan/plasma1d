@@ -115,6 +115,54 @@ run/fast:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/build
 .PHONY : run/fast
 
+adjacent_coods.o: adjacent_coods.cpp.o
+.PHONY : adjacent_coods.o
+
+# target to build an object file
+adjacent_coods.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/adjacent_coods.cpp.o
+.PHONY : adjacent_coods.cpp.o
+
+adjacent_coods.i: adjacent_coods.cpp.i
+.PHONY : adjacent_coods.i
+
+# target to preprocess a source file
+adjacent_coods.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/adjacent_coods.cpp.i
+.PHONY : adjacent_coods.cpp.i
+
+adjacent_coods.s: adjacent_coods.cpp.s
+.PHONY : adjacent_coods.s
+
+# target to generate assembly for a file
+adjacent_coods.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/adjacent_coods.cpp.s
+.PHONY : adjacent_coods.cpp.s
+
+density.o: density.cpp.o
+.PHONY : density.o
+
+# target to build an object file
+density.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/density.cpp.o
+.PHONY : density.cpp.o
+
+density.i: density.cpp.i
+.PHONY : density.i
+
+# target to preprocess a source file
+density.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/density.cpp.i
+.PHONY : density.cpp.i
+
+density.s: density.cpp.s
+.PHONY : density.s
+
+# target to generate assembly for a file
+density.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/density.cpp.s
+.PHONY : density.cpp.s
+
 density_diagnostic.o: density_diagnostic.cpp.o
 .PHONY : density_diagnostic.o
 
@@ -652,6 +700,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... run"
+	@echo "... adjacent_coods.o"
+	@echo "... adjacent_coods.i"
+	@echo "... adjacent_coods.s"
+	@echo "... density.o"
+	@echo "... density.i"
+	@echo "... density.s"
 	@echo "... density_diagnostic.o"
 	@echo "... density_diagnostic.i"
 	@echo "... density_diagnostic.s"

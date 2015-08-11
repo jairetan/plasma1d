@@ -282,9 +282,32 @@ src/CMakeFiles/run.dir/field.cpp.o.provides: src/CMakeFiles/run.dir/field.cpp.o.
 
 src/CMakeFiles/run.dir/field.cpp.o.provides.build: src/CMakeFiles/run.dir/field.cpp.o
 
+src/CMakeFiles/run.dir/density.cpp.o: src/CMakeFiles/run.dir/flags.make
+src/CMakeFiles/run.dir/density.cpp.o: ../src/density.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/density.cpp.o"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/density.cpp.o -c /home/jtan/my-plasma/1dcpp/src/density.cpp
+
+src/CMakeFiles/run.dir/density.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/density.cpp.i"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jtan/my-plasma/1dcpp/src/density.cpp > CMakeFiles/run.dir/density.cpp.i
+
+src/CMakeFiles/run.dir/density.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/density.cpp.s"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jtan/my-plasma/1dcpp/src/density.cpp -o CMakeFiles/run.dir/density.cpp.s
+
+src/CMakeFiles/run.dir/density.cpp.o.requires:
+.PHONY : src/CMakeFiles/run.dir/density.cpp.o.requires
+
+src/CMakeFiles/run.dir/density.cpp.o.provides: src/CMakeFiles/run.dir/density.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/density.cpp.o.provides.build
+.PHONY : src/CMakeFiles/run.dir/density.cpp.o.provides
+
+src/CMakeFiles/run.dir/density.cpp.o.provides.build: src/CMakeFiles/run.dir/density.cpp.o
+
 src/CMakeFiles/run.dir/out_writer.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/out_writer.cpp.o: ../src/out_writer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/out_writer.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/out_writer.cpp.o -c /home/jtan/my-plasma/1dcpp/src/out_writer.cpp
 
@@ -307,7 +330,7 @@ src/CMakeFiles/run.dir/out_writer.cpp.o.provides.build: src/CMakeFiles/run.dir/o
 
 src/CMakeFiles/run.dir/ion.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/ion.cpp.o: ../src/ion.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/ion.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/ion.cpp.o -c /home/jtan/my-plasma/1dcpp/src/ion.cpp
 
@@ -330,7 +353,7 @@ src/CMakeFiles/run.dir/ion.cpp.o.provides.build: src/CMakeFiles/run.dir/ion.cpp.
 
 src/CMakeFiles/run.dir/wrap_around.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/wrap_around.cpp.o: ../src/wrap_around.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/wrap_around.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/wrap_around.cpp.o -c /home/jtan/my-plasma/1dcpp/src/wrap_around.cpp
 
@@ -353,7 +376,7 @@ src/CMakeFiles/run.dir/wrap_around.cpp.o.provides.build: src/CMakeFiles/run.dir/
 
 src/CMakeFiles/run.dir/move.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/move.cpp.o: ../src/move.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/move.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/move.cpp.o -c /home/jtan/my-plasma/1dcpp/src/move.cpp
 
@@ -374,9 +397,32 @@ src/CMakeFiles/run.dir/move.cpp.o.provides: src/CMakeFiles/run.dir/move.cpp.o.re
 
 src/CMakeFiles/run.dir/move.cpp.o.provides.build: src/CMakeFiles/run.dir/move.cpp.o
 
+src/CMakeFiles/run.dir/adjacent_coods.cpp.o: src/CMakeFiles/run.dir/flags.make
+src/CMakeFiles/run.dir/adjacent_coods.cpp.o: ../src/adjacent_coods.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_16)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/adjacent_coods.cpp.o"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/adjacent_coods.cpp.o -c /home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp
+
+src/CMakeFiles/run.dir/adjacent_coods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run.dir/adjacent_coods.cpp.i"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp > CMakeFiles/run.dir/adjacent_coods.cpp.i
+
+src/CMakeFiles/run.dir/adjacent_coods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run.dir/adjacent_coods.cpp.s"
+	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp -o CMakeFiles/run.dir/adjacent_coods.cpp.s
+
+src/CMakeFiles/run.dir/adjacent_coods.cpp.o.requires:
+.PHONY : src/CMakeFiles/run.dir/adjacent_coods.cpp.o.requires
+
+src/CMakeFiles/run.dir/adjacent_coods.cpp.o.provides: src/CMakeFiles/run.dir/adjacent_coods.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/adjacent_coods.cpp.o.provides.build
+.PHONY : src/CMakeFiles/run.dir/adjacent_coods.cpp.o.provides
+
+src/CMakeFiles/run.dir/adjacent_coods.cpp.o.provides.build: src/CMakeFiles/run.dir/adjacent_coods.cpp.o
+
 src/CMakeFiles/run.dir/pot_diagnostic.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/pot_diagnostic.cpp.o: ../src/pot_diagnostic.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/pot_diagnostic.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/pot_diagnostic.cpp.o -c /home/jtan/my-plasma/1dcpp/src/pot_diagnostic.cpp
 
@@ -399,7 +445,7 @@ src/CMakeFiles/run.dir/pot_diagnostic.cpp.o.provides.build: src/CMakeFiles/run.d
 
 src/CMakeFiles/run.dir/transform_wrapper.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/transform_wrapper.cpp.o: ../src/transform_wrapper.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/transform_wrapper.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/transform_wrapper.cpp.o -c /home/jtan/my-plasma/1dcpp/src/transform_wrapper.cpp
 
@@ -422,7 +468,7 @@ src/CMakeFiles/run.dir/transform_wrapper.cpp.o.provides.build: src/CMakeFiles/ru
 
 src/CMakeFiles/run.dir/energy_diagnostic.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/energy_diagnostic.cpp.o: ../src/energy_diagnostic.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/energy_diagnostic.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/energy_diagnostic.cpp.o -c /home/jtan/my-plasma/1dcpp/src/energy_diagnostic.cpp
 
@@ -445,7 +491,7 @@ src/CMakeFiles/run.dir/energy_diagnostic.cpp.o.provides.build: src/CMakeFiles/ru
 
 src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o: ../src/time_history_diagnostics.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/time_history_diagnostics.cpp.o -c /home/jtan/my-plasma/1dcpp/src/time_history_diagnostics.cpp
 
@@ -468,7 +514,7 @@ src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/run.dir/particle.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/particle.cpp.o: ../src/particle.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/particle.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/particle.cpp.o -c /home/jtan/my-plasma/1dcpp/src/particle.cpp
 
@@ -491,7 +537,7 @@ src/CMakeFiles/run.dir/particle.cpp.o.provides.build: src/CMakeFiles/run.dir/par
 
 src/CMakeFiles/run.dir/psd.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/psd.cpp.o: ../src/psd.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/psd.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/psd.cpp.o -c /home/jtan/my-plasma/1dcpp/src/psd.cpp
 
@@ -514,7 +560,7 @@ src/CMakeFiles/run.dir/psd.cpp.o.provides.build: src/CMakeFiles/run.dir/psd.cpp.
 
 src/CMakeFiles/run.dir/electron.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/electron.cpp.o: ../src/electron.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/electron.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/electron.cpp.o -c /home/jtan/my-plasma/1dcpp/src/electron.cpp
 
@@ -537,7 +583,7 @@ src/CMakeFiles/run.dir/electron.cpp.o.provides.build: src/CMakeFiles/run.dir/ele
 
 src/CMakeFiles/run.dir/weighing.cpp.o: src/CMakeFiles/run.dir/flags.make
 src/CMakeFiles/run.dir/weighing.cpp.o: ../src/weighing.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jtan/my-plasma/1dcpp/build/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/run.dir/weighing.cpp.o"
 	cd /home/jtan/my-plasma/1dcpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/run.dir/weighing.cpp.o -c /home/jtan/my-plasma/1dcpp/src/weighing.cpp
 
@@ -570,10 +616,12 @@ run_OBJECTS = \
 "CMakeFiles/run.dir/square_mod.cpp.o" \
 "CMakeFiles/run.dir/init_pos.cpp.o" \
 "CMakeFiles/run.dir/field.cpp.o" \
+"CMakeFiles/run.dir/density.cpp.o" \
 "CMakeFiles/run.dir/out_writer.cpp.o" \
 "CMakeFiles/run.dir/ion.cpp.o" \
 "CMakeFiles/run.dir/wrap_around.cpp.o" \
 "CMakeFiles/run.dir/move.cpp.o" \
+"CMakeFiles/run.dir/adjacent_coods.cpp.o" \
 "CMakeFiles/run.dir/pot_diagnostic.cpp.o" \
 "CMakeFiles/run.dir/transform_wrapper.cpp.o" \
 "CMakeFiles/run.dir/energy_diagnostic.cpp.o" \
@@ -586,36 +634,38 @@ run_OBJECTS = \
 # External object files for target run
 run_EXTERNAL_OBJECTS =
 
-src/run: src/CMakeFiles/run.dir/mom_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o
-src/run: src/CMakeFiles/run.dir/run_man.cpp.o
-src/run: src/CMakeFiles/run.dir/phase_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/init_v.cpp.o
-src/run: src/CMakeFiles/run.dir/field_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/density_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/square_mod.cpp.o
-src/run: src/CMakeFiles/run.dir/init_pos.cpp.o
-src/run: src/CMakeFiles/run.dir/field.cpp.o
-src/run: src/CMakeFiles/run.dir/out_writer.cpp.o
-src/run: src/CMakeFiles/run.dir/ion.cpp.o
-src/run: src/CMakeFiles/run.dir/wrap_around.cpp.o
-src/run: src/CMakeFiles/run.dir/move.cpp.o
-src/run: src/CMakeFiles/run.dir/pot_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/transform_wrapper.cpp.o
-src/run: src/CMakeFiles/run.dir/energy_diagnostic.cpp.o
-src/run: src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o
-src/run: src/CMakeFiles/run.dir/particle.cpp.o
-src/run: src/CMakeFiles/run.dir/psd.cpp.o
-src/run: src/CMakeFiles/run.dir/electron.cpp.o
-src/run: src/CMakeFiles/run.dir/weighing.cpp.o
-src/run: src/CMakeFiles/run.dir/build.make
-src/run: /usr/local/lib/libfftw3.a
-src/run: src/CMakeFiles/run.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable run"
+../run: src/CMakeFiles/run.dir/mom_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o
+../run: src/CMakeFiles/run.dir/run_man.cpp.o
+../run: src/CMakeFiles/run.dir/phase_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/init_v.cpp.o
+../run: src/CMakeFiles/run.dir/field_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/density_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/square_mod.cpp.o
+../run: src/CMakeFiles/run.dir/init_pos.cpp.o
+../run: src/CMakeFiles/run.dir/field.cpp.o
+../run: src/CMakeFiles/run.dir/density.cpp.o
+../run: src/CMakeFiles/run.dir/out_writer.cpp.o
+../run: src/CMakeFiles/run.dir/ion.cpp.o
+../run: src/CMakeFiles/run.dir/wrap_around.cpp.o
+../run: src/CMakeFiles/run.dir/move.cpp.o
+../run: src/CMakeFiles/run.dir/adjacent_coods.cpp.o
+../run: src/CMakeFiles/run.dir/pot_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/transform_wrapper.cpp.o
+../run: src/CMakeFiles/run.dir/energy_diagnostic.cpp.o
+../run: src/CMakeFiles/run.dir/time_history_diagnostics.cpp.o
+../run: src/CMakeFiles/run.dir/particle.cpp.o
+../run: src/CMakeFiles/run.dir/psd.cpp.o
+../run: src/CMakeFiles/run.dir/electron.cpp.o
+../run: src/CMakeFiles/run.dir/weighing.cpp.o
+../run: src/CMakeFiles/run.dir/build.make
+../run: /usr/local/lib/libfftw3.a
+../run: src/CMakeFiles/run.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../run"
 	cd /home/jtan/my-plasma/1dcpp/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/run.dir/build: src/run
+src/CMakeFiles/run.dir/build: ../run
 .PHONY : src/CMakeFiles/run.dir/build
 
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/mom_diagnostic.cpp.o.requires
@@ -628,10 +678,12 @@ src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/density_diagnostic.cpp.o
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/square_mod.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/init_pos.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/field.cpp.o.requires
+src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/density.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/out_writer.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/ion.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/wrap_around.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/move.cpp.o.requires
+src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/adjacent_coods.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/pot_diagnostic.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/transform_wrapper.cpp.o.requires
 src/CMakeFiles/run.dir/requires: src/CMakeFiles/run.dir/energy_diagnostic.cpp.o.requires

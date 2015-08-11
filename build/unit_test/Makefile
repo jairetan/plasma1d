@@ -115,6 +115,54 @@ test/fast:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
+__/src/adjacent_coods.o: __/src/adjacent_coods.cpp.o
+.PHONY : __/src/adjacent_coods.o
+
+# target to build an object file
+__/src/adjacent_coods.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o
+.PHONY : __/src/adjacent_coods.cpp.o
+
+__/src/adjacent_coods.i: __/src/adjacent_coods.cpp.i
+.PHONY : __/src/adjacent_coods.i
+
+# target to preprocess a source file
+__/src/adjacent_coods.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.i
+.PHONY : __/src/adjacent_coods.cpp.i
+
+__/src/adjacent_coods.s: __/src/adjacent_coods.cpp.s
+.PHONY : __/src/adjacent_coods.s
+
+# target to generate assembly for a file
+__/src/adjacent_coods.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.s
+.PHONY : __/src/adjacent_coods.cpp.s
+
+__/src/density.o: __/src/density.cpp.o
+.PHONY : __/src/density.o
+
+# target to build an object file
+__/src/density.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/density.cpp.o
+.PHONY : __/src/density.cpp.o
+
+__/src/density.i: __/src/density.cpp.i
+.PHONY : __/src/density.i
+
+# target to preprocess a source file
+__/src/density.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/density.cpp.i
+.PHONY : __/src/density.cpp.i
+
+__/src/density.s: __/src/density.cpp.s
+.PHONY : __/src/density.s
+
+# target to generate assembly for a file
+__/src/density.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/density.cpp.s
+.PHONY : __/src/density.cpp.s
+
 __/src/density_diagnostic.o: __/src/density_diagnostic.cpp.o
 .PHONY : __/src/density_diagnostic.o
 
@@ -475,30 +523,6 @@ __/src/psd.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/psd.cpp.s
 .PHONY : __/src/psd.cpp.s
 
-__/src/run_man.o: __/src/run_man.cpp.o
-.PHONY : __/src/run_man.o
-
-# target to build an object file
-__/src/run_man.cpp.o:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/run_man.cpp.o
-.PHONY : __/src/run_man.cpp.o
-
-__/src/run_man.i: __/src/run_man.cpp.i
-.PHONY : __/src/run_man.i
-
-# target to preprocess a source file
-__/src/run_man.cpp.i:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/run_man.cpp.i
-.PHONY : __/src/run_man.cpp.i
-
-__/src/run_man.s: __/src/run_man.cpp.s
-.PHONY : __/src/run_man.s
-
-# target to generate assembly for a file
-__/src/run_man.cpp.s:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/run_man.cpp.s
-.PHONY : __/src/run_man.cpp.s
-
 __/src/snapshot_diagnostics.o: __/src/snapshot_diagnostics.cpp.o
 .PHONY : __/src/snapshot_diagnostics.o
 
@@ -667,6 +691,30 @@ adjacent_coods_test.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.s
 .PHONY : adjacent_coods_test.cpp.s
 
+density_test.o: density_test.cpp.o
+.PHONY : density_test.o
+
+# target to build an object file
+density_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/density_test.cpp.o
+.PHONY : density_test.cpp.o
+
+density_test.i: density_test.cpp.i
+.PHONY : density_test.i
+
+# target to preprocess a source file
+density_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/density_test.cpp.i
+.PHONY : density_test.cpp.i
+
+density_test.s: density_test.cpp.s
+.PHONY : density_test.s
+
+# target to generate assembly for a file
+density_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/density_test.cpp.s
+.PHONY : density_test.cpp.s
+
 main_test.o: main_test.cpp.o
 .PHONY : main_test.o
 
@@ -691,6 +739,54 @@ main_test.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/main_test.cpp.s
 .PHONY : main_test.cpp.s
 
+weighing_test.o: weighing_test.cpp.o
+.PHONY : weighing_test.o
+
+# target to build an object file
+weighing_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/weighing_test.cpp.o
+.PHONY : weighing_test.cpp.o
+
+weighing_test.i: weighing_test.cpp.i
+.PHONY : weighing_test.i
+
+# target to preprocess a source file
+weighing_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/weighing_test.cpp.i
+.PHONY : weighing_test.cpp.i
+
+weighing_test.s: weighing_test.cpp.s
+.PHONY : weighing_test.s
+
+# target to generate assembly for a file
+weighing_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/weighing_test.cpp.s
+.PHONY : weighing_test.cpp.s
+
+wrap_around_test.o: wrap_around_test.cpp.o
+.PHONY : wrap_around_test.o
+
+# target to build an object file
+wrap_around_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o
+.PHONY : wrap_around_test.cpp.o
+
+wrap_around_test.i: wrap_around_test.cpp.i
+.PHONY : wrap_around_test.i
+
+# target to preprocess a source file
+wrap_around_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.i
+.PHONY : wrap_around_test.cpp.i
+
+wrap_around_test.s: wrap_around_test.cpp.s
+.PHONY : wrap_around_test.s
+
+# target to generate assembly for a file
+wrap_around_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.s
+.PHONY : wrap_around_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -700,6 +796,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... __/src/adjacent_coods.o"
+	@echo "... __/src/adjacent_coods.i"
+	@echo "... __/src/adjacent_coods.s"
+	@echo "... __/src/density.o"
+	@echo "... __/src/density.i"
+	@echo "... __/src/density.s"
 	@echo "... __/src/density_diagnostic.o"
 	@echo "... __/src/density_diagnostic.i"
 	@echo "... __/src/density_diagnostic.s"
@@ -745,9 +847,6 @@ help:
 	@echo "... __/src/psd.o"
 	@echo "... __/src/psd.i"
 	@echo "... __/src/psd.s"
-	@echo "... __/src/run_man.o"
-	@echo "... __/src/run_man.i"
-	@echo "... __/src/run_man.s"
 	@echo "... __/src/snapshot_diagnostics.o"
 	@echo "... __/src/snapshot_diagnostics.i"
 	@echo "... __/src/snapshot_diagnostics.s"
@@ -769,9 +868,18 @@ help:
 	@echo "... adjacent_coods_test.o"
 	@echo "... adjacent_coods_test.i"
 	@echo "... adjacent_coods_test.s"
+	@echo "... density_test.o"
+	@echo "... density_test.i"
+	@echo "... density_test.s"
 	@echo "... main_test.o"
 	@echo "... main_test.i"
 	@echo "... main_test.s"
+	@echo "... weighing_test.o"
+	@echo "... weighing_test.i"
+	@echo "... weighing_test.s"
+	@echo "... wrap_around_test.o"
+	@echo "... wrap_around_test.i"
+	@echo "... wrap_around_test.s"
 .PHONY : help
 
 

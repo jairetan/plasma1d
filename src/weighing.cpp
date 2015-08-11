@@ -1,4 +1,5 @@
 #include "weighing.h"
+
 void alt_weighing (Particle *particle, double *weights)
 {
     double left_pos = 0, right_pos = 0;

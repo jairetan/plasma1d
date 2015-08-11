@@ -9,10 +9,12 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/run.dir/square_mod.cpp.o"
   "CMakeFiles/run.dir/init_pos.cpp.o"
   "CMakeFiles/run.dir/field.cpp.o"
+  "CMakeFiles/run.dir/density.cpp.o"
   "CMakeFiles/run.dir/out_writer.cpp.o"
   "CMakeFiles/run.dir/ion.cpp.o"
   "CMakeFiles/run.dir/wrap_around.cpp.o"
   "CMakeFiles/run.dir/move.cpp.o"
+  "CMakeFiles/run.dir/adjacent_coods.cpp.o"
   "CMakeFiles/run.dir/pot_diagnostic.cpp.o"
   "CMakeFiles/run.dir/transform_wrapper.cpp.o"
   "CMakeFiles/run.dir/energy_diagnostic.cpp.o"
@@ -21,8 +23,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/run.dir/psd.cpp.o"
   "CMakeFiles/run.dir/electron.cpp.o"
   "CMakeFiles/run.dir/weighing.cpp.o"
-  "run.pdb"
-  "run"
+  "../../run.pdb"
+  "../../run"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,3 +1,3 @@
 #include <gtest/gtest.h>
-#include "density.h"
+#include "wrap_around.h"
 #include "ion.h"
