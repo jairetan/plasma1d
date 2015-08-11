@@ -1,0 +1,25 @@
+CC=g++
+CFLAGS= -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -std=c++11
+SRC=./src/
+INC=./include/
+UNIT=./unit_test/
+OBJECTS=./object/
+FILES:=$(wildcard $(SRC)*.cpp) $(wildcard $(UNIT)*.cpp)
+ALL_OBJ:=$(FILES:$(SRC)%.cpp=%.o)
+OBJ:= $(filter-out run_man.o, $(ALL_OBJ))
+
+all: run_tests
+
+
+%.o: $(UNIT)%.cpp $(INC)%.h
+	$(CC) $(CFLAGS) -I$(INC) -I/homejtan/my-plasma/1dcpp/include -c $<
+
+main_test.o: $(UNIT)main_test.cpp
+	$(CC) $(CFLAGS) -I$(INC) -I/homejtan/my-plasma/1dcpp/include -c $<
+
+run_tests: $(OBJ) -lfftw3 -lm -lgsl -lgslcblas -lgtest -lpthread
+	$(CC) -o $@ $^
+	@mv *.o $(OBJECTS)
+
+clean:
+	@rm -f $(OBJECTS)*.o run_tests *.o

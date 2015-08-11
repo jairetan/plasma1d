@@ -1,4 +1,5 @@
 #include "run_man.h"
+#include "gtest/gtest.h"
 
 static void helper (std::vector <Particle*> *particles,
         std::vector <double> *pot,
@@ -15,7 +16,7 @@ static void helper (std::vector <Particle*> *particles,
     }
 }
 
-int main (){
+int main (int argc, char **argv){
     std::vector <Particle *> particles;
     srand (time(NULL));
     int iterations = T/D_T;

@@ -1,7 +1,6 @@
 #include "particle.h"
 #include <cstdio>
 
-
 //All quantities natively normalized
 
 Particle:: Particle (double m, double c, double v, double p, double w)
