@@ -310,18 +310,6 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp
-cstdio
--
-adjacent_coods.h
-/home/jtan/my-plasma/1dcpp/src/adjacent_coods.h
-
-/home/jtan/my-plasma/1dcpp/src/density.cpp
-density.h
-/home/jtan/my-plasma/1dcpp/src/density.h
-cstdio
--
-
 /home/jtan/my-plasma/1dcpp/src/density_diagnostic.cpp
 density_diagnostic.h
 /home/jtan/my-plasma/1dcpp/src/density_diagnostic.h
