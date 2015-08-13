@@ -11,26 +11,28 @@ static void helper (std::vector <Particle*> *particles,
     move_particles (particles, field);
 
     //Run diagnostics every intervals
-    if (curr_it % 25 == 0){
+    if (curr_it % 25 == 0)
+    {
         time_history_diagnostics (particles, curr_it, pot, density, field);
     }
-
-    if (curr_it % 1000 == 0){
-        FILE *file = NULL;
-        std::string fName = "data/"+to_string(curr_it)+"vel.dat";
-        if ((file = fopen (fName.c_str(), "a")) == NULL){
-            return;
+		if (curr_it % 20000 == 0){
+			std::string fName = "data/"+std::to_string(curr_it)+"vel.dat";
+			std::ofstream out;
+			out.open(fName,"w");
+			for (int i=0; i<particles->size(); i++){
+				out<<particles->at(i)->get_vel()<<'\n';
+			}
+			out.close();
+		}
+    if (curr_it % 20000 == 0){
+        std::vector <double> velocity;
+        std::vector <double> x_data;
+        for (int i = 0; i < particles->size(); particles ++){
+            velocity.push_back (particles->at(i)->get_vel());
+            x_data.push_back (i);
         }
 
-        for (int i=0; i < particles->size(); i++){
-            Particle *particle = particles->at (i);
-
-            if (particle->get_charge () < 0){
-                fprintf (file, "%f\n", particle->get_vel());
-            }
-        }
-
-        fclose (file);
+        //out_writer (to_string (curr_it) + "velocity", &x_data, &velocity);
     }
 }
 
@@ -48,7 +50,7 @@ int main (int argc, char **argv){
             (random_vel (ION_MASS, I_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    int end = NUM_E*1+NUM_IONS;
+    int end = NUM_E*.9+NUM_IONS;
  //   #pragma omp parallel for
     for (int j = NUM_IONS; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
@@ -60,7 +62,7 @@ int main (int argc, char **argv){
 //    #pragma omp parallel for
     for (int j = start; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
-            (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP)+.25, random_start (), 1));
+            (.8, random_start (), 1));
     }
 
     for (int i = 0; i < iterations; i++){

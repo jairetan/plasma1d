@@ -37,11 +37,6 @@ double mode_diagnostic (std::vector <double> *potential,
     full_transform (transformed_density, size);
 
     for (int i = 0; i < size; i++){
-        //double trans_pot_real = transformed_potential [i].real();
-        //double trans_pot_imag = transformed_potential [i].imag();
-        //double trans_dens_real = transformed_density [i].real();
-        //double trans_dens_imag = transformed_density [i].imag();
-
         //mode_energy[i] = .5 * (trans_pot_real * trans_dens_real
                 //+ trans_pot_imag * trans_dens_imag);
         mode_energy[i] = (transformed_potential [i] *

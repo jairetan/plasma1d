@@ -1,5 +1,7 @@
 #!/bin/bash
-make clean
-make -j 4> make_output.txt
+trash data/*.dat
+cd build
+make -j 4
+cd ..
 ./run
 

@@ -14,10 +14,12 @@ void calc_density (std::vector <Particle *> *particles,
     int num_particles = particles->size(), adjacencies = pow (2, 1);
     double *weights = new double [2];
     int *points = new int [2];
+    int i;
 
     reset_density (density);
 
-    for (int i = 0; i < num_particles; i++){
+    #pragma omp parallel for
+    for (i = 0; i < num_particles; i++){
         Particle *particle = particles->at (i);
         double particle_charge = particle->get_charge();
 

@@ -1,5 +1,7 @@
 FILE(REMOVE_RECURSE
+  "CMakeFiles/test.dir/field_test.cpp.o"
   "CMakeFiles/test.dir/main_test.cpp.o"
+  "CMakeFiles/test.dir/transform_wrapper_test.cpp.o"
   "CMakeFiles/test.dir/weighing_test.cpp.o"
   "CMakeFiles/test.dir/wrap_around_test.cpp.o"
   "CMakeFiles/test.dir/density_test.cpp.o"

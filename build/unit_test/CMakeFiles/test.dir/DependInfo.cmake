@@ -29,7 +29,9 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/jtan/my-plasma/1dcpp/src/wrap_around.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/__/src/wrap_around.cpp.o"
   "/home/jtan/my-plasma/1dcpp/unit_test/adjacent_coods_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o"
   "/home/jtan/my-plasma/1dcpp/unit_test/density_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/density_test.cpp.o"
+  "/home/jtan/my-plasma/1dcpp/unit_test/field_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/field_test.cpp.o"
   "/home/jtan/my-plasma/1dcpp/unit_test/main_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/main_test.cpp.o"
+  "/home/jtan/my-plasma/1dcpp/unit_test/transform_wrapper_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o"
   "/home/jtan/my-plasma/1dcpp/unit_test/weighing_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/weighing_test.cpp.o"
   "/home/jtan/my-plasma/1dcpp/unit_test/wrap_around_test.cpp" "/home/jtan/my-plasma/1dcpp/build/unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o"
   )
@@ -45,7 +47,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../unit_test/../include"
   "/usr/local/include"
-  "../gtest-1.7.0/include"
+  "/include"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

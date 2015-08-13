@@ -715,6 +715,30 @@ density_test.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/density_test.cpp.s
 .PHONY : density_test.cpp.s
 
+field_test.o: field_test.cpp.o
+.PHONY : field_test.o
+
+# target to build an object file
+field_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/field_test.cpp.o
+.PHONY : field_test.cpp.o
+
+field_test.i: field_test.cpp.i
+.PHONY : field_test.i
+
+# target to preprocess a source file
+field_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/field_test.cpp.i
+.PHONY : field_test.cpp.i
+
+field_test.s: field_test.cpp.s
+.PHONY : field_test.s
+
+# target to generate assembly for a file
+field_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/field_test.cpp.s
+.PHONY : field_test.cpp.s
+
 main_test.o: main_test.cpp.o
 .PHONY : main_test.o
 
@@ -738,6 +762,30 @@ main_test.s: main_test.cpp.s
 main_test.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/main_test.cpp.s
 .PHONY : main_test.cpp.s
+
+transform_wrapper_test.o: transform_wrapper_test.cpp.o
+.PHONY : transform_wrapper_test.o
+
+# target to build an object file
+transform_wrapper_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o
+.PHONY : transform_wrapper_test.cpp.o
+
+transform_wrapper_test.i: transform_wrapper_test.cpp.i
+.PHONY : transform_wrapper_test.i
+
+# target to preprocess a source file
+transform_wrapper_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.i
+.PHONY : transform_wrapper_test.cpp.i
+
+transform_wrapper_test.s: transform_wrapper_test.cpp.s
+.PHONY : transform_wrapper_test.s
+
+# target to generate assembly for a file
+transform_wrapper_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.s
+.PHONY : transform_wrapper_test.cpp.s
 
 weighing_test.o: weighing_test.cpp.o
 .PHONY : weighing_test.o
@@ -871,9 +919,15 @@ help:
 	@echo "... density_test.o"
 	@echo "... density_test.i"
 	@echo "... density_test.s"
+	@echo "... field_test.o"
+	@echo "... field_test.i"
+	@echo "... field_test.s"
 	@echo "... main_test.o"
 	@echo "... main_test.i"
 	@echo "... main_test.s"
+	@echo "... transform_wrapper_test.o"
+	@echo "... transform_wrapper_test.i"
+	@echo "... transform_wrapper_test.s"
 	@echo "... weighing_test.o"
 	@echo "... weighing_test.i"
 	@echo "... weighing_test.s"

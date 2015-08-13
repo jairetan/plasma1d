@@ -13,6 +13,7 @@ std::string TIME_HISTORIES [] = {"ke_out", "pe_out",
 std::string TIME_HISTORIES_Y_AXIS [] = {"Kinetic Energy", "Potential Energy",
     "Total Energy", "Momentum"};
 
+
 static TString GetID(int type)
 {
     TString name;
@@ -121,7 +122,38 @@ static void history_graph ()
     }
 }
 
+void GetHistogram(double xLo, double xHi, int nBins = 200)
+{
+    TCanvas *canvas = create_canvas ("Velocity Dists", 3, 3);
+    FILE *file = NULL;
+    char *buffer = new char [1024];
+    TH1D* myHist = NULL;
+
+    for (int i = 0; i < 9; i++){
+        std::string name = std::to_string (i*1000) + "vel.dat";
+        printf ("%s\n", name.c_str());
+	    myHist = new TH1D ((name).c_str(),"My Histogram;x;y",nBins,xLo,xHi);
+        double temp;
+
+        if ((file = fopen (("data/"+name).c_str(), "r")) == NULL){
+            printf ("hello %d\n", i);
+            return;
+        }
+
+        while (fgets (buffer, 1025, file) != NULL){
+            sscanf (buffer, "%lf", &temp);
+            myHist->Fill (temp);
+        }
+
+        canvas->cd (i+1);
+        myHist->Draw ();
+
+        fclose (file);
+    }
+}
+
 void runner (){
-    snapshot_graph ();
-    history_graph ();
+//    snapshot_graph ();
+ //   history_graph ();
+    GetHistogram (-2, 2);
 }

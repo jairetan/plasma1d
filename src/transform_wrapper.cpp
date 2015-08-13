@@ -1,6 +1,5 @@
 #include "transform_wrapper.h"
 
-//works
 std::complex <double> *transform (double *vect, int size)
 {
     std::complex <double> *transform_out = new std::complex <double> [size];
@@ -24,7 +23,6 @@ void full_transform (std::complex <double> *transform, int size)
     for (int i = 0; i < size/2; i++){
         transform [size-i-1] = std::conj (transform [i+1]);
     }
-
 }
 
 double *inverse_transform (std::complex <double> *transform, int size)

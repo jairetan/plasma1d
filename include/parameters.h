@@ -9,7 +9,7 @@
 //Normalized units
 
 static const double D_T = 1e-6;
-static const double T = 1e-1;
+static const double T = 1e-2;
 static const int NUM_CELLS = 1e2; //size of cells < debye length
 static const int PARTICLE_WIDTH = 1; //In debye lengths
 static const double GRID_SIZE = .2; //Grid size must be < Debye length
@@ -36,11 +36,6 @@ static const int PLOT_MODES = 20;
 //static const double I_V_THERMAL = pow (2*MY_BOLTZMANN * ELECTRON_TEMP/ NON_NORMAL_MASS/1000, .5);
 //static const double PLASMA_FREQ = E_V_THERMAL/DEBYE_LENGTH;
 
-static const double E_V_THERMAL = .08; //In units of grid_size/d_t
-static const double I_V_THERMAL = .001;
-//static const double I_V_THERMAL = .0;
-static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL; //Normalized k*T
-static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL;
 
 //Normalized to electron properties
 //static const double PROTON_CHARGE = 1;
@@ -51,9 +46,15 @@ static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL;
 static const double ELECTRON_CHARGE = -1;
 static const double ION_CHARGE = 1;
 static const double ELECTRON_MASS = -ELECTRON_CHARGE;
-static const double ION_MASS = 1000 *ELECTRON_MASS;
+static const double ION_MASS = 1000 * ELECTRON_MASS;
 static const int BACKGROUND_DENSITY = 0;
 //static const int BACKGROUND_DENSITY = -NUM_E*ELECTRON_CHARGE/NUM_CELLS;
+//
+static const double E_V_THERMAL = .3; //In units of grid_size/d_t
+static const double I_V_THERMAL = .01;
+//static const double I_V_THERMAL = .0;
+static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL/2; //Normalized k*T
+static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL/2*ION_MASS;
 
 //Non normalized masses
 /*static const double PROTON_CHARGE = CLHEP::eplus;

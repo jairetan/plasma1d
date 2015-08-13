@@ -74,6 +74,7 @@ double maxwell2 (double vb)
 static double maxwell_3 (double boltzmann_temp, double mass)
 {
     double variance = boltzmann_temp/mass;
+    printf ("Variance: %f\n", variance);
     double mean = 0;
     static bool hasSpare = false;
     static double spare;
