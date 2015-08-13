@@ -37,4 +37,7 @@ void calc_density (std::vector <Particle *> *particles,
             density->at (points [j]) += weights [j]* (particle_charge);
         }
     }
+
+    delete [] weights;
+    delete [] points;
 }

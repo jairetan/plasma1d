@@ -74,7 +74,6 @@ double maxwell2 (double vb)
 static double maxwell_3 (double boltzmann_temp, double mass)
 {
     double variance = boltzmann_temp/mass;
-    printf ("Variance: %f\n", variance);
     double mean = 0;
     static bool hasSpare = false;
     static double spare;
@@ -107,7 +106,7 @@ double random_vel (double mass, double boltzmann_temp)
     //printf ("%d\n", rand());
     //return (double)rand () / RAND_MAX / 2;
     //return maxwell(10000, mass, boltzmann_temp);
-    //return maxwell2 (1);
+    //return maxwell2 (5)/10;
 
     //Normalize velocity
     double vel = maxwell_3 (boltzmann_temp, mass);

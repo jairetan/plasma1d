@@ -15,7 +15,6 @@
 #include "snapshot_diagnostics.h"
 #include <vector>
 #include "parameters.h"
-#include <iostream>
 
 //void run_man (int (*init_pos)(int),
         //double (*init_vel)(void), double dt,

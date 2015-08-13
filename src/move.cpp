@@ -35,7 +35,10 @@ void move_particles (std::vector <Particle *> * particles,
         right_field = field->at (points [1]) * weights [1];
         accel = find_accel(left_field + right_field, particle);
 
-        particle->inc_vel (accel);
         particle->inc_pos ();
+        particle->inc_vel (accel);
     }
+
+    delete [] weights;
+    delete [] points;
 }

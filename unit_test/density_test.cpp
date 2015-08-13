@@ -22,10 +22,10 @@ TEST (density_test, density_test)
 
     calc_density (&particles, &density);
 
-    ASSERT_FLOAT_EQ (density[0], 1);
-    ASSERT_FLOAT_EQ (density[1], .75);
-    ASSERT_FLOAT_EQ (density[2], 1.75);
-    ASSERT_FLOAT_EQ (density[3], -.5);
-    ASSERT_FLOAT_EQ (density[4], 0);
-    ASSERT_FLOAT_EQ (density[5], -1);
+    ASSERT_FLOAT_EQ (density[0], 1+BACKGROUND_DENSITY);
+    ASSERT_FLOAT_EQ (density[1], .75+BACKGROUND_DENSITY);
+    ASSERT_FLOAT_EQ (density[2], 1.75+BACKGROUND_DENSITY);
+    ASSERT_FLOAT_EQ (density[3], -.5+BACKGROUND_DENSITY);
+    ASSERT_FLOAT_EQ (density[4], 0+BACKGROUND_DENSITY);
+    ASSERT_FLOAT_EQ (density[5], -1+BACKGROUND_DENSITY);
 }

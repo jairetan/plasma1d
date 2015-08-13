@@ -3,7 +3,7 @@
 void E_psd (std::vector <double> *electric_field)
 {
     char *buffer = new char [1024];
-    int size = int (T/D_T);
+    int size = ITERATIONS;
     FILE *in_file = NULL;
     FILE *out_file = NULL;
     std::complex <double> *field_space_time_trans = NULL;
@@ -45,7 +45,7 @@ void E_psd (std::vector <double> *electric_field)
 void U_psd (std::vector <double> *potential,
         std::vector <double> *density, int iter)
 {
-    int size = int (T/D_T);
+    int size = int (ITERATIONS);
     FILE *in_file = NULL;
     FILE *out_file = NULL;
     char *buffer = new char [1024];
@@ -82,5 +82,7 @@ void U_psd (std::vector <double> *potential,
         fclose (in_file);
         fclose (out_file);
     }
+    delete [] mode_ese;
+    delete [] buffer;
 }
 

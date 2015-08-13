@@ -7,7 +7,7 @@ void pot_diagnostic (std::vector <double> *pot, int iter)
         x.push_back (i);
     }
 
-    std::string path = DATA_DIR + to_string (int (.5 +iter*10*D_T/T)) + "pot_out.dat";
+    std::string path = DATA_DIR + to_string (int (.5 +iter*10/ITERATIONS)) + "pot_out.dat";
 
     out_writer (path, &x, pot);
 }
