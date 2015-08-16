@@ -152,39 +152,37 @@ void GetHistogram(double xLo, double xHi, int nBins = 200)
     }
 }
 
-void Dispersion (double xLo, double xHi, double yLo, double yHi,
-        int nBinsX = 200, int nBinsY =200)
+void Dispersion (double xLo, double xHi, double yLo, double yHi, int nBinsX = 100, int nBinsY =100)
 {
-    TCanvas *canvas = create_canvas ("Velocity Dists", 3, 3);
+    TCanvas *canvas = create_canvas ("Dispersion Relation", 3, 3);
     FILE *file = NULL;
     char *buffer = new char [1024];
     TH2D* myHist = NULL;
+	myHist = new TH2D ("Dispersion","My Histogram;x;y",nBinsX,xLo,xHi, nBinsY, yLo, yHi);
 
     for (int i = 0; i < 9; i++){
         std::string name = std::to_string (i) + "field_space_time_trans.dat";
-	    myHist = new TH2D ((name).c_str(),"My Histogram;x;y",nBinsX,xLo,xHi
-                nBinsY, yLo, yHi);
-        double temp;
 
         if ((file = fopen (("data/"+name).c_str(), "r")) == NULL){
-            printf ("hello %d\n", i);
+            printf ("hello %s\n", name.c_str());
+            perror ("Something bad\n");
             return;
         }
 
         while (fgets (buffer, 1025, file) != NULL){
-            sscanf (buffer, "%lf", &temp);
-            myHist->Fill (temp);
+            double x, y, weight;
+            sscanf (buffer, "%lf %lf %lf", &x, &y, &weight);
+            myHist->Fill (x,y,weight);
         }
-
-        canvas->cd (i+1);
-        myHist->Draw ();
 
         fclose (file);
     }
+        myHist->Draw ();
 }
 
 void runner (){
 //    snapshot_graph ();
  //   history_graph ();
     GetHistogram (-2, 2);
+    Dispersion (0,  10,  0,  10);
 }

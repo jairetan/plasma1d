@@ -68,10 +68,13 @@ int main ()
         if ((i % (ITERATIONS / 10)) == 0){
             printf ("%d ", 10 - i*10/ITERATIONS);
             fflush (stdout);
+        }
+        if ((i % (ITERATIONS / 50)) == 0){
             snapshot_diagnostics (&particles, &density,
                     &field, &potential, i);
         }
     }
+    E_psd();
 
     printf ("0\nCompleted\n");
 }

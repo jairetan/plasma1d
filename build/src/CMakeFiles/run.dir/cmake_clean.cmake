@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/run.dir/mom_diagnostic.cpp.o"
+  "CMakeFiles/run.dir/altfft.cpp.o"
   "CMakeFiles/run.dir/snapshot_diagnostics.cpp.o"
   "CMakeFiles/run.dir/run_man.cpp.o"
   "CMakeFiles/run.dir/phase_diagnostic.cpp.o"

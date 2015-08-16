@@ -10,6 +10,9 @@ unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: /home/jtan/Desktop/in
 unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: ../src/adjacent_coods.cpp
 
+unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o: ../unit_test/../include/altfft.h
+unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o: ../src/altfft.cpp
+
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/adjacent_coods.h
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/density.h
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/parameters.h
@@ -148,6 +151,7 @@ unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: /home/jtan/Desktop/in
 unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: ../src/pot_diagnostic.cpp
 
+unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/altfft.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/psd.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/square_mod.h
@@ -159,6 +163,7 @@ unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: /home/jtan/Desktop/include/CLHEP
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../src/psd.cpp
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: /usr/local/include/fftw3.h
 
+unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/altfft.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/density_diagnostic.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/field_diagnostic.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/out_writer.h
@@ -218,25 +223,6 @@ unit_test/CMakeFiles/test.dir/__/src/wrap_around.cpp.o: /home/jtan/Desktop/inclu
 unit_test/CMakeFiles/test.dir/__/src/wrap_around.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/__/src/wrap_around.cpp.o: ../src/wrap_around.cpp
 
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../unit_test/../include/adjacent_coods.h
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../unit_test/../include/adjacent_coods_test.h
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../unit_test/../include/density.h
@@ -250,25 +236,18 @@ unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: /home/jtan/Desktop/incl
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../unit_test/adjacent_coods_test.cpp
 
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/altfft.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/parameters.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/psd.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/square_mod.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/to_string.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/transform_wrapper.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/SystemOfUnits.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/complex_transform_wrapper_test.cpp
+unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: /usr/local/include/fftw3.h
+
 unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../unit_test/../include/adjacent_coods.h
 unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../unit_test/../include/density.h
 unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../unit_test/../include/electron.h
@@ -282,25 +261,6 @@ unit_test/CMakeFiles/test.dir/density_test.cpp.o: /home/jtan/Desktop/include/CLH
 unit_test/CMakeFiles/test.dir/density_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/density_test.cpp.o: ../unit_test/density_test.cpp
 
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../unit_test/../include/field.h
 unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../unit_test/../include/transform_wrapper.h
@@ -310,25 +270,6 @@ unit_test/CMakeFiles/test.dir/field_test.cpp.o: /home/jtan/Desktop/include/CLHEP
 unit_test/CMakeFiles/test.dir/field_test.cpp.o: ../unit_test/field_test.cpp
 unit_test/CMakeFiles/test.dir/field_test.cpp.o: /usr/local/include/fftw3.h
 
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../unit_test/../include/adjacent_coods.h
 unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../unit_test/../include/adjacent_coods_test.h
 unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../unit_test/../include/density.h
@@ -342,48 +283,10 @@ unit_test/CMakeFiles/test.dir/main_test.cpp.o: /home/jtan/Desktop/include/CLHEP/
 unit_test/CMakeFiles/test.dir/main_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/main_test.cpp.o: ../unit_test/main_test.cpp
 
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../unit_test/../include/transform_wrapper.h
 unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: ../unit_test/transform_wrapper_test.cpp
 unit_test/CMakeFiles/test.dir/transform_wrapper_test.cpp.o: /usr/local/include/fftw3.h
 
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../unit_test/../include/ion.h
 unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../unit_test/../include/particle.h
@@ -395,25 +298,6 @@ unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: /home/jtan/Desktop/include/CL
 unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/weighing_test.cpp.o: ../unit_test/weighing_test.cpp
 
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-death-test.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-message.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-param-test.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-printers.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-test-part.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest-typed-test.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_pred_impl.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/gtest_prod.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-death-test-internal.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-filepath.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-internal.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-linked_ptr.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util-generated.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-param-util.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-port.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-string.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-tuple.h
-unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../gtest-1.7.0/include/gtest/internal/gtest-type-util.h
 unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../unit_test/../include/ion.h
 unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/wrap_around_test.cpp.o: ../unit_test/../include/particle.h

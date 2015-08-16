@@ -139,6 +139,30 @@ __/src/adjacent_coods.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.s
 .PHONY : __/src/adjacent_coods.cpp.s
 
+__/src/altfft.o: __/src/altfft.cpp.o
+.PHONY : __/src/altfft.o
+
+# target to build an object file
+__/src/altfft.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o
+.PHONY : __/src/altfft.cpp.o
+
+__/src/altfft.i: __/src/altfft.cpp.i
+.PHONY : __/src/altfft.i
+
+# target to preprocess a source file
+__/src/altfft.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.i
+.PHONY : __/src/altfft.cpp.i
+
+__/src/altfft.s: __/src/altfft.cpp.s
+.PHONY : __/src/altfft.s
+
+# target to generate assembly for a file
+__/src/altfft.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.s
+.PHONY : __/src/altfft.cpp.s
+
 __/src/density.o: __/src/density.cpp.o
 .PHONY : __/src/density.o
 
@@ -691,6 +715,30 @@ adjacent_coods_test.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.s
 .PHONY : adjacent_coods_test.cpp.s
 
+complex_transform_wrapper_test.o: complex_transform_wrapper_test.cpp.o
+.PHONY : complex_transform_wrapper_test.o
+
+# target to build an object file
+complex_transform_wrapper_test.cpp.o:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o
+.PHONY : complex_transform_wrapper_test.cpp.o
+
+complex_transform_wrapper_test.i: complex_transform_wrapper_test.cpp.i
+.PHONY : complex_transform_wrapper_test.i
+
+# target to preprocess a source file
+complex_transform_wrapper_test.cpp.i:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.i
+.PHONY : complex_transform_wrapper_test.cpp.i
+
+complex_transform_wrapper_test.s: complex_transform_wrapper_test.cpp.s
+.PHONY : complex_transform_wrapper_test.s
+
+# target to generate assembly for a file
+complex_transform_wrapper_test.cpp.s:
+	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.s
+.PHONY : complex_transform_wrapper_test.cpp.s
+
 density_test.o: density_test.cpp.o
 .PHONY : density_test.o
 
@@ -847,6 +895,9 @@ help:
 	@echo "... __/src/adjacent_coods.o"
 	@echo "... __/src/adjacent_coods.i"
 	@echo "... __/src/adjacent_coods.s"
+	@echo "... __/src/altfft.o"
+	@echo "... __/src/altfft.i"
+	@echo "... __/src/altfft.s"
 	@echo "... __/src/density.o"
 	@echo "... __/src/density.i"
 	@echo "... __/src/density.s"
@@ -916,6 +967,9 @@ help:
 	@echo "... adjacent_coods_test.o"
 	@echo "... adjacent_coods_test.i"
 	@echo "... adjacent_coods_test.s"
+	@echo "... complex_transform_wrapper_test.o"
+	@echo "... complex_transform_wrapper_test.i"
+	@echo "... complex_transform_wrapper_test.s"
 	@echo "... density_test.o"
 	@echo "... density_test.i"
 	@echo "... density_test.s"

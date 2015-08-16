@@ -10,6 +10,9 @@ src/CMakeFiles/run.dir/adjacent_coods.cpp.o: /home/jtan/Desktop/include/CLHEP/Un
 src/CMakeFiles/run.dir/adjacent_coods.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 src/CMakeFiles/run.dir/adjacent_coods.cpp.o: ../src/adjacent_coods.cpp
 
+src/CMakeFiles/run.dir/altfft.cpp.o: ../src/../include/altfft.h
+src/CMakeFiles/run.dir/altfft.cpp.o: ../src/altfft.cpp
+
 src/CMakeFiles/run.dir/density.cpp.o: ../src/../include/adjacent_coods.h
 src/CMakeFiles/run.dir/density.cpp.o: ../src/../include/density.h
 src/CMakeFiles/run.dir/density.cpp.o: ../src/../include/parameters.h
@@ -148,6 +151,7 @@ src/CMakeFiles/run.dir/pot_diagnostic.cpp.o: /home/jtan/Desktop/include/CLHEP/Un
 src/CMakeFiles/run.dir/pot_diagnostic.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 src/CMakeFiles/run.dir/pot_diagnostic.cpp.o: ../src/pot_diagnostic.cpp
 
+src/CMakeFiles/run.dir/psd.cpp.o: ../src/../include/altfft.h
 src/CMakeFiles/run.dir/psd.cpp.o: ../src/../include/parameters.h
 src/CMakeFiles/run.dir/psd.cpp.o: ../src/../include/psd.h
 src/CMakeFiles/run.dir/psd.cpp.o: ../src/../include/square_mod.h
@@ -160,6 +164,7 @@ src/CMakeFiles/run.dir/psd.cpp.o: ../src/psd.cpp
 src/CMakeFiles/run.dir/psd.cpp.o: /usr/local/include/fftw3.h
 
 src/CMakeFiles/run.dir/run_man.cpp.o: ../src/../include/adjacent_coods.h
+src/CMakeFiles/run.dir/run_man.cpp.o: ../src/../include/altfft.h
 src/CMakeFiles/run.dir/run_man.cpp.o: ../src/../include/density.h
 src/CMakeFiles/run.dir/run_man.cpp.o: ../src/../include/density_diagnostic.h
 src/CMakeFiles/run.dir/run_man.cpp.o: ../src/../include/electron.h
@@ -192,6 +197,7 @@ src/CMakeFiles/run.dir/run_man.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/def
 src/CMakeFiles/run.dir/run_man.cpp.o: ../src/run_man.cpp
 src/CMakeFiles/run.dir/run_man.cpp.o: /usr/local/include/fftw3.h
 
+src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o: ../src/../include/altfft.h
 src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o: ../src/../include/density_diagnostic.h
 src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o: ../src/../include/field_diagnostic.h
 src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o: ../src/../include/out_writer.h

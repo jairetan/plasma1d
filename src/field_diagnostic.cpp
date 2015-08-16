@@ -19,8 +19,7 @@ void field_space_transform (std::vector <double> *field, int iter)
     std::vector <std::complex <double> > writing_vector
         (space_transform, space_transform + field->size ());
 
-
-    for (int i = 0 ; i < 20; i++){
+    for (int i = 0 ; i < NUM_CELLS/5; i++){
         std::string path = DATA_DIR + to_string (i) + "field_space_trans.dat";
 
         FILE *file = NULL;
@@ -31,5 +30,7 @@ void field_space_transform (std::vector <double> *field, int iter)
         fprintf (file, "%d %lf %lf\n",
                 iter, space_transform [i].real(),
                 space_transform[i].imag());
+
+        fclose (file);
     }
 }

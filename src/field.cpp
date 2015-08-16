@@ -35,7 +35,7 @@ void calc_field (std::vector <double> *field_vector,
 
     density_trans = transform (&(density_vector->at(0)), NUM_CELLS);
 
-    #pragma omp parallel for
+    //#pragma omp parallel for
     for (int x = 1; x < NUM_CELLS/2; x++){
         density_trans [x] *= trans_mult (x);
     }

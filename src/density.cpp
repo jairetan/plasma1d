@@ -18,7 +18,7 @@ void calc_density (std::vector <Particle *> *particles,
 
     reset_density (density);
 
-    #pragma omp parallel for
+    //#pragma omp parallel for
     for (i = 0; i < num_particles; i++){
         Particle *particle = particles->at (i);
         double particle_charge = particle->get_charge();

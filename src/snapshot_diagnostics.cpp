@@ -9,5 +9,4 @@ void snapshot_diagnostics (std::vector <Particle *> *particles,
     pot_diagnostic (potential, iter);
     phase_diagnostic (particles, iter);
     U_psd (potential, density, iter);
-    E_psd ();
 }

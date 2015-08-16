@@ -18,7 +18,7 @@ void move_particles (std::vector <Particle *> * particles,
     double *weights = new double [2];
     int *points = new int [2];
 
-    #pragma omp parallel for
+    //#pragma omp parallel for
     for (int i = 0; i < num_particles; i++)
     {
         Particle *particle = particles->at (i);
