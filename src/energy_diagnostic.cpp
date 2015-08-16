@@ -31,9 +31,11 @@ double mode_diagnostic (std::vector <double> *potential,
     std::vector <double> y (1);
     std::vector <double> mode_energy (size);
 
-    std::complex <double> *transformed_potential = transform (&((*potential)[0]), NUM_CELLS);
+    std::complex <double> *transformed_potential =
+        transform (&((*potential)[0]), NUM_CELLS);
     full_transform (transformed_potential, size);
-    std::complex <double> *transformed_density= transform (&((*density)[0]), NUM_CELLS);
+    std::complex <double> *transformed_density=
+        transform (&((*density)[0]), NUM_CELLS);
     full_transform (transformed_density, size);
 
     for (int i = 0; i < size; i++){

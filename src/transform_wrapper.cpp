@@ -5,7 +5,8 @@ std::complex <double> *transform (double *vect, int size)
     std::complex <double> *transform_out = new std::complex <double> [size];
 
     fftw_plan p = fftw_plan_dft_r2c_1d
-        (size, vect, reinterpret_cast <fftw_complex *>(transform_out), FFTW_ESTIMATE);
+        (size, vect, reinterpret_cast <fftw_complex *>(transform_out),
+         FFTW_ESTIMATE);
     fftw_execute (p);
     fftw_destroy_plan (p);
 
@@ -30,7 +31,8 @@ double *inverse_transform (std::complex <double> *transform, int size)
     double *inverse = new double [size];
 
     fftw_plan p = fftw_plan_dft_c2r_1d
-        (size, reinterpret_cast <fftw_complex *> (transform), inverse, FFTW_ESTIMATE);
+        (size, reinterpret_cast <fftw_complex *> (transform), inverse,
+         FFTW_ESTIMATE);
     fftw_execute (p);
     fftw_destroy_plan (p);
 
