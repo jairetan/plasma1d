@@ -2,12 +2,13 @@
 
 void pot_diagnostic (std::vector <double> *pot, int iter)
 {
-    std::vector <double> x;
-    for (int i = NUM_CELLS-1; i >=0; i--){
-        x.push_back (i);
+    std::vector <double> x (NUM_CELLS);
+    for (int i = 0; i < NUM_CELLS; i++){
+        x[i] = i;
     }
 
-    std::string path = DATA_DIR + to_string (int (.5 +iter*10/ITERATIONS)) + "pot_out.dat";
+    auto path = DATA_DIR + std::to_string (int (.5 +iter*10/ITERATIONS)) +
+        "pot_out.dat";
 
     out_writer (path, &x, pot);
 }

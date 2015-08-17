@@ -1,7 +1,6 @@
 #include "run_man.h"
-#include <iostream>
 
-static void helper (std::vector <Particle*> *particles,
+static void system_cycle (std::vector <Particle*> *particles,
         std::vector <double> *pot,
         std::vector <double> *density, std::vector <double> *field, int curr_it)
 {
@@ -18,9 +17,7 @@ static void helper (std::vector <Particle*> *particles,
         std::string fName = "data/"+to_string(curr_it)+"vel.dat";
         std::ofstream file (fName.c_str(), std::ios::app);
 
-        for (int i=0; i < particles->size(); i++){
-            Particle *particle = particles->at (i);
-
+        for (auto particle : *particles){
             if (particle->get_charge () < 0){
                 file<< particle->get_vel() << std::endl;
             }
@@ -52,14 +49,13 @@ int main ()
 
     int start = end;
     end = NUM_E+ NUM_IONS;
-//    #pragma omp parallel for
     for (int j = start; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
             (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP)+10 * E_V_THERMAL, random_start (), 1));
     }
 
     for (int i = 0; i < ITERATIONS; i++){
-        helper (&particles, &potential, &density, &field, i);
+        system_cycle (&particles, &potential, &density, &field, i);
 
         //Progress bar
         if ((i % (ITERATIONS / 10)) == 0){

@@ -1,6 +1,7 @@
 #pragma once
 
 //Manage evolution of system over time
+#include <iostream>
 #include "density.h"
 #include "init_pos.h"
 #include "field.h"

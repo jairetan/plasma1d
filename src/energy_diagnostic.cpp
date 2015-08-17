@@ -2,18 +2,18 @@
 #include "energy_diagnostic.h"
 #include "mode_diagnostic.h"
 
-double ke_diagnostic (std::vector <Particle *> *particles,  double t){
-    double ke_total = 0;
-    int size = particles -> size();
+double ke_diagnostic (std::vector <Particle *> *particles, double iter){
+    auto ke_total = 0.0;
+    auto size = particles -> size();
     std::vector <double> x (1);
     std::vector <double> y (1);
     std::string path = DATA_DIR + "ke_out.dat";
 
-    for (int i = 0; i < size; i++){
-        ke_total += particles->at (i)->get_ke();
+    for (auto particle : *particles){
+        ke_total += particle->get_ke();
     }
 
-    x[0] = t;
+    x[0] = iter;
     y[0] = ke_total;
 
     out_writer (path, &x, &y);
@@ -22,7 +22,7 @@ double ke_diagnostic (std::vector <Particle *> *particles,  double t){
 }
 
 double mode_diagnostic (std::vector <double> *potential,
-        std::vector <double> *density, int t)
+        std::vector <double> *density, int iter)
 {
     double total_ese = 0;
     double test_ese = 0;
@@ -47,8 +47,8 @@ double mode_diagnostic (std::vector <double> *potential,
 
         total_ese += mode_energy [i];
 
-        if (i < PLOT_MODES){
-            x[0]= (t);
+        if (i < SPATIAL_MODES){
+            x[0]= (iter);
             y[0]= mode_energy [i];
             std::string path = DATA_DIR +to_string (i)+"mode"+ "_out.dat";
             out_writer (path, &x, &y);
@@ -61,21 +61,21 @@ double mode_diagnostic (std::vector <double> *potential,
 }
 
 double pe_diagnostic (std::vector <double> *potential,
-        std::vector <double> *density,  double t){
-    double pe_total = 0;
-    int size = potential->size();
-    std::vector <double> x;
-    std::vector <double> y;
+        std::vector <double> *density,  double iter){
+    auto pe_total = 0.0;
+    auto size = potential->size();
+    std::vector <double> x (1);
+    std::vector <double> y (1);
 
     std::string path = DATA_DIR + "pe_out.dat";
-    mode_diagnostic (potential, density, t);
+    mode_diagnostic (potential, density, iter);
 
     for (int i = 0; i < size; i++){
         pe_total += potential->at (i)* density->at(i);
     }
 
-    x.push_back (t);
-    y.push_back (pe_total);
+    x[0] = iter;
+    y[0] = pe_total;
     out_writer (path, &x, &y);
 
     return pe_total;
@@ -83,16 +83,16 @@ double pe_diagnostic (std::vector <double> *potential,
 
 void energy_diagnostic (std::vector <Particle *> *particles,
         std::vector <double> *potential, std::vector <double> *density,
-        double t)
+        double iter)
 {
     std::string path = DATA_DIR + "e_out.dat";
-    std::vector <double> x;
-    std::vector <double> y;
+    std::vector <double> x (1);
+    std::vector <double> y (1);
 
-    double e_total = ke_diagnostic (particles, t) +
-        pe_diagnostic (potential, density, t);
+    auto e_total = ke_diagnostic (particles, iter) +
+        pe_diagnostic (potential, density, iter);
 
-    x.push_back (t);
-    y.push_back (e_total);
+    x [0] = iter;
+    y [0] = e_total;
     out_writer (path, &x, &y);
 }

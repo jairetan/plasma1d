@@ -6,13 +6,39 @@
 
 #IncludeRegexTransform: 
 
-../src/../include/adjacent_coods.h
+../src/../include/energy_diagnostic.h
 vector
 -
 particle.h
-../src/../include/particle.h
-wrap_around.h
-../src/../include/wrap_around.h
+-
+out_writer.h
+../src/../include/out_writer.h
+transform_wrapper.h
+../src/../include/transform_wrapper.h
+
+../src/../include/mode_diagnostic.h
+complex
+-
+string
+-
+parameters.h
+../src/../include/parameters.h
+to_string.h
+../src/../include/to_string.h
+fftw3.h
+-
+vector
+-
+cmath
+-
+
+../src/../include/out_writer.h
+string
+-
+vector
+-
+fstream
+-
 
 ../src/../include/parameters.h
 /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
@@ -30,6 +56,18 @@ wrap_around.h
 parameters.h
 ../src/../include/parameters.h
 
+../src/../include/to_string.h
+sstream
+-
+
+../src/../include/transform_wrapper.h
+complex
+-
+fftw3.h
+-
+cmath
+-
+
 ../src/../include/wrap_around.h
 parameters.h
 ../src/../include/parameters.h
@@ -46,7 +84,15 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp
-adjacent_coods.h
-/home/jtan/my-plasma/1dcpp/src/adjacent_coods.h
+/home/jtan/my-plasma/1dcpp/src/energy_diagnostic.cpp
+energy_diagnostic.h
+/home/jtan/my-plasma/1dcpp/src/energy_diagnostic.h
+mode_diagnostic.h
+/home/jtan/my-plasma/1dcpp/src/mode_diagnostic.h
+
+/usr/local/include/fftw3.h
+stdio.h
+-
+stddef.h
+-
 

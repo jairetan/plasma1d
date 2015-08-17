@@ -11,5 +11,4 @@ double wrap_around (double position, double max_pos)
     }
 
     return position;
-
 }

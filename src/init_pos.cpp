@@ -7,9 +7,5 @@ int random_start ()
     //srand (time(NULL));
     //printf ("%d\n", rand());
 
-    int pos = rand () % NUM_CELLS;
-    if (pos < 0 || pos > NUM_CELLS){
-        printf ("Seriously\n");
-    }
-    return pos;
+    return rand () % NUM_CELLS;
 }

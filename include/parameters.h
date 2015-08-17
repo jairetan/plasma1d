@@ -18,7 +18,8 @@ static const double FIELD_SCALE = 1;
 static const int NUM_IONS = 1e3;
 static const int NUM_E = 1e3;
 
-static const int PLOT_MODES = 20;
+static const int SPATIAL_MODES = 20;
+static const int TIME_MODES = 100;
 
 static const double ELECTRON_CHARGE = -1;
 static const double ION_CHARGE = 1;

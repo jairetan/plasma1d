@@ -40,10 +40,9 @@ void calc_field (std::vector <double> *field_vector,
         density_trans [x] *= trans_mult (x);
     }
 
-    density_trans [0] = 0; //automatically add in neutralizing background ions?
+    density_trans [0] = 0; //Net charge of system = 0
     potential = inverse_transform (density_trans, NUM_CELLS);
 
-    /*divide by NUM_CELLS in array (inverse transform not normalized)*/
     for (int x = 0; x < NUM_CELLS; x++){
         pot_vector->at (x) = potential [x];
     }

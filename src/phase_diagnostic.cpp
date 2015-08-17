@@ -3,9 +3,9 @@
 
 void phase_diagnostic (std::vector <Particle *> *particles, int iter)
 {
-    int size = particles -> size();
+    int size = particles->size();
     std::ofstream file;
-    std::string path = DATA_DIR + to_string (int (.5 +10*iter/ITERATIONS)) + "phase_out.dat";
+    auto path = DATA_DIR + std::to_string (int (.5 +10*iter/ITERATIONS)) + "phase_out.dat";
     file.open (path.c_str (), std::ios::app);
 
     for (int i = 0; i < size; i++){

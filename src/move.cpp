@@ -5,7 +5,7 @@
 //Return normalized acceleration
 static double find_accel (double field, Particle *particle)
 {
-    double accel = FIELD_SCALE * field * particle->get_charge ()/particle->get_mass()
+    double accel = field * particle->get_charge ()/particle->get_mass()
         *D_T*D_T/GRID_SIZE;
 
     return accel;
@@ -14,24 +14,21 @@ static double find_accel (double field, Particle *particle)
 void move_particles (std::vector <Particle *> * particles,
         std::vector <double> *field)
 {
-    int num_particles = particles->size();
-    double left_field = 0, right_field = 0, accel = 0;
-    double *weights = new double [2];
-    int *points = new int [2];
+    auto num_particles = particles->size();
+    auto left_field = 0, right_field = 0, accel = 0;
+    std::vector <double> weights (2);
+    std::vector <int> points (2);
 
-    //#pragma omp parallel for
-    for (int i = 0; i < num_particles; i++)
+    for (auto particle : *particles)
     {
-        Particle *particle = particles->at (i);
-
         if (CIC){
-            weighing (particle, weights);
+            weighing (particle, &weights[0]);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particle, weights);
+            zero_order_weighing (particle, &weights[0]);
         }
 
-        adjacent_points (particle, points);
+        adjacent_points (particle, &points[0]);
         left_field = field->at (points [0]) * weights [0];
         right_field = field->at (points [1]) * weights [1];
         accel = find_accel(left_field + right_field, particle);
@@ -39,7 +36,4 @@ void move_particles (std::vector <Particle *> * particles,
         particle->inc_pos ();
         particle->inc_vel (accel);
     }
-
-    delete [] weights;
-    delete [] points;
 }
