@@ -122,7 +122,7 @@ static void history_graph ()
     }
 }
 
-void GetHistogram(double xLo, double xHi, int nBins = 200)
+void GetHistogram(double xLo, double xHi, int nBins = 400)
 {
     TCanvas *canvas = create_canvas ("Velocity Dists", 3, 3);
     FILE *file = NULL;
@@ -152,7 +152,7 @@ void GetHistogram(double xLo, double xHi, int nBins = 200)
     }
 }
 
-void Dispersion (double xLo, double xHi, double yLo, double yHi, int nBinsX = 100, int nBinsY =20)
+void Dispersion (double xLo, double xHi, double yLo, double yHi, int nBinsX = 2e2, int nBinsY =40)
 {
     TCanvas *canvas = create_canvas ("Dispersion Relation", 3, 3);
     FILE *file = NULL;
@@ -176,11 +176,12 @@ void Dispersion (double xLo, double xHi, double yLo, double yHi, int nBinsX = 10
         fclose (file);
     }
     myHist->Draw ();
+
 }
 
 void runner (){
     //    snapshot_graph ();
     //   history_graph ();
-    GetHistogram (-2, 2);
-    Dispersion (0,  100,  0,  20);
+    GetHistogram (-1, 1);
+    Dispersion (0,  1e2,  0,  20);
 }

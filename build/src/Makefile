@@ -139,30 +139,6 @@ adjacent_coods.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/adjacent_coods.cpp.s
 .PHONY : adjacent_coods.cpp.s
 
-altfft.o: altfft.cpp.o
-.PHONY : altfft.o
-
-# target to build an object file
-altfft.cpp.o:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/altfft.cpp.o
-.PHONY : altfft.cpp.o
-
-altfft.i: altfft.cpp.i
-.PHONY : altfft.i
-
-# target to preprocess a source file
-altfft.cpp.i:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/altfft.cpp.i
-.PHONY : altfft.cpp.i
-
-altfft.s: altfft.cpp.s
-.PHONY : altfft.s
-
-# target to generate assembly for a file
-altfft.cpp.s:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f src/CMakeFiles/run.dir/build.make src/CMakeFiles/run.dir/altfft.cpp.s
-.PHONY : altfft.cpp.s
-
 density.o: density.cpp.o
 .PHONY : density.o
 
@@ -727,9 +703,6 @@ help:
 	@echo "... adjacent_coods.o"
 	@echo "... adjacent_coods.i"
 	@echo "... adjacent_coods.s"
-	@echo "... altfft.o"
-	@echo "... altfft.i"
-	@echo "... altfft.s"
 	@echo "... density.o"
 	@echo "... density.i"
 	@echo "... density.s"

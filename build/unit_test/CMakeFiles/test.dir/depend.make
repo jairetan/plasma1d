@@ -10,9 +10,6 @@ unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: /home/jtan/Desktop/in
 unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.o: ../src/adjacent_coods.cpp
 
-unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o: ../unit_test/../include/altfft.h
-unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o: ../src/altfft.cpp
-
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/adjacent_coods.h
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/density.h
 unit_test/CMakeFiles/test.dir/__/src/density.cpp.o: ../unit_test/../include/parameters.h
@@ -151,7 +148,6 @@ unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: /home/jtan/Desktop/in
 unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/__/src/pot_diagnostic.cpp.o: ../src/pot_diagnostic.cpp
 
-unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/altfft.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/psd.h
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../unit_test/../include/square_mod.h
@@ -163,7 +159,6 @@ unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: /home/jtan/Desktop/include/CLHEP
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: ../src/psd.cpp
 unit_test/CMakeFiles/test.dir/__/src/psd.cpp.o: /usr/local/include/fftw3.h
 
-unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/altfft.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/density_diagnostic.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/field_diagnostic.h
 unit_test/CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o: ../unit_test/../include/out_writer.h
@@ -236,7 +231,6 @@ unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: /home/jtan/Desktop/incl
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: /home/jtan/Desktop/include/CLHEP/Units/defs.h
 unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o: ../unit_test/adjacent_coods_test.cpp
 
-unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/altfft.h
 unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/parameters.h
 unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/psd.h
 unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o: ../unit_test/../include/square_mod.h

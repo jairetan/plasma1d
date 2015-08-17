@@ -1,4 +1,5 @@
 #include "run_man.h"
+#include <iostream>
 
 static void helper (std::vector <Particle*> *particles,
         std::vector <double> *pot,
@@ -42,18 +43,19 @@ int main ()
             (random_vel (ION_MASS, I_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    int end = NUM_E+NUM_IONS;
+    int end = NUM_E*.9+NUM_IONS;
  //   #pragma omp parallel for
     for (int j = NUM_IONS; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
             (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    int start = end; end = NUM_E+ NUM_IONS;
+    int start = end;
+    end = NUM_E+ NUM_IONS;
 //    #pragma omp parallel for
     for (int j = start; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
-            (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP)+.25, random_start (), 1));
+            (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP)+10 * E_V_THERMAL, random_start (), 1));
     }
 
     for (int i = 0; i < ITERATIONS; i++){

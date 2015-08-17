@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+../src/../include/adjacent_coods.h
+vector
+-
+particle.h
+../src/../include/particle.h
+wrap_around.h
+../src/../include/wrap_around.h
+
 ../src/../include/parameters.h
 /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
 -
@@ -22,24 +30,6 @@ wrap_around.h
 parameters.h
 ../src/../include/parameters.h
 
-../src/../include/phase_diagnostic.h
-vector
--
-particle.h
--
-parameters.h
-../src/../include/parameters.h
-string
--
-to_string.h
-../src/../include/to_string.h
-fstream
--
-
-../src/../include/to_string.h
-sstream
--
-
 ../src/../include/wrap_around.h
 parameters.h
 ../src/../include/parameters.h
@@ -56,7 +46,7 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/phase_diagnostic.cpp
-phase_diagnostic.h
-/home/jtan/my-plasma/1dcpp/src/phase_diagnostic.h
+/home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp
+adjacent_coods.h
+/home/jtan/my-plasma/1dcpp/src/adjacent_coods.h
 

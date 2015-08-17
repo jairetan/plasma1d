@@ -139,30 +139,6 @@ __/src/adjacent_coods.cpp.s:
 	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/adjacent_coods.cpp.s
 .PHONY : __/src/adjacent_coods.cpp.s
 
-__/src/altfft.o: __/src/altfft.cpp.o
-.PHONY : __/src/altfft.o
-
-# target to build an object file
-__/src/altfft.cpp.o:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.o
-.PHONY : __/src/altfft.cpp.o
-
-__/src/altfft.i: __/src/altfft.cpp.i
-.PHONY : __/src/altfft.i
-
-# target to preprocess a source file
-__/src/altfft.cpp.i:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.i
-.PHONY : __/src/altfft.cpp.i
-
-__/src/altfft.s: __/src/altfft.cpp.s
-.PHONY : __/src/altfft.s
-
-# target to generate assembly for a file
-__/src/altfft.cpp.s:
-	cd /home/jtan/my-plasma/1dcpp/build && $(MAKE) -f unit_test/CMakeFiles/test.dir/build.make unit_test/CMakeFiles/test.dir/__/src/altfft.cpp.s
-.PHONY : __/src/altfft.cpp.s
-
 __/src/density.o: __/src/density.cpp.o
 .PHONY : __/src/density.o
 
@@ -895,9 +871,6 @@ help:
 	@echo "... __/src/adjacent_coods.o"
 	@echo "... __/src/adjacent_coods.i"
 	@echo "... __/src/adjacent_coods.s"
-	@echo "... __/src/altfft.o"
-	@echo "... __/src/altfft.i"
-	@echo "... __/src/altfft.s"
 	@echo "... __/src/density.o"
 	@echo "... __/src/density.i"
 	@echo "... __/src/density.s"

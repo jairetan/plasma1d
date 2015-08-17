@@ -1,5 +1,20 @@
 #include "transform_wrapper.h"
 
+std::complex <double> *complex_forward_trans (
+        std::complex <double> *transform_in, int size)
+{
+    fftw_plan p;
+    std::complex <double> *transform_out = new std::complex <double> [size];
+    p = fftw_plan_dft_1d(size,
+            reinterpret_cast <fftw_complex *>(transform_in),
+            reinterpret_cast <fftw_complex *>(transform_out),
+            FFTW_FORWARD, FFTW_ESTIMATE);
+    fftw_execute(p);
+    fftw_destroy_plan(p);
+
+    return transform_out;
+}
+
 std::complex <double> *transform (double *vect, int size)
 {
     std::complex <double> *transform_out = new std::complex <double> [size];

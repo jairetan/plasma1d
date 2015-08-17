@@ -2,26 +2,31 @@
 
 static void reset_density (std::vector <double> *density)
 {
-    for (int i = 0; i < NUM_CELLS; i++){
-        density->at (i) = BACKGROUND_DENSITY;
+    for (auto &i : *density){
+        i = BACKGROUND_DENSITY;
     }
+
+    //for (auto i = 0; i < NUM_CELLS; i++){
+        //density->at (i) = BACKGROUND_DENSITY;
+    //}
 }
 
 void calc_density (std::vector <Particle *> *particles,
         std::vector <double> *density)
 {
+    auto test = 0;
     //Change to any dimension later on
-    int num_particles = particles->size(), adjacencies = pow (2, 1);
-    double *weights = new double [2];
-    int *points = new int [2];
-    int i;
+    auto num_particles = particles->size();
+    auto adjacencies = pow (2, 1);
+    auto *weights = new double [2];
+    auto *points = new int [2];
 
     reset_density (density);
 
     //#pragma omp parallel for
-    for (i = 0; i < num_particles; i++){
-        Particle *particle = particles->at (i);
-        double particle_charge = particle->get_charge();
+    for (int i = 0; i < num_particles; i++){
+        auto particle = particles->at (i);
+        auto particle_charge = particle->get_charge();
 
         //Weighing schemes
         if (CIC){

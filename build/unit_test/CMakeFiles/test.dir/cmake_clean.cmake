@@ -8,7 +8,6 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/test.dir/density_test.cpp.o"
   "CMakeFiles/test.dir/adjacent_coods_test.cpp.o"
   "CMakeFiles/test.dir/__/src/mom_diagnostic.cpp.o"
-  "CMakeFiles/test.dir/__/src/altfft.cpp.o"
   "CMakeFiles/test.dir/__/src/snapshot_diagnostics.cpp.o"
   "CMakeFiles/test.dir/__/src/phase_diagnostic.cpp.o"
   "CMakeFiles/test.dir/__/src/init_v.cpp.o"

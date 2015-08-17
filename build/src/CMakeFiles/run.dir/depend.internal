@@ -10,9 +10,6 @@ src/CMakeFiles/run.dir/adjacent_coods.cpp.o
  /home/jtan/Desktop/include/CLHEP/Units/SystemOfUnits.h
  /home/jtan/Desktop/include/CLHEP/Units/defs.h
  /home/jtan/my-plasma/1dcpp/src/adjacent_coods.cpp
-src/CMakeFiles/run.dir/altfft.cpp.o
- ../src/../include/altfft.h
- /home/jtan/my-plasma/1dcpp/src/altfft.cpp
 src/CMakeFiles/run.dir/density.cpp.o
  ../src/../include/adjacent_coods.h
  ../src/../include/density.h
@@ -152,7 +149,6 @@ src/CMakeFiles/run.dir/pot_diagnostic.cpp.o
  /home/jtan/Desktop/include/CLHEP/Units/defs.h
  /home/jtan/my-plasma/1dcpp/src/pot_diagnostic.cpp
 src/CMakeFiles/run.dir/psd.cpp.o
- ../src/../include/altfft.h
  ../src/../include/parameters.h
  ../src/../include/psd.h
  ../src/../include/square_mod.h
@@ -165,7 +161,6 @@ src/CMakeFiles/run.dir/psd.cpp.o
  /usr/local/include/fftw3.h
 src/CMakeFiles/run.dir/run_man.cpp.o
  ../src/../include/adjacent_coods.h
- ../src/../include/altfft.h
  ../src/../include/density.h
  ../src/../include/density_diagnostic.h
  ../src/../include/electron.h
@@ -198,7 +193,6 @@ src/CMakeFiles/run.dir/run_man.cpp.o
  /home/jtan/my-plasma/1dcpp/src/run_man.cpp
  /usr/local/include/fftw3.h
 src/CMakeFiles/run.dir/snapshot_diagnostics.cpp.o
- ../src/../include/altfft.h
  ../src/../include/density_diagnostic.h
  ../src/../include/field_diagnostic.h
  ../src/../include/out_writer.h
