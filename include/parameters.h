@@ -15,7 +15,7 @@ static const int PARTICLE_WIDTH = 1; //In debye lengths
 static const double GRID_SIZE = .2; //Grid size must be < Debye length
 static const int SYS_SIZE = 1e2; //In debye lengths
 static const double FIELD_SCALE = 1;
-static const int NUM_IONS = 0;
+static const int NUM_IONS = 1e3;
 static const int NUM_E = 1e3;
 
 static const int PLOT_MODES = 20;
@@ -50,8 +50,8 @@ static const double ION_MASS = 1000 * ELECTRON_MASS;
 //static const int BACKGROUND_DENSITY = 0;
 static const int BACKGROUND_DENSITY = -NUM_E*ELECTRON_CHARGE/NUM_CELLS;
 //
-static const double E_V_THERMAL = .3; //In units of grid_size/d_t
-static const double I_V_THERMAL = .01;
+static const double E_V_THERMAL = .5; //In units of grid_size/d_t
+static const double I_V_THERMAL = .05;
 //static const double I_V_THERMAL = .0;
 static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL/2; //Normalized k*T
 static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL/2*ION_MASS;

@@ -1,6 +1,6 @@
+#include <iostream>
 #include <random>
 #include "init_v.h"
-#include <cstdio>
 #include <chrono>
 
 static double pdf (double mass, double vel, double boltzmann_temp)
@@ -33,7 +33,7 @@ static double maxwell (double max_vel, double mass, double boltzmann_temp)
         return maxwell (max_vel,mass, boltzmann_temp);
     }
 
-    printf ("%f %f %f\n", probability, gen_val, vel);
+    std::cout << probability << " " << gen_val << " "<<vel << std::endl;
 
     if (rand () % 2){
         return -vel;

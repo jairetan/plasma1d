@@ -1,7 +1,7 @@
 #pragma once
+#include <fstream>
 #include <math.h>
 #include <vector>
-#include <stdlib.h>
 #include "to_string.h"
 #include "parameters.h"
 #include "transform_wrapper.h"

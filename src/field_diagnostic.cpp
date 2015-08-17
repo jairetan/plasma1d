@@ -1,4 +1,5 @@
 #include "field_diagnostic.h"
+#include <iostream>
 
 void field_diagnostic (std::vector <double> *field, int iter)
 {
@@ -22,15 +23,12 @@ void field_space_transform (std::vector <double> *field, int iter)
     for (int i = 0 ; i < NUM_CELLS/5; i++){
         std::string path = DATA_DIR + to_string (i) + "field_space_trans.dat";
 
-        FILE *file = NULL;
-        if ((file = fopen (path.c_str(), "a")) == NULL){
-            return;
-        }
+        std::ofstream file;
+        file.open (path.c_str(), std::ios::app);
 
-        fprintf (file, "%d %lf %lf\n",
-                iter, space_transform [i].real(),
-                space_transform[i].imag());
+        file << iter << " " <<  space_transform [i].real() << " " <<
+                space_transform[i].imag() << std::endl;
 
-        fclose (file);
+        file.close();
     }
 }

@@ -14,21 +14,17 @@ static void helper (std::vector <Particle*> *particles,
     }
 
     if (curr_it % (ITERATIONS/10) == 0){
-        FILE *file = NULL;
         std::string fName = "data/"+to_string(curr_it)+"vel.dat";
-        if ((file = fopen (fName.c_str(), "a")) == NULL){
-            return;
-        }
+        std::ofstream file (fName.c_str(), std::ios::app);
 
         for (int i=0; i < particles->size(); i++){
             Particle *particle = particles->at (i);
 
             if (particle->get_charge () < 0){
-                fprintf (file, "%f\n", particle->get_vel());
+                file<< particle->get_vel() << std::endl;
             }
         }
-
-        fclose (file);
+        file.close();
     }
 }
 
@@ -46,15 +42,14 @@ int main ()
             (random_vel (ION_MASS, I_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    int end = NUM_E*.7+NUM_IONS;
+    int end = NUM_E+NUM_IONS;
  //   #pragma omp parallel for
     for (int j = NUM_IONS; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
             (random_vel (ELECTRON_MASS, E_BOLTZMANN_TEMP), random_start (), 1));
     }
 
-    int start = end;
-    end = NUM_E+ NUM_IONS;
+    int start = end; end = NUM_E+ NUM_IONS;
 //    #pragma omp parallel for
     for (int j = start; j < end; j++){
         particles.insert (particles.begin() + j , new Electron
@@ -66,15 +61,17 @@ int main ()
 
         //Progress bar
         if ((i % (ITERATIONS / 10)) == 0){
-            printf ("%d ", 10 - i*10/ITERATIONS);
-            fflush (stdout);
+            std::cout << 10 - i*10/ITERATIONS << " " ;
+            std::cout.flush();
         }
-        if ((i % (ITERATIONS / 50)) == 0){
+
+        if ((i % (ITERATIONS / 100)) == 0){
             snapshot_diagnostics (&particles, &density,
                     &field, &potential, i);
         }
     }
+
     E_psd();
 
-    printf ("0\nCompleted\n");
+    std::cout << "0" << std::endl << "Completed" << std::endl;
 }

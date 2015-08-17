@@ -6,6 +6,6 @@
 #include "parameters.h"
 #include <string>
 #include "to_string.h"
-#include <stdio.h>
+#include <fstream>
 
 void phase_diagnostic (std::vector <Particle *> *, int i);
