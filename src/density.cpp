@@ -5,10 +5,6 @@ static void reset_density (std::vector <double> *grid_density)
     for (auto &point_density : *grid_density){
         point_density = BACKGROUND_DENSITY;
     }
-
-    //for (auto i = 0; i < NUM_CELLS; i++){
-        //density->at (i) = BACKGROUND_DENSITY;
-    //}
 }
 
 void calc_density (std::vector <Particle *> *particles,
@@ -24,11 +20,9 @@ void calc_density (std::vector <Particle *> *particles,
     reset_density (grid_density);
 
     //#pragma omp parallel for
-    for (int i = 0; i < num_particles; i++){
-        auto particle = particles->at (i);
+    for (auto particle : *particles){
         auto particle_charge = particle->get_charge();
 
-        //Weighing schemes
         if (CIC){
             weighing (particle, &weights[0]);
         }

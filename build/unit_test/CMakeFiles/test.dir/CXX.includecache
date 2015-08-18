@@ -6,39 +6,25 @@
 
 #IncludeRegexTransform: 
 
-../unit_test/../include/energy_diagnostic.h
+../unit_test/../include/adjacent_coods.h
 vector
 -
 particle.h
--
-out_writer.h
-../unit_test/../include/out_writer.h
-transform_wrapper.h
-../unit_test/../include/transform_wrapper.h
+../unit_test/../include/particle.h
+wrap_around.h
+../unit_test/../include/wrap_around.h
 
-../unit_test/../include/mode_diagnostic.h
-complex
--
-string
--
-parameters.h
-../unit_test/../include/parameters.h
-to_string.h
-../unit_test/../include/to_string.h
-fftw3.h
--
+../unit_test/../include/density.h
+particle.h
+../unit_test/../include/particle.h
 vector
 -
 cmath
 -
-
-../unit_test/../include/out_writer.h
-string
--
-vector
--
-fstream
--
+adjacent_coods.h
+../unit_test/../include/adjacent_coods.h
+weighing.h
+../unit_test/../include/weighing.h
 
 ../unit_test/../include/parameters.h
 /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
@@ -56,17 +42,11 @@ wrap_around.h
 parameters.h
 ../unit_test/../include/parameters.h
 
-../unit_test/../include/to_string.h
-sstream
+../unit_test/../include/weighing.h
+vector
 -
-
-../unit_test/../include/transform_wrapper.h
-complex
--
-fftw3.h
--
-cmath
--
+particle.h
+../unit_test/../include/particle.h
 
 ../unit_test/../include/wrap_around.h
 parameters.h
@@ -84,15 +64,7 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/energy_diagnostic.cpp
-energy_diagnostic.h
-/home/jtan/my-plasma/1dcpp/src/energy_diagnostic.h
-mode_diagnostic.h
-/home/jtan/my-plasma/1dcpp/src/mode_diagnostic.h
-
-/usr/local/include/fftw3.h
-stdio.h
--
-stddef.h
--
+/home/jtan/my-plasma/1dcpp/src/density.cpp
+density.h
+/home/jtan/my-plasma/1dcpp/src/density.h
 
