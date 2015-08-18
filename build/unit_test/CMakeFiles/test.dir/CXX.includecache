@@ -14,17 +14,19 @@ particle.h
 wrap_around.h
 ../unit_test/../include/wrap_around.h
 
-../unit_test/../include/density.h
-particle.h
-../unit_test/../include/particle.h
+../unit_test/../include/move.h
 vector
 -
 cmath
 -
-adjacent_coods.h
-../unit_test/../include/adjacent_coods.h
+particle.h
+../unit_test/../include/particle.h
 weighing.h
 ../unit_test/../include/weighing.h
+adjacent_coods.h
+../unit_test/../include/adjacent_coods.h
+parameters.h
+../unit_test/../include/parameters.h
 
 ../unit_test/../include/parameters.h
 /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
@@ -64,7 +66,9 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/density.cpp
-density.h
-/home/jtan/my-plasma/1dcpp/src/density.h
+/home/jtan/my-plasma/1dcpp/src/move.cpp
+move.h
+/home/jtan/my-plasma/1dcpp/src/move.h
+iostream
+-
 

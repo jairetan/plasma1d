@@ -8,7 +8,7 @@
 //Work through each module by hand
 //Normalized units
 
-static const double D_T = 1e-4;
+static const double D_T = 1e-2;
 static const int ITERATIONS = 1e4;
 static const int NUM_CELLS = 1e2; //size of cells < debye length
 static const int PARTICLE_WIDTH = 1; //In debye lengths
@@ -28,7 +28,7 @@ static const double ION_MASS = 1000 * ELECTRON_MASS;
 static const double BACKGROUND_DENSITY = 0;
 //static const int BACKGROUND_DENSITY = -NUM_E*ELECTRON_CHARGE/NUM_CELLS;
 //
-static const double E_V_THERMAL = .01; //In units of grid_size/d_t
+static const double E_V_THERMAL = D_T/GRID_SIZE; //In units of grid_size/d_t
 static const double I_V_THERMAL = .00005;
 static const double E_BOLTZMANN_TEMP = E_V_THERMAL* E_V_THERMAL/2 * ELECTRON_MASS; //Normalized k*T
 static const double I_BOLTZMANN_TEMP = I_V_THERMAL* I_V_THERMAL/2*ION_MASS;

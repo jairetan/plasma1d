@@ -6,6 +6,6 @@
 #include "out_writer.h"
 #include "transform_wrapper.h"
 
-double ke_diagnostic (std::vector <Particle *> *, double);
+double ke_diagnostic (std::vector <Particle> *, double);
 double pe_diagnostic (std::vector <double> *potential, std::vector <double> *density, double t);
-void energy_diagnostic (std::vector <Particle *> *, std::vector <double> *, std::vector <double> *, double);
+void energy_diagnostic (std::vector <Particle> *, std::vector <double> *, std::vector <double> *, double);

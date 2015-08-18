@@ -13,13 +13,11 @@ class Particle
         double position;
         double width;
 
-        Particle (double m, double c, double v, double p, double w);
-
     public:
-
         Particle ()
         {
         }
+        Particle (double m, double c, double v, double p, double w);
         double get_vel ();
         double get_pos ();
         void inc_pos ();

@@ -306,10 +306,6 @@ parameters.h
 
 /home/jtan/Desktop/include/CLHEP/Units/defs.h
 
-/home/jtan/my-plasma/1dcpp/src/density.cpp
-density.h
-/home/jtan/my-plasma/1dcpp/src/density.h
-
 /home/jtan/my-plasma/1dcpp/src/run_man.cpp
 run_man.h
 /home/jtan/my-plasma/1dcpp/src/run_man.h

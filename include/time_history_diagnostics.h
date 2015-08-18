@@ -5,4 +5,4 @@
 
 #pragma once
 
-void time_history_diagnostics (std::vector <Particle*> *, double, std::vector <double> *, std::vector <double> *, std::vector <double> *);
+void time_history_diagnostics (std::vector <Particle> *, double, std::vector <double> *, std::vector <double> *, std::vector <double> *);

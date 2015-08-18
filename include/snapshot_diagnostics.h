@@ -6,4 +6,4 @@
 #include "particle.h"
 #include "psd.h"
 
-void snapshot_diagnostics (std::vector <Particle *> *, std::vector <double> *, std::vector <double> *, std::vector <double> *, int);
+void snapshot_diagnostics (std::vector <Particle> *, std::vector <double> *, std::vector <double> *, std::vector <double> *, int);

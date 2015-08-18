@@ -2,15 +2,15 @@
 #include "energy_diagnostic.h"
 #include "mode_diagnostic.h"
 
-double ke_diagnostic (std::vector <Particle *> *particles, double iter){
+double ke_diagnostic (std::vector <Particle> *particles, double iter){
     auto ke_total = 0.0;
-    auto size = particles -> size();
+    auto size = particles->size();
     std::vector <double> x (1);
     std::vector <double> y (1);
     std::string path = DATA_DIR + "ke_out.dat";
 
     for (auto particle : *particles){
-        ke_total += particle->get_ke();
+        ke_total += particle.get_ke();
     }
 
     x[0] = iter;
@@ -81,7 +81,7 @@ double pe_diagnostic (std::vector <double> *potential,
     return pe_total;
 }
 
-void energy_diagnostic (std::vector <Particle *> *particles,
+void energy_diagnostic (std::vector <Particle> *particles,
         std::vector <double> *potential, std::vector <double> *density,
         double iter)
 {

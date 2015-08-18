@@ -11,7 +11,7 @@ static double find_accel (double field, Particle *particle)
     return accel;
 }
 
-void move_particles (std::vector <Particle *> * particles,
+void move_particles (std::vector <Particle> *particles,
         std::vector <double> *field)
 {
     auto num_particles = particles->size();
@@ -19,21 +19,21 @@ void move_particles (std::vector <Particle *> * particles,
     std::vector <double> weights (2);
     std::vector <int> points (2);
 
-    for (auto particle : *particles)
+    for (auto &particle : *particles)
     {
         if (CIC){
-            weighing (particle, &weights[0]);
+            weighing (&particle, &weights[0]);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particle, &weights[0]);
+            zero_order_weighing (&particle, &weights[0]);
         }
 
-        adjacent_points (particle, &points[0]);
+        adjacent_points (&particle, &points[0]);
         left_field = field->at (points [0]) * weights [0];
         right_field = field->at (points [1]) * weights [1];
-        accel = find_accel(left_field + right_field, particle);
+        accel = find_accel(left_field + right_field, &particle);
 
-        particle->inc_pos ();
-        particle->inc_vel (accel);
+        particle.inc_pos ();
+        particle.inc_vel (accel);
     }
 }

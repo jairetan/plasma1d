@@ -1,5 +1,5 @@
 #include "snapshot_diagnostics.h"
-void snapshot_diagnostics (std::vector <Particle *> *particles,
+void snapshot_diagnostics (std::vector <Particle> *particles,
         std::vector <double> *density, std::vector <double> *field,
         std::vector <double> *potential, int iter)
 {

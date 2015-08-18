@@ -8,4 +8,4 @@
 #include "to_string.h"
 #include <fstream>
 
-void phase_diagnostic (std::vector <Particle *> *, int i);
+void phase_diagnostic (std::vector <Particle> *, int i);

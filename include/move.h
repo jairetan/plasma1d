@@ -9,4 +9,4 @@
 
 #include "parameters.h"
 
-void move_particles (std::vector <Particle *> * particles, std::vector <double> *field);
+void move_particles (std::vector <Particle> * particles, std::vector <double> *field);
