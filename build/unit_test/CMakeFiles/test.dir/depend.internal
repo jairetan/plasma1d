@@ -232,14 +232,7 @@ unit_test/CMakeFiles/test.dir/adjacent_coods_test.cpp.o
  /home/jtan/Desktop/include/CLHEP/Units/defs.h
  /home/jtan/my-plasma/1dcpp/unit_test/adjacent_coods_test.cpp
 unit_test/CMakeFiles/test.dir/complex_transform_wrapper_test.cpp.o
- ../unit_test/../include/parameters.h
- ../unit_test/../include/psd.h
- ../unit_test/../include/square_mod.h
- ../unit_test/../include/to_string.h
  ../unit_test/../include/transform_wrapper.h
- /home/jtan/Desktop/include/CLHEP/Units/PhysicalConstants.h
- /home/jtan/Desktop/include/CLHEP/Units/SystemOfUnits.h
- /home/jtan/Desktop/include/CLHEP/Units/defs.h
  /home/jtan/my-plasma/1dcpp/unit_test/complex_transform_wrapper_test.cpp
  /usr/local/include/fftw3.h
 unit_test/CMakeFiles/test.dir/density_test.cpp.o

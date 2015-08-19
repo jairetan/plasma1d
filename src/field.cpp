@@ -30,8 +30,8 @@ void calc_field (std::vector <double> *field_vector,
         std::vector <double> *pot_vector,
         std::vector <double> *density_vector)
 {
-    double *potential = NULL;
-    std::complex <double> *density_trans = NULL;
+    std::vector <double> potential;
+    std::vector <std::complex <double> > density_trans;
 
     density_trans = transform (&(density_vector->at(0)), NUM_CELLS);
 
@@ -41,7 +41,7 @@ void calc_field (std::vector <double> *field_vector,
     }
 
     density_trans [0] = 0; //Net charge of system = 0
-    potential = inverse_transform (density_trans, NUM_CELLS);
+    potential = inverse_transform (&density_trans[0], NUM_CELLS);
 
     for (int x = 0; x < NUM_CELLS; x++){
         pot_vector->at (x) = potential [x];

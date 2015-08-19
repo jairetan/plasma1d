@@ -20,8 +20,8 @@ class Particle
         Particle (double m, double c, double v, double p, double w);
         double get_vel ();
         double get_pos ();
-        void inc_pos ();
-        void inc_vel (double); //somehwo adapt for b field when time comes
+        void inc_pos (double);
+        void inc_vel (double accel_left, double accel_right); //somehwo adapt for b field when time comes
         double get_mom ();
         double get_ke ();
         double get_width();

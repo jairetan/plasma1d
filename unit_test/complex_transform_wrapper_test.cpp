@@ -1,14 +1,20 @@
-#include "psd.h"
+#include "transform_wrapper.h"
 #include <cstdio>
 #include <gtest/gtest.h>
 
 TEST (complex_transform_wrapper_test, forward_transform)
 {
-    std::complex <double> input [4] = {std::complex <double> (5,0), std::complex <double> (-9,0),std::complex <double> (2,0),std::complex<double>(0,0)};
-    printf ("%lf %lf %lf %lf\n", input[0].real(), input [1].real(), input [2].real(), input[3].real());
-    std::complex <double> *output = complex_forward_trans (input, 4);
-    full_transform (output, 4);
-    printf ("%lf %lf %lf %lf\n", output[0].real(), output [1].real(), output [2].real(), output[3].real());
+    std::vector <std::complex <double> > input
+        ({std::complex <double> (5,0), std::complex <double> (-9,0),
+         std::complex <double> (2,0),std::complex<double>(0,0)});
+
+    printf ("%lf %lf %lf %lf\n", input[0].real(),
+            input [1].real(), input [2].real(), input[3].real());
+
+    auto output = complex_forward_trans (&input[0], 4);
+
+    full_transform (&output[0], 4);
+    //printf ("%lf %lf %lf %lf\n", output[0].real(), output [1].real(), output [2].real(), output[3].real());
 
     double real_0 =  output  [0].real ()/2;
     double imag_0 =  output [0].imag ()/2;

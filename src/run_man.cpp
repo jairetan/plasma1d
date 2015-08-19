@@ -86,6 +86,6 @@ int main ()
         }
     }
 
-    E_psd();
+    E_dispersion();
     std::cout << "0" << std::endl << "Completed" << std::endl;
 }

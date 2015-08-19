@@ -4,8 +4,8 @@
 TEST (transform_wrapper_test, forward_transform)
 {
     double input [4] = {5,-9,2,0};
-    std::complex <double> *output = transform (input, 4);
-    full_transform (output, 4);
+    std::vector <std::complex <double> > output = transform (input, 4);
+    full_transform (&output[0], 4);
 
     ASSERT_FLOAT_EQ (output [0].real (), -1);
     ASSERT_FLOAT_EQ (output [0].imag (), 0);
@@ -20,8 +20,8 @@ TEST (transform_wrapper_test, forward_transform)
 TEST (transform_wrapper_test, reverse_transform)
 {
     double input [5] = {3,2,2,-10,1};
-    std::complex <double> *transformed = transform (input, 5);
-    double *output = inverse_transform (transformed, 5);
+    std::vector <std::complex <double> > transformed = transform (input, 5);
+    std::vector <double> output = inverse_transform (&transformed[0], 5);
 
     ASSERT_FLOAT_EQ (output [0], input [0]);
     ASSERT_FLOAT_EQ (output [1], input [1]);

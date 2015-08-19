@@ -18,15 +18,16 @@ double Particle::get_pos ()
     return position;
 }
 
-void Particle::inc_pos ()
+//Using leapfrog integration
+void Particle::inc_pos (double accel)
 {
-    position = wrap_around (position + velocity, NUM_CELLS);
+    position = wrap_around (position + velocity + .5*accel, NUM_CELLS);
 }
 
 //Increment velocity relative to grid points
-void Particle::inc_vel (double accel)
+void Particle::inc_vel (double accel_left, double accel_right)
 {
-    velocity += accel;
+    velocity += (accel_left+accel_right)/2;
 }
 
 double Particle::get_mom ()

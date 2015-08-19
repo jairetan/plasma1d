@@ -182,6 +182,6 @@ void Dispersion (double xLo, double xHi, double yLo, double yHi, int nBinsX = 2e
 void runner (){
     //    snapshot_graph ();
     //   history_graph ();
-    GetHistogram (-1, 1);
+    GetHistogram (-.2, .2);
     Dispersion (0,  1e2,  0,  20);
 }

@@ -1,13 +1,13 @@
 #include "transform_wrapper.h"
 
-std::complex <double> *complex_forward_trans (
+std::vector <std::complex <double> > complex_forward_trans (
         std::complex <double> *transform_in, int size)
 {
     fftw_plan p;
-    std::complex <double> *transform_out = new std::complex <double> [size];
+    std::vector <std::complex <double> > transform_out (size);
     p = fftw_plan_dft_1d(size,
             reinterpret_cast <fftw_complex *>(transform_in),
-            reinterpret_cast <fftw_complex *>(transform_out),
+            reinterpret_cast <fftw_complex *>(&transform_out[0]),
             FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_execute(p);
     fftw_destroy_plan(p);
@@ -15,12 +15,12 @@ std::complex <double> *complex_forward_trans (
     return transform_out;
 }
 
-std::complex <double> *transform (double *vect, int size)
+std::vector <std::complex <double> >transform (double *vect, int size)
 {
-    std::complex <double> *transform_out = new std::complex <double> [size];
+    std::vector <std::complex <double> >transform_out (size);
 
     fftw_plan p = fftw_plan_dft_r2c_1d
-        (size, vect, reinterpret_cast <fftw_complex *>(transform_out),
+        (size, vect, reinterpret_cast <fftw_complex *>(&transform_out[0]),
          FFTW_ESTIMATE);
     fftw_execute (p);
     fftw_destroy_plan (p);
@@ -41,12 +41,12 @@ void full_transform (std::complex <double> *transform, int size)
     }
 }
 
-double *inverse_transform (std::complex <double> *transform, int size)
+std::vector <double> inverse_transform (std::complex <double> *transform, int size)
 {
-    double *inverse = new double [size];
+    std::vector <double> inverse (size);
 
     fftw_plan p = fftw_plan_dft_c2r_1d
-        (size, reinterpret_cast <fftw_complex *> (transform), inverse,
+        (size, reinterpret_cast <fftw_complex *> (&transform[0]), &inverse[0],
          FFTW_ESTIMATE);
     fftw_execute (p);
     fftw_destroy_plan (p);
