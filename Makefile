@@ -1,19 +1,23 @@
 CC=g++
-CFLAGS= -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all
-DEPS=particle.h
-OBJ=adjacent_coods.o density.o electron.o altfield.o init_pos.o move.o particle.o proton.o run_man.o weighing.o jmod.o energy_diagnostic.o mom_diagnostic.o pos_diagnostic.o time_history_diagnostics.o field_diagnostic.o pot_diagnostic.o init_v.o density_diagnostic.o zero_order_weighing.o velocity_diagnostic.o psd.o snapshot_diagnostics.o
+CFLAGS= -Wall -g -O0 -Wwrite-strings -Wshadow -pedantic-errors -fstack-protector-all -std=c++11
 SRC=./src/
 INC=./include/
+UNIT=./unit_test/
 OBJECTS=./object/
+FILES:=$(wildcard $(SRC)*.cpp)
+OBJ:=$(FILES:$(SRC)%.cpp=%.o)
 
 all: run
 
 %.o: $(SRC)%.cpp $(INC)%.h
 	$(CC) $(CFLAGS) -I./$(INC) -c $<
 
+%.o: $(UNIT)%.cpp $(INC)%.h
+	$(CC) $(CFLAGS) -I./$(INC) -c $<
+
 run: $(OBJ) -lfftw3 -lm -lgsl -lgslcblas
 	$(CC) -o $@ $^
-	mv *.o $(OBJECTS)
+	@mv *.o $(OBJECTS)
 
 clean:
-	@rm -f $(OBJECTS)*.o run ./data/*.dat *.dat
+	@rm -f $(OBJECTS)*.o run ./data/*.dat *.dat *.o

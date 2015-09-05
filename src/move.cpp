@@ -1,40 +1,50 @@
 //Move particles
 #include "move.h"
-#include <fstream>
+#include <iostream>
 
 //Return normalized acceleration
 static double find_accel (double field, Particle *particle)
 {
-    double dx = SYS_SIZE/NUM_CELLS;
-    double accel = FIELD_SCALE* field * particle->get_charge () *D_T *D_T / particle->get_mass ()/ dx;
-    //std::ofstream field_test ("field_test.dat", std::ios::app);
-    //field_test << "Field" << field << "\n";
-    //field_test.close();
+    auto accel = field * particle->get_charge ()/particle->get_mass()
+        *D_T*D_T/GRID_SIZE;
+
     return accel;
 }
 
-void move_particles (std::vector <Particle *> * particles, std::vector <double> *field)
+void move_particles (std::vector <Particle> *particles,
+        std::vector <double> *field)
 {
-    int num_particles = particles->size();
-    double left_field = 0, right_field = 0, accel = 0;
-    double *weights = new double [2];
-    int *points = new int [2];
+    auto num_particles = particles->size();
+    std::vector <double> weights (2);
+    std::vector <int> points (2);
 
-    for (int i = 0; i < num_particles; i++)
+    for (auto& particle : *particles)
     {
         if (CIC){
-            weighing (particles->at (i), weights);
+            weighing (&particle, &weights[0]);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particles->at (i), weights); //Birdsell says to conserve energy
+            zero_order_weighing (&particle, &weights[0]);
         }
 
-        adjacent_points (particles->at (i), points);
-        left_field = field->at (points [0])*weights [0];
-        right_field = field->at (points[1]) * weights [1];
-        accel = find_accel(left_field+right_field, particles->at (i));
+        adjacent_points (&particle, &points[0]);
+        auto left_field = field->at (points [0]) * weights [0];
+        auto right_field = field->at (points [1]) * weights [1];
+        auto accel_0 = find_accel(left_field + right_field, &particle);
 
-        particles->at (i)->inc_vel (accel);
-        particles->at (i)->inc_pos ();
+        particle.inc_pos (accel_0);
+        if (CIC){
+            weighing (&particle, &weights[0]);
+        }
+        else if (ZERO_ORDER){
+            zero_order_weighing (&particle, &weights[0]);
+        }
+
+        adjacent_points (&particle, &points[0]);
+        left_field = field->at (points [0]) * weights [0];
+        right_field = field->at (points [1]) * weights [1];
+        auto accel_1 = find_accel(left_field + right_field, &particle);
+
+        particle.inc_vel (accel_0, accel_1);
     }
 }

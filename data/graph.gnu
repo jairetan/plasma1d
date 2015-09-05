@@ -7,6 +7,7 @@ set ylabel "Momentum"
 set xlabel "Iteration"
 plot "mom_out.dat"
 
+
 set title "Kinetic Energy vs Time"
 unset key
 set ylabel "Kinetic Energy"

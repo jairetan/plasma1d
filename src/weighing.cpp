@@ -1,6 +1,17 @@
-//1D weighing scheme
 #include "weighing.h"
 
+void alt_weighing (Particle *particle, double *weights)
+{
+    double left_pos = 0, right_pos = 0;
+
+    left_pos = particle->get_pos()-.5*particle->get_width();
+    right_pos = left_pos + 1;
+
+    weights [0] = (particle->get_pos () - right_pos);
+    weights [1] = particle->get_pos () - left_pos;
+}
+
+//1D weighing scheme
 void weighing (Particle *particle, double *weights)
 {
     double left_pos = 0, left_perc = 0, right_perc = 0;
@@ -23,4 +34,21 @@ void weighing (Particle *particle, double *weights)
     //weights->insert (weights->begin()+1, right_perc);
     weights[1] = (right_perc);
     weights[0] = (left_perc);
+}
+
+void zero_order_weighing (Particle *particle, double *weights)
+{
+    int nearest = (int)(particle->get_pos() + .5);
+    double left_perc, right_perc;
+    if (nearest < particle->get_pos()){
+        left_perc = 1.;
+        right_perc = 0.;
+    }
+    else{
+        right_perc = 1.;
+        left_perc = 0.;
+    }
+
+    weights [1] = (right_perc);
+    weights [0] = (left_perc);
 }

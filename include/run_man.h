@@ -1,21 +1,18 @@
 #pragma once
 
 //Manage evolution of system over time
+#include <iostream>
 #include "density.h"
 #include "init_pos.h"
 #include "field.h"
 #include "move.h"
 #include "particle.h"
-#include "proton.h"
 #include "electron.h"
+#include "ion.h"
 #include "time_history_diagnostics.h"
-#include "field_diagnostic.h"
-#include "pot_diagnostic.h"
 #include "density_diagnostic.h"
 #include "init_v.h"
 #include "init_pos.h"
-#include "velocity_diagnostic.h"
-#include "psd.h"
 #include "snapshot_diagnostics.h"
 #include <vector>
 #include "parameters.h"

@@ -1,4 +1,11 @@
 #pragma once
-#include <fstream>
+#include <complex>
 #include <string>
-void move_diagnostic (int, double, double);
+#include "parameters.h"
+#include "to_string.h"
+#include <fftw3.h>
+#include <vector>
+#include <cmath>
+//void mode_diagnostic (std::vector <double> *, int);
+double mode_diagnostic (std::vector <double> *, std::vector <double> *, int);
+

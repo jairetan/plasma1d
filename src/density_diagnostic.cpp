@@ -1,12 +1,15 @@
 #include "density_diagnostic.h"
 
-void density_diagnostic (std::vector <double> *density, int iter)
+void density_diagnostic (std::vector <double> *density, const int iter)
 {
-    std::string path = DATA_DIR + to_string (10*iter*D_T/T) + "density_out.dat";
-    std::ofstream density_out (path.c_str(), std::ios::app);
-    for (int x = 0; x < NUM_CELLS; x++)
-    {
-        density_out << x << " " << density->at (x) << "\n";
+    std::string path = DATA_DIR +
+        std::to_string (int (.5+10*iter/ITERATIONS)) + "density_out.dat";
+    std::vector <double> x (NUM_CELLS);
+
+    for (int i = NUM_CELLS-1; i >=0; i--){
+        x [i] = i;
     }
-    density_out.close ();
+
+    out_writer (path, &x, density);
+
 }

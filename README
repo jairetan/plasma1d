@@ -1,0 +1,76 @@
+WHAT IS THIS:
+    A 1D, electrostatic particle-in-cell plasma simulation with some diagnostics
+    included.
+
+HOW TO RUN:
+    Run go.sh in bash shell or alternatively run make utility and ./run
+
+HOW DOES IT WORK:
+    1. Initialize particle positions uniformly in space
+    2. Initialize particle velocities according a maxwell distribution
+    3. Calculate the charge density at each grid point using the cloud-in-cell
+    weighing scheme
+    4. Calculate the potential at each grid point by solving the poisson
+    equation with an application of the fast fourier trasnform
+    5. Calculate the field at each grid point by using the finite difference
+    approximation of derivatives on the potentials
+    6. Calculate the force on each particle from the adjacent grid points, again
+    using the cloud-in-cell weighing technique in conjuction with the particle
+    charge
+    7. Increment each particle's position according to its current velocity
+    (leap-frog method)
+    8. Increment each particle's velocity according to its current accelaration
+    9. Repeat from step 3 until desired number of iterations has occured
+
+BOUNDARY CONDITIONS:
+    Periodic. i.e. A particle traveling monotonically toward greater grid
+    points will, upon passing the "final" grid point, wrap around back to the
+    first grid point in the system
+
+DIAGNOSTICS:
+    Simulation data output in the "data" directory in two column format
+    File naming convention for time histories given
+        by <name of physical quantity>_out.dat
+        For snapshots, the file names are given
+            by <snapshot #><name of quanitty>_out.dat
+    Graphical representation of data can be loaded by running any of the data
+        directory's .gnu files through gnuplot or by running ROOT_graph.cpp
+        through ROOT Cling
+    Diagnostics Include:
+        1. Mode Energy
+        2. Power Spectral density for each mode
+        2. Total Energy vs Time
+        3. Kinetic Energy vs Time
+        4. Potential Energy vs Time
+        5. Momentum vs Time
+        6. Potential vs Grid Point Snapshot
+        7. Charge Density vs Grid Point Snapshot
+        8. Field vs Grid Point Snapshot
+
+PHYSICAL CONSTANTS:
+    Refer to "parameters.h" in the "include" directory
+    Note, to minimize non-physical effects, a number of relative relatinoship
+        between the constants must be maintained:
+        1. The size of the system >> 1 Debye Length
+        2. No particle can cross more than one grid point in one time interval
+        3. Number of particles per grid cell  >> 1
+        4. Grid size < Debye length
+
+UNITS:
+    Normalized Unit System
+    ----------------------
+    Time: Inverse Plasma Frequency
+    Distance: Debye Lengths
+    Charge: Elementary Charge Units
+    Mass: Electron Mass Units
+
+    Velocity: Debye Lengths/Inverse Plasma Freq.
+    Momentum: Electron Mass * Debye Lengths/Inverse Plasma Freq.
+
+FUTURE FEATURES:
+    Analysis of ion-acoustic waves
+    Introduction of Magnetic Field
+    Introduction of higher dimensions
+
+ISSUES:
+    Non-physical power spectrum spike at 0th mode

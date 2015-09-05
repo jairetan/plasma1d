@@ -1,33 +1,29 @@
 #include "density.h"
-
-void calc_density (std::vector <double> *density, std::vector <Particle *> *particles)
+void calc_density (std::vector <Particle> *particles,
+        std::vector <double> *grid_density)
 {
-    //Change to any dimension later on
-    int num_particles = particles->size(), adjacencies = pow (2, 1);
-    double *weights = new double [2];
-    int *points = new int[2];
+    auto test = 0;
+    auto num_particles = particles->size();
+    auto adjacencies = pow (2, 1);
 
-    //Reset density
-    for (int i = 0; i < NUM_CELLS; i++){
-        density->at (i) = 0;
-    }
+    std::vector <double> weights (2);
+    std::vector <int> points (2);
 
-    for (int i = 0; i < num_particles; i++){
+    //#pragma omp parallel for
+    for (auto &particle : *particles){
+        auto particle_charge = particle.get_charge();
+
         if (CIC){
-            weighing (particles->at (i), weights);
+            weighing (&particle, &weights[0]);
         }
         else if (ZERO_ORDER){
-            zero_order_weighing (particles->at (i), weights);
+            zero_order_weighing (&particle, &weights[0]);
         }
-        adjacent_points (particles->at (i), points);
+
+        adjacent_points (&particle, &points[0]);
 
         for (int j = 0; j < adjacencies; j++){
-            //if (points[j] > NUM_CELLS-1 || points [j] < 0){
-            //std::cout << points[j] << "\n";
-            //exit (-1);
-            //}
-            density->at (points [j]) +=
-                weights [j]* ((particles->at (i))->get_charge());
+            grid_density->at (points [j]) += weights [j]* (particle_charge);
         }
     }
 }
